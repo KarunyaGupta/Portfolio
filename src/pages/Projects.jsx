@@ -4,28 +4,28 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
   {
-    title: '🩺 Mammogram Malignancy Detector',
-    desc: 'Hybrid CNN + YOLOv8 ensemble for full-image breast cancer detection with ROI preprocessing and sliding-window inference.',
-    ss: '/mamo.png',
-    tech: ['TensorFlow', 'Keras', 'OpenCV', 'YOLOv8'],
+    title: '🤖 Code Review AI – Intelligent Code Analysis Tool',
+    desc: 'An AI-powered platform that reviews code in real-time and provides instant suggestions for improvement. It helps developers enhance performance, security, and code quality with smart, automated insights.',
+    ss: '/codereview.png',
+    tech: ['React', 'Vite', 'Express', 'Google Generative AI(Gemini)'],
     live: '#',
-    code: 'https://github.com/kunjdesai/mammo-detector'
+    code: 'https://github.com/KarunyaGupta/CodeReview.ai'
   },
   {
-  title: '🧠 Mental Health Analyzer',
-  desc: 'NLP-based system that analyzes user text to detect signs of anxiety, stress, and depression using sentiment analysis and transformer models.',
-  ss: '/mentalhealth.jpg',
-  tech: ['Python', 'Transformers', 'NLTK', 'scikit-learn'],
-  live: 'https://mental-health-analyzer.streamlit.app/',
-  code: 'https://github.com/kunj2803/Mental-Health-Analyzer'
+  title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
+  desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
+  ss: '/ecom.jpg',
+  tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
+  live: '/e-commerce.png',
+  code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link'
   },
   {
-    title: '🤖 Indian Sign Language Interpreter',
-    desc: 'Real-time gesture recognition and translation using Mediapipe + TensorFlow, enabling live sign-to-text interpretation.',
-    ss: '/ISL.png',
-    tech: ['Mediapipe', 'TensorFlow', 'React', 'Flask'],
-    live: '#',
-    code: 'https://github.com/kunjdesai/ISL-Interpreter'
+    title: '🚓 Uber Ride Analysis – End-to-End Business Intelligence Dashboard',
+    desc: 'An interactive Power BI dashboard that analyzes Uber ride data to uncover booking trends, revenue patterns, rider behavior, and operational performance. The report supports data-driven decision-making through KPIs, drill-downs, vehicle insights, and location-based metrics.',
+    ss: '/uber.jpg',
+    tech: ['Pandas', 'DAX', 'PowerBI', 'KPIs'],
+    live: 'https://app.powerbi.com/links/UgR2hEsl46?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
+    code: 'https://drive.google.com/drive/folders/1T_n-1GsqTFy4hSpwvh56Ca4ufjxtppff?usp=drive_link'
   },
   {
   title: '💼 Portfolio Website',
@@ -33,31 +33,47 @@ const PROJECTS = [
   ss: '/portfolio.jpg',
   tech: ['React', 'Framer Motion', 'Tailwind CSS'],
   live: '#',
-  code: 'https://github.com/kunj2803/Kunj-Portfolio'
+  code: 'https://github.com/KarunyaGupta/Portfolio'
   },
   {
-    title: '💬 DocuChat – Gemini AI Chatbot',
-    desc: 'An intelligent document interaction app powered by Gemini API that understands and answers queries from uploaded PDFs.',
-    ss: '/Docuchat.png',
-    tech: ['Gemini API', 'LangChain', 'Python', 'Streamlit'],
-    live: 'https://docuchat-chatbot.streamlit.app/',
-    code: 'https://github.com/kunj2803/Docuchat-Chatbot'
+    title: '🩺 Pharmaceutical Sales Analysis Dashboard',
+    desc: "This project analyzes a global Pharmaceutical Manufacturing Company's raw sales data to derive meaningful insights. The analysis focuses on performance metrics across different regions, distributors, customers, and sales teams.",
+    ss: '/pharma.jpg',
+    tech: ['Pandas', 'EDA', 'Python', 'Data Visiualization'],
+    live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
+    code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link'
   },
   {
     title: '📊 ProfileX – Data Profiler',
-    desc: 'Smart data profiling and preprocessing web app for CSV datasets — feature summary, missing value handling, and visualization.',
+    desc: 'Smart data profiling and preprocessing web app for CSV datasets — feature summary, missing value handling, and data visualization.',
     ss: '/ProfileX.png',
-    tech: ['Streamlit', 'Pandas', 'Plotly'],
+    tech: ['Streamlit', 'Pandas', 'Plotly',"Scikit-learn","Matplotlib","Seaborn","Visualization"],
     live: 'https://profilex.streamlit.app/',
     code: 'https://github.com/kunjdesai/ProfileX'
   },
   {
-    title: '🧬 Breast Cancer Prediction',
-    desc: 'ML pipeline using SVC, Random Forest, and XGBoost with SMOTE for imbalanced dataset handling and model optimization.',
-    ss: '/breastpred.jpg',
-    tech: ['scikit-learn', 'XGBoost', 'Pandas'],
+    title: '💰 Loan Status Prediction',
+    desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
+    ss: '/loan.png',
+    tech: ['scikit-learn', 'Numpy', 'Pandas',"Matplotlib"],
     live: '#',
-    code: 'https://github.com/kunjdesai/BreastCancerPrediction'
+    code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py'
+  },
+  {
+    title: '📽 Netflix Content Library',
+    desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
+    ss: '/netflix.png',
+    tech: ["PowerBI", 'Excel/CSV', 'DAX', 'Power Query'],
+    live: '#',
+    code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing'
+  },
+  {
+    title: '🚓Bengaluru Rides Analysis (OLA)',
+    desc: 'This is a data analysis and exploration project focused on understanding patterns and insights from a dataset of 100,000 rides taken in the city of Bengaluru.',
+    ss: '/uber.jpg',
+    tech: ['CSV', 'Numpy', 'Pandas',"Matplotlib"],
+    live: '#',
+    code: '#'
   }
 ]
 
@@ -157,7 +173,7 @@ export default function Projects() {
                       textDecoration: 'none'
                     }}
                   >
-                    <Github size={14} /> Code
+                    <Github size={14} /> Source
                   </motion.a>
                   <motion.a
                     href={p.live}
