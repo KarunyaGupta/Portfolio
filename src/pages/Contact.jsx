@@ -75,8 +75,68 @@ export default function Contact() {
     
   ];
 
+  // Responsive inline styles (lightweight, complements your existing CSS)
+  const resp = {
+    container: {
+      padding: "2rem 1rem",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100%",
+      boxSizing: "border-box",
+    },
+    linksWrap: {
+      display: "flex",
+      gap: "12px",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      margin: "1rem 0",
+    },
+    form: {
+      width: "100%",
+      maxWidth: "720px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      boxSizing: "border-box",
+    },
+    input: {
+      width: "100%",
+      padding: "12px 14px",
+      fontSize: "1rem",
+      borderRadius: "10px",
+      border: "1px solid rgba(255,255,255,0.08)",
+      background: "transparent",
+      color: "inherit",
+      boxSizing: "border-box",
+    },
+    textarea: {
+      minHeight: "120px",
+      resize: "vertical",
+      padding: "12px 14px",
+      borderRadius: "10px",
+      border: "1px solid rgba(255,255,255,0.08)",
+      background: "transparent",
+      color: "inherit",
+      fontSize: "1rem",
+    },
+    btn: {
+      padding: "12px 16px",
+      borderRadius: "10px",
+      fontSize: "1rem",
+      cursor: "pointer",
+      alignSelf: "flex-start",
+    },
+    socialIcon: {
+      width: "40px",
+      height: "40px",
+      objectFit: "contain",
+    },
+  };
+
   return (
-    <section className="contact-section">
+    // apply container inline style to ensure spacing is responsive
+    <section style={resp.container} className="contact-section">
       <motion.h1
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -96,7 +156,7 @@ export default function Contact() {
       </motion.p>
 
       {/* Quick Links */}
-      <motion.div className="contact-links">
+      <motion.div className="contact-links" style={resp.linksWrap}>
         {quickLinks.map((item, i) => (
           <motion.a
             key={i}
@@ -106,11 +166,13 @@ export default function Contact() {
             className="social-link"
             whileHover={{ scale: 1.15, rotate: 5 }}
             transition={{ type: "spring", stiffness: 250 }}
+            style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
           >
             <motion.img
               src={item.img}
               alt={item.title}
               className="social-icon"
+              style={resp.socialIcon}
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 3 + i * 0.3,
@@ -129,12 +191,19 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.9 }}
         className="contact-form"
+        style={resp.form}
       >
-        <input type="text" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
-        <input type="text" name="contact" placeholder="Your Email or Phone" value={form.contact} onChange={handleChange} required />
-        <input type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} required />
-        <textarea name="message" placeholder="Your Message..." value={form.message} onChange={handleChange} rows="5" required />
-        <motion.button type="submit" className="contact-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <input style={resp.input} type="text" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
+        <input style={resp.input} type="text" name="contact" placeholder="Your Email or Phone" value={form.contact} onChange={handleChange} required />
+        <input style={resp.input} type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} required />
+        <textarea style={resp.textarea} name="message" placeholder="Your Message..." value={form.message} onChange={handleChange} rows="5" required />
+        <motion.button
+          type="submit"
+          className="contact-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          style={resp.btn}
+        >
           🚀 Send Message
         </motion.button>
 

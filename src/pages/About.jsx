@@ -14,7 +14,7 @@ const AboutMe = () => {
         justifyContent: "center",
         background: "radial-gradient(circle at top, #0d0d0d, #000)",
         color: "white",
-        padding: "3rem 1rem",
+        padding: "clamp(1rem, 4vw, 3rem) 1rem",
       }}
     >
       {/* --- About Me + Education Section --- */}
@@ -27,18 +27,19 @@ const AboutMe = () => {
           maxWidth: "1100px",
           textAlign: "left",
           marginTop: "1rem",
-          lineHeight: 1.8,
+          lineHeight: 1.7,
           background: "rgba(255,255,255,0.04)",
-          padding: "3rem 3.5rem",
+          padding: "clamp(1.5rem, 3vw, 3.5rem)",
           borderRadius: "18px",
           boxShadow: "0 0 25px rgba(0,255,200,0.08)",
           backdropFilter: "blur(10px)",
+          boxSizing: "border-box",
         }}
       >
         {/* --- Header --- */}
         <h2
           style={{
-            fontSize: "1.9rem",
+            fontSize: "clamp(1.2rem, 2.5vw, 1.9rem)",
             marginBottom: "1.2rem",
             background: "linear-gradient(90deg, var(--accent), var(--accent-2))",
             WebkitBackgroundClip: "text",
@@ -51,7 +52,7 @@ const AboutMe = () => {
         {/* --- Description --- */}
         <p
           style={{
-            fontSize: "1.1rem",
+            fontSize: "clamp(1rem, 1.6vw, 1.1rem)",
             color: "rgba(255,255,255,0.85)",
             marginBottom: "1rem",
           }}
@@ -76,11 +77,11 @@ const AboutMe = () => {
           <strong>Data Analysis & Visualization</strong> (Excel, Power BI, DAX, SQL, Python)
           </li>
           <li>
-          <strong>Business Insights & Reporting</strong> — turning data into
+          <strong>Business Insights & Reporting</strong> : turning data into
           action
           </li>
           <li>
-          <strong>Generative AI & Prompt Engineering</strong> — exploring real
+          <strong>Generative AI & Prompt Engineering</strong> : exploring real
           business applications
           </li>
           <li>
@@ -130,7 +131,7 @@ const AboutMe = () => {
         >
           <h3
             style={{
-              fontSize: "1.6rem",
+              fontSize: "clamp(1.1rem, 2.2vw, 1.6rem)",
               marginBottom: "1.5rem",
               background:
                 "linear-gradient(90deg, var(--accent), var(--accent-2))",
@@ -158,31 +159,27 @@ const AboutMe = () => {
               style={{
                 background: "rgba(255,255,255,0.05)",
                 borderRadius: "14px",
-                padding: "1.5rem 2rem",
+                padding: "1.2rem 1.4rem",
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 0 15px rgba(0,255,200,0.05)",
                 display: "flex",
                 alignItems: "center",
-                gap: "1.2rem",
+                gap: "1rem",
+                flexWrap: "wrap",
               }}
             >
               <FaUniversity size={40} color="var(--accent)" />
-              <div>
+              <div style={{ flex: 1, minWidth: "200px" }}>
                 <h4
                   style={{
                     color: "var(--accent)",
                     marginBottom: "0.4rem",
-                    fontSize: "1.25rem",
+                    fontSize: "1.05rem",
                   }}
                 >
                   Bachelor of Engineering in Computer Science and Engineering
                 </h4>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.85)",
-                    marginBottom: "0.2rem",
-                  }}
-                >
+                <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
                   <strong>Chitkara University</strong> - Rajpura, Punjab
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -202,32 +199,22 @@ const AboutMe = () => {
               style={{
                 background: "rgba(255,255,255,0.05)",
                 borderRadius: "14px",
-                padding: "1.5rem 2rem",
+                padding: "1.2rem 1.4rem",
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 0 15px rgba(0,255,200,0.05)",
                 display: "flex",
                 alignItems: "center",
-                gap: "1.2rem",
+                gap: "1rem",
+                flexWrap: "wrap",
               }}
             >
               <FaGraduationCap size={38} color="var(--accent)" />
-              <div>
-                <h4
-                  style={{
-                    color: "var(--accent)",
-                    marginBottom: "0.4rem",
-                    fontSize: "1.25rem",
-                  }}
-                >
+              <div style={{ flex: 1, minWidth: "200px" }}>
+                <h4 style={{ color: "var(--accent)", marginBottom: "0.4rem", fontSize: "1.05rem" }}>
                   Higher Secondary Education (12th Grade)
                 </h4>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.85)",
-                    marginBottom: "0.2rem",
-                  }}
-                >
-                  <strong>Lord's Convent School</strong> — Sarkaghat, Mandi, Himachal Pradesh
+                <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
+                  <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
                   Gujarat Board | Percentage: 89.8%
@@ -246,32 +233,22 @@ const AboutMe = () => {
               style={{
                 background: "rgba(255,255,255,0.05)",
                 borderRadius: "14px",
-                padding: "1.5rem 2rem",
+                padding: "1.2rem 1.4rem",
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 0 15px rgba(0,255,200,0.05)",
                 display: "flex",
                 alignItems: "center",
-                gap: "1.2rem",
+                gap: "1rem",
+                flexWrap: "wrap",
               }}
             >
               <FaSchool size={36} color="var(--accent)" />
-              <div>
-                <h4
-                  style={{
-                    color: "var(--accent)",
-                    marginBottom: "0.4rem",
-                    fontSize: "1.25rem",
-                  }}
-                >
+              <div style={{ flex: 1, minWidth: "200px" }}>
+                <h4 style={{ color: "var(--accent)", marginBottom: "0.4rem", fontSize: "1.05rem" }}>
                   Secondary Education (10th Grade)
                 </h4>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.85)",
-                    marginBottom: "0.2rem",
-                  }}
-                >
-                  <strong>Lord's Convent School</strong> — Sarkaghat, Mandi, Himachal Pradesh,
+                <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
+                  <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh,
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
                   Gujarat Board | Percentage: 88.9%

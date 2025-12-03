@@ -101,3 +101,83 @@
   width: 300px;
   text-align: left;
 }
+
+/* ---------- Responsive breakpoints ---------- */
+@media (max-width: 900px) {
+  .skills-stage {
+    height: 300px;
+    width: 96%;
+  }
+
+  .skills-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .skill-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .skill-circle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skill-circle span {
+    font-size: 9px;
+  }
+
+  .skills-table {
+    margin-top: 36px;
+    gap: 32px;
+  }
+
+  .skill-box {
+    width: calc(50% - 24px);
+    max-width: 420px;
+    padding: 16px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-stage {
+    height: 240px;
+    width: 96%;
+  }
+
+  .skills-header {
+    margin-left: 4%;
+  }
+
+  .skills-header h2 {
+    font-size: 1rem;
+  }
+
+  .skill-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .skill-circle img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .skill-circle span {
+    font-size: 9px;
+  }
+
+  .skills-table {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .skills-row {
+    gap: 18px;
+  }
+
+  .skill-box {
+    width: 100%;
+    padding: 14px;
+  }
+}
