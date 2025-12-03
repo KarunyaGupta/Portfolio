@@ -17,21 +17,6 @@ const IMAGES = {
       photos: [ "/gallery/communication.jpg"],
     },
   ],
-  projects: [
-    {
-      id: 1,
-      caption:
-        "It’s an AI-powered tool that understands what someone might be feeling based on their words.",
-      photos: ["/gallery/m.png", "/gallery/m2.jpeg"],
-    },
-    
-    {
-      id: 1,
-      caption:
-        "📂ProfileX - Smart Data Profiler + Preprocessor",
-      photos: ["/gallery/profilex.jpeg", "/gallery/profilex2.jpeg","/gallery/profilex3.jpeg", "/gallery/profilex4.jpeg"],
-    },
-  ],
   achievements: [
     {
       id: 1,
@@ -50,7 +35,7 @@ const IMAGES = {
     },
     {
       id: 2,
-      caption: "\"E-Waste Creations\" - Our 1st Prize Innovation! This gallery showcases the unique creations—like photo frames and décor—made from repurposed e-waste for the National Science Day 2024 Carnival. A powerful display of creativity, sustainability, and commitment to a Viksit Bharat!",
+      caption: "\"E-Waste Creations\" - Our 1st Prize Innovation! This gallery showcases the unique creations- like photo frames and décor- made from repurposed e-waste for the National Science Day 2024 Carnival. A powerful display of creativity, sustainability, and commitment to a Viksit Bharat!",
       photos: ["/gallery/Carnival2.jpg"],
     },
   ],
@@ -110,6 +95,15 @@ export default function Gallery() {
     setZoom({ ...zoom, img: zoom.post.photos[prevIndex], index: prevIndex });
   };
 
+  // Add a tab config that maps internal keys to display labels.
+  const TABS = [
+    { key: "personal", label: "Grow" },
+    { key: "achievements", label: "Achievements" },
+  ];
+
+  // Safe posts fallback to avoid mapping undefined
+  const posts = IMAGES[tab] || [];
+
   return (
     <motion.section
       className="gallery-container"
@@ -125,15 +119,15 @@ export default function Gallery() {
 
       {/* 🧭 Tabs */}
       <motion.div className="tab-buttons" variants={childVariants}>
-        {["Grow", "projects", "achievements"].map((type) => (
+        {TABS.map((t) => (
           <motion.button
-            key={type}
-            className={`tab ${tab === type ? "active" : ""}`}
-            onClick={() => setTab(type)}
+            key={t.key}
+            className={`tab ${tab === t.key ? "active" : ""}`}
+            onClick={() => setTab(t.key)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {type.charAt(0).toUpperCase() + type.slice(1)}
+            {t.label}
           </motion.button>
         ))}
       </motion.div>
@@ -148,9 +142,9 @@ export default function Gallery() {
           animate="visible"
           exit="exit"
         >
-          {IMAGES[tab].map((post) => (
+          {posts.map((post, postIdx) => (
             <motion.div
-              key={post.id}
+              key={`${post.id}-${postIdx}`}
               className="post-card"
               variants={childVariants}
               whileHover={{ y: -4 }}

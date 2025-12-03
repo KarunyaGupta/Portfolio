@@ -4,7 +4,7 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
   {
-    title: '🤖 Code Review AI – Intelligent Code Analysis Tool',
+    title: '🤖 Code Review AI - Intelligent Code Analysis Tool',
     desc: 'An AI-powered platform that reviews code in real-time and provides instant suggestions for improvement. It helps developers enhance performance, security, and code quality with smart, automated insights.',
     ss: '/codereview.png',
     tech: ['React', 'Vite', 'Express', 'Google Generative AI(Gemini)'],
@@ -20,20 +20,12 @@ const PROJECTS = [
   code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link'
   },
   {
-    title: '🚓 Uber Ride Analysis – End-to-End Business Intelligence Dashboard',
+    title: '🚓 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
     desc: 'An interactive Power BI dashboard that analyzes Uber ride data to uncover booking trends, revenue patterns, rider behavior, and operational performance. The report supports data-driven decision-making through KPIs, drill-downs, vehicle insights, and location-based metrics.',
     ss: '/uber.jpg',
     tech: ['Pandas', 'DAX', 'PowerBI', 'KPIs'],
     live: 'https://app.powerbi.com/links/UgR2hEsl46?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
     code: 'https://drive.google.com/drive/folders/1T_n-1GsqTFy4hSpwvh56Ca4ufjxtppff?usp=drive_link'
-  },
-  {
-  title: '💼 Portfolio Website',
-  desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
-  ss: '/portfolio.jpg',
-  tech: ['React', 'Framer Motion', 'Tailwind CSS'],
-  live: '#',
-  code: 'https://github.com/KarunyaGupta/Portfolio'
   },
   {
     title: '🩺 Pharmaceutical Sales Analysis Dashboard',
@@ -74,6 +66,14 @@ const PROJECTS = [
     tech: ['CSV', 'Numpy', 'Pandas',"Matplotlib"],
     live: '#',
     code: '#'
+  },
+  {
+  title: '💼 Portfolio Website',
+  desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
+  ss: '/portfolio.jpg',
+  tech: ['React', 'Framer Motion', 'Tailwind CSS'],
+  live: '#',
+  code: 'https://github.com/KarunyaGupta/Portfolio'
   }
 ]
 
@@ -96,7 +96,7 @@ export default function Projects() {
           🚀 Projects
         </motion.h2>
         <p className="text-gray-400 mb-10">
-          A collection of my major works — blending research, AI innovation.
+          A collection of my major works - blending research, AI innovation.
         </p>
 
         <div className="projects-grid" style={{ display: 'grid', gap: 24, gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
