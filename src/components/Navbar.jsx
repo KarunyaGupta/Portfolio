@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // add useLocation
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [

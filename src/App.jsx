@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
@@ -12,10 +12,19 @@ import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import SkillNetwork from './pages/Skills'  
 
+function ScrollToTop() {
+  const location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <div className="app">
       <Navbar />
+      <ScrollToTop />
       <main style={{ flex: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
