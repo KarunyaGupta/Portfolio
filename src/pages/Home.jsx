@@ -89,10 +89,9 @@ export default function Home() {
             </motion.span>
           </h1>
 
-          {/* Typing Animated Text */}
+          {/* Enhanced Typing Animated Text */}
           <p className="typing-effect">
-            Business & Data Analyst | PowerBI |{" "}
-            <span className="tech-explorer">Tech Explorer</span>
+            Business & Data Analyst&nbsp;|&nbsp;PowerBI&nbsp;|&nbsp;Data Visualization
           </p>
 
           {/* Profession Tags */}

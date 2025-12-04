@@ -4,6 +4,9 @@
   padding: 24px;
   background: #1A1A1A;
   border-radius: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .projects-title {
@@ -24,6 +27,10 @@
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: stretch;
 }
 
 .project-card {
@@ -31,11 +38,15 @@
   border: 1px solid rgba(6,182,212,0.18);
   border-radius: 16px;
   padding: 14px;
-  overflow: hidden;
   box-shadow: 0 0 12px rgba(6,182,212,0.07);
   display: flex;
   flex-direction: column;
-  font-size: 0.88rem; /* -2px */
+  font-size: 0.88rem;
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: flex-start;
 }
 
 .project-ss {
@@ -48,6 +59,8 @@
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
 .project-content {
@@ -132,7 +145,9 @@
 /* Tablet breakpoint */
 @media (max-width: 900px) {
   .projects-container {
-    padding: 12px 4px;
+    padding: 6px 4px;
+    max-width: 100vw;
+    width:100%;
   }
   .projects-title {
     font-size: 1.2rem;
@@ -140,109 +155,192 @@
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 12px;
+    width: 100%;
   }
   .project-card {
     padding: 8px;
     font-size: 0.95rem;
+    max-width: 100%;
+    width: 100%;
   }
   .project-ss img {
-    height: 100px;
+    height: 120px;
   }
 }
 
 /* Mobile breakpoint */
 @media (max-width: 600px) {
-  .container {
+  .projects-container {
     padding: 0 8px;
-    /* Remove padding-top and margin-top overrides */
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     box-sizing: border-box;
   }
-  .card {
-    padding: 8px 8px;
-    /* Remove padding-top and margin-top overrides */
-    width: 100%;
-    box-sizing: border-box;
-  }
-  /* Reduce vertical gaps for sections */
-  .projects-title,
-  .projects-subtitle,
-  .project-card,
-  .project-tech,
-  .project-links {
-    margin-bottom: 0.7rem !important;
-  }
-  /* For Resume, Certificates, and Projects sections */
-  .resume-section,
-  .certificates-section,
-  .projects-section {
-    padding: 0 4px !important;
-    margin: 0 !important;
-  }
-  /* Reduce grid gap for projects */
   .projects-grid {
-    gap: 10px !important;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: stretch;
+  }
+  .project-card {
+    width: 100vw;
+    max-width: 370px;
+    margin: 0 auto 14px auto;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-ss img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .project-content {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-title {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    text-align: left;
+    width: 100%;
+  }
+  .project-desc {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    text-align: justify;
+    width: 100%;
+  }
+  .project-tech {
+    gap: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .tech-badge {
+    font-size: 0.8rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .project-links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .btn {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 6px;
   }
 }
 
 /* Small mobile breakpoint */
 @media (max-width: 400px) {
-  .container {
+  .projects-container {
     padding: 2px 1px;
-    /* Remove padding-top and margin-top overrides */
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     box-sizing: border-box;
-  }
-  .card {
-    padding: 4px 2px;
-    /* Remove padding-top and margin-top overrides */
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .resume-section,
-  .certificates-section,
-  .projects-section {
-    padding: 0 2px !important;
-    margin: 0 !important;
+    margin: 0;
+    overflow-x: hidden;
   }
   .projects-grid {
-    gap: 6px !important;
+    gap: 4px;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: stretch;
+    margin: 0px;
+  }
+  .project-card {
+    max-width: 98vw;
+    width: 100vw;
+    min-width: 0;
+    padding: 4px 2px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: hidden;
   }
   .project-ss img {
-    height: 90px; /* fits small screens */
-    border-radius: 8px;
+    height: 90px;
     width: 100%;
+    min-width: 0;
+    border-radius: 7px;
     object-fit: cover;
-    box-sizing: border-box;
     display: block;
     margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .project-content {
+    margin-top: 7px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: hidden;
+  }
+  .project-title,
+  .project-desc,
+  .project-tech,
+  .project-links {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
   .project-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 2px;
     text-align: left;
   }
   .project-desc {
-    font-size: 0.7rem;
-    margin-bottom: 4px;
+    font-size: 0.65rem;
+    margin-bottom: 3px;
     text-align: justify;
   }
   .project-tech {
     gap: 2px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
   }
   .tech-badge {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     padding: 1px 3px;
     border-radius: 3px;
   }
   .project-links {
-    gap: 6px;
-    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 5px;
   }
   .btn {
-    font-size: 0.65rem;
-    padding: 2px 5px;
+    font-size: 0.6rem;
+    padding: 2px 6px;
     border-radius: 4px;
+    min-width: 0;
+    box-sizing: border-box;
   }
 }

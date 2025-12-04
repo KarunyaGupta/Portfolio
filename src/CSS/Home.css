@@ -32,7 +32,7 @@
 .home-info { flex: 1; min-width: 360px; max-width: 700px; display: flex; flex-direction: column; justify-content: center; }
 .home-title { font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.4rem; }
 .home-name { background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent)); -webkit-background-clip: text; color: transparent; background-size: 200%; display: inline-block; }
-.typing-effect { font-size: 1.2rem; color: rgba(255,255,255,0.85); margin-top: 0.4rem; max-width: 95%; display: inline-block; overflow: hidden; white-space: nowrap; border-right: 0.15em solid var(--accent); animation: typing 3.5s steps(40,end) forwards, blink .8s infinite; }
+.typing-effect { font-size: 1.2rem; color: rgba(255,255,255,0.85); margin-top: 0.4rem; max-width: 95%; display: inline-block; overflow: hidden; white-space: nowrap; position: relative; border-right: 2px solid var(--accent); animation: typing 2.2s steps(40,end) 1s 1 normal both, blink .8s infinite; }
 
 /* Profession Tags */
 .profession-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
@@ -69,6 +69,28 @@
   justify-content: center; /* ensures icons are centered */
 }
 
+/* Enhanced typing effect */
+.typing-effect {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.4rem;
+  max-width: 95%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-right: 2px solid var(--accent);
+  animation: typing 2.2s steps(40,end) 1s 1 normal both, blink .8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .home-section {
@@ -99,14 +121,16 @@
     width: 100%;
   }
   .typing-effect {
-    font-size: 1rem;
-    max-width: 100%;
-    white-space: normal;
-    word-break: break-word;
-    display: block;
-    line-height: 1.3;
-    text-align: center;
-    margin: 0 auto;
+    font-size: 1rem !important;
+    flex-direction: column !important;
+    gap: 0.2em !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .typing-effect .divider {
+    margin: 0 !important;
   }
   .typing-effect .tech-explorer {
     display: block;
@@ -141,6 +165,43 @@
   .quick-link-img { width: 32px; height: 32px; }
 }
 
+@media (max-width: 400px) {
+  .home-section {
+    padding: 0.5rem 0.2rem 0.5rem;
+    min-height: 100vh;
+    font-size: 0.95rem;
+  }
+  .home-title {
+    font-size: 1rem;
+    padding: 0 2px;
+  }
+  .home-info {
+    padding: 0;
+    min-width: 0;
+    max-width: 100vw;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .typing-effect {
+    font-size: 0.85rem !important;
+    gap: 0.1em !important;
+  }
+  .info-cards {
+    padding-left: 2px;
+    padding-right: 2px;
+    gap: 0.5rem;
+  }
+  .info-card {
+    padding: 8px 4px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+  .quick-links-title { font-size: 0.95rem; }
+  .quick-link-img { width: 24px; height: 24px; }
+}
+
 /* Ensure info-cards are full width on mobile */
 @media (max-width: 900px) {
   .info-cards {
@@ -166,39 +227,29 @@
   }
 }
 
-@media (max-width: 400px) {
-  .home-section {
-    padding: 0.5rem 0.2rem 0.5rem;
-    min-height: 100vh;
-    font-size: 0.95rem;
-  }
-  .home-title {
+@media (max-width: 900px) {
+  .typing-effect {
     font-size: 1rem;
-    padding: 0 2px;
-  }
-  .home-info {
-    padding: 0;
-    min-width: 0;
-    max-width: 100vw;
-    width: 100%;
-    align-items: center;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    display: block;
+    line-height: 1.3;
     text-align: center;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 600px) {
+  .typing-effect {
+    font-size: 0.92rem;
+    padding: 0 2px;
+  }
+}
+
+@media (max-width: 400px) {
   .typing-effect {
     font-size: 0.85rem;
     padding: 0 2px;
   }
-  .info-cards {
-    padding-left: 2px;
-    padding-right: 2px;
-    gap: 0.5rem;
-  }
-  .info-card {
-    padding: 8px 4px;
-    font-size: 0.85rem;
-    border-radius: 8px;
-  }
-  .quick-links-title { font-size: 0.95rem; }
-  .quick-link-img { width: 24px; height: 24px; }
 }

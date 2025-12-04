@@ -358,3 +358,10 @@ form h3 {
   background-color: #ff4c4c;
   color: #0b0e14;
 }
+
+/* Prevent text selection for the whole website */
+body, html, #root, .app, .container, .card, .projects-title, .projects-subtitle, .project-card, .project-title, .project-desc, .project-tech, .tech-badge, .project-links, .btn, .code-btn, .live-btn, .gallery-title, .gallery-container, .tab, .tab-buttons, .post-card, .caption, .skills-container, .skills-header, .skills-stage, .skill-circle, .skills-table, .skill-box, .certs-grid, .cert.card, .blog-section, .blog-title, .blog-sub, .blog-grid, .blog-post, .post-title, .post-text, .vote-btn, .contact-section, .contact-title, .contact-subtitle, .contact-links, .contact-form, .contact-btn, .social-link, .social-icon, .footer {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
