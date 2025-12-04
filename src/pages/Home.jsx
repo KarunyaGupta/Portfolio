@@ -38,6 +38,22 @@ export default function Home() {
         {`
           @keyframes typing { from { width: 0; } to { width: 100%; } }
           @keyframes blink { 50% { border-color: transparent; } }
+          .typing-effect {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid var(--accent);
+            width: 100%;
+            animation: typing 2.5s steps(30, end) 1, blink .7s infinite;
+          }
+          @media (max-width: 600px) {
+            .typing-effect {
+              animation: none !important;
+              border-right: none !important;
+              white-space: normal !important;
+              overflow: visible !important;
+            }
+          }
         `}
       </style>
 
@@ -89,7 +105,7 @@ export default function Home() {
             </motion.span>
           </h1>
 
-          {/* Enhanced Typing Animated Text */}
+          {/* Typing effect only for big screens, plain text for mobile */}
           <p className="typing-effect">
             Business & Data Analyst&nbsp;|&nbsp;Data Visualization
           </p>
