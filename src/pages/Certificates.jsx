@@ -120,7 +120,18 @@ export default function Certificates() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   return (
-    <section className="container" style={{ padding: "40px 0" }}>
+    <section className="container certificates-section">
+      {/* Responsive style for mobile */}
+      <style>
+        {`
+          @media (max-width: 600px) {
+            .container { padding: 8px 2px !important; }
+            .card { padding: 10px 4px !important; }
+            .certificates-section { padding: 0 2px !important; }
+          }
+        `}
+      </style>
+
       <div className="card" style={{ background: "#111", borderRadius: 12, padding: 24 }}>
         <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 4 }}>Certificates 🏅</h2>
         <p className="lead" style={{ color: "#aaa" }}>

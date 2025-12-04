@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 export default function Resume() {
   return (
     <section className="container" style={{ padding: "60px 0" }}>
+      {/* Responsive style for mobile */}
+      <style>
+        {`
+          @media (max-width: 600px) {
+            .container { padding: 8px 2px !important; }
+            .card { padding: 10px 4px !important; }
+            .resume-section { padding: 0 2px !important; }
+          }
+        `}
+      </style>
       <motion.div
         className="card"
         initial={{ opacity: 0, y: 40 }}

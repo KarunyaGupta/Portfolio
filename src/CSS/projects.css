@@ -155,99 +155,65 @@
   html, body {
     overflow-x: hidden;
   }
-  .projects-container {
-    padding: 0 8px;
-    font-size: 0.92rem;
-    width: 100%;
-    box-sizing: border-box;
+  .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    margin-top: 0 !important;
   }
   .card {
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    margin-top: 0 !important;
   }
-  .projects-title {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .project-card {
-    padding: 8px;
-    font-size: 0.92rem;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 360px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 16px rgba(6,182,212,0.10);
-    background: #181818;
-    border: 1px solid rgba(6,182,212,0.18);
-  }
-  .project-ss img {
-    height: 200px;
-    border-radius: 10px;
-    width: 100%;
-    object-fit: cover;
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto;
-  }
-  .project-title {
-    font-size: 1rem;
-    margin-bottom: 3px;
-    text-align: left;
-  }
-  .project-desc {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
-    text-align: justify;
-  }
-  .project-tech {
-    gap: 4px;
-    margin-bottom: 10px;
-  }
-  .tech-badge {
-    font-size: 0.8rem;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
+  /* Reduce vertical gaps for sections */
+  .projects-title,
+  .projects-subtitle,
+  .project-card,
+  .project-tech,
   .project-links {
-    gap: 12px;
-    margin-top: 12px;
+    margin-bottom: 0.7rem !important;
   }
-  .btn {
-    font-size: 0.8rem;
-    padding: 3px 10px;
-    border-radius: 6px;
+  /* For Resume, Certificates, and Projects sections */
+  .resume-section,
+  .certificates-section,
+  .projects-section {
+    padding: 0 4px !important;
+    margin: 0 !important;
+  }
+  /* Reduce grid gap for projects */
+  .projects-grid {
+    gap: 10px !important;
   }
 }
 
 /* Small mobile breakpoint */
 @media (max-width: 400px) {
-  .projects-container {
-    padding: 2px 1px;
-    font-size: 0.8rem;
-    width: 100%;
-    box-sizing: border-box;
+  .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    margin-top: 0 !important;
   }
   .card {
-    padding: 0 2px;
-    width: 100%;
-    box-sizing: border-box;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    margin-top: 0 !important;
   }
-  .projects-title { font-size: 0.8rem; }
-  .projects-grid { grid-template-columns: 1fr; gap: 4px; width: 100%; }
-  .project-card {
-    padding: 2px;
-    font-size: 0.8rem;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 320px;
-    box-sizing: border-box;
+  .resume-section,
+  .certificates-section,
+  .projects-section {
+    padding: 0 2px !important;
+    margin: 0 !important;
+  }
+  .projects-grid {
+    gap: 6px !important;
   }
   .project-ss img {
     height: 90px; /* fits small screens */
