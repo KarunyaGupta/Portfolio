@@ -104,6 +104,9 @@ export default function Gallery() {
   // Safe posts fallback to avoid mapping undefined
   const posts = IMAGES[tab] || [];
 
+  // Responsive: 2 columns for achievements on desktop, 1 on mobile
+  const isAchievements = tab === "achievements";
+
   return (
     <motion.section
       className="gallery-container"
@@ -111,6 +114,7 @@ export default function Gallery() {
       initial="hidden"
       animate="visible"
       exit="hidden"
+      style={{ marginLeft: "10px", marginRight: "10px" }}
     >
       {/* 🌟 Title */}
       <motion.h2 className="gallery-title" variants={childVariants}>
@@ -135,39 +139,47 @@ export default function Gallery() {
       {/* 🖼️ Posts with Animation on Tab Switch */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={tab} // Important for AnimatePresence to detect tab change
-          className="post-feed"
+          key={tab}
+          className={`post-feed${isAchievements ? " achievements-feed" : ""}`}
           variants={tabContentVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
           {posts.map((post, postIdx) => (
-            <motion.div
-              key={`${post.id}-${postIdx}`}
-              className="post-card"
-              variants={childVariants}
-              whileHover={{ y: -4 }}
-            >
-              <p className="caption">{post.caption}</p>
-              <div
-                className={`photo-grid ${
-                  post.photos.length > 1 ? "multi" : "single"
-                }`}
+            <React.Fragment key={`${post.id}-${postIdx}`}>
+              <motion.div
+                className="post-card"
+                variants={childVariants}
+                whileHover={{ y: -4 }}
+                style={{ marginLeft: "8px", marginRight: "8px" }}
               >
-                {post.photos.map((src, i) => (
-                  <motion.div
-                    key={i}
-                    className="photo-item"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 250 }}
-                    onClick={() => openZoom(post, i)}
-                  >
-                    <img src={src} alt="gallery" />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                {/* Title above text content */}
+                <div className="post-title">
+                  {isAchievements ? `Achievement #${postIdx + 1}` : `Story #${postIdx + 1}`}
+                </div>
+                <p className="caption" style={{ textAlign: "justify" }}>{post.caption}</p>
+                <div
+                  className={`photo-grid ${
+                    post.photos.length > 1 ? "multi" : "single"
+                  }`}
+                >
+                  {post.photos.map((src, i) => (
+                    <motion.div
+                      key={i}
+                      className="photo-item"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 250 }}
+                      onClick={() => openZoom(post, i)}
+                    >
+                      <img src={src} alt="gallery" />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+              {/* Divider for mobile only */}
+              <div className="post-divider"></div>
+            </React.Fragment>
           ))}
         </motion.div>
       </AnimatePresence>

@@ -119,3 +119,31 @@
   height: 100vh; /* cover full screen */
   z-index: 1000; /* already done */
 }
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 0.3rem 0.5rem;
+    width: 100vw;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-left {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav {
+    padding: 0.2rem 0.2rem;
+    font-size: 0.85rem;
+  }
+  .logo {
+    font-size: 0.8rem;
+  }
+  .nav-left {
+    gap: 4px;
+  }
+}

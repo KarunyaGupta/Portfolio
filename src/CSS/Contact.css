@@ -90,3 +90,16 @@
   color: #0ff;
   font-weight: 500;
 }
+
+@media (max-width: 400px) {
+  .contact-section {
+    padding: 0.5rem 0.2rem 1rem;
+    font-size: 0.9rem;
+  }
+  .contact-title { font-size: 1rem; }
+  .contact-links { gap: 6px; }
+  .contact-form { max-width: 99vw; }
+  .contact-form input, .contact-form textarea { font-size: 0.8rem; padding: 8px; }
+  .contact-btn { padding: 8px; font-size: 0.8rem; }
+  .social-icon { width: 28px; height: 28px; }
+}

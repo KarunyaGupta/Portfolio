@@ -95,3 +95,56 @@
   font-size: 0.7rem;
   color: #aaa;
 }
+
+@media (max-width: 900px) {
+  .blog-section {
+    padding: 2rem 2vw;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .blog-post {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .post-title {
+    font-size: 1.05rem;
+  }
+  .post-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-section {
+    padding: 1rem 0.5rem;
+  }
+  .blog-title {
+    font-size: 1.1rem;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .blog-post {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+  .post-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-text {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .vote-container {
+    gap: 0.5rem;
+  }
+  .vote-btn-circle {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

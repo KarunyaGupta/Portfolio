@@ -108,3 +108,15 @@
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
+
+@media (max-width: 400px) {
+  .certs-section, .certs-card {
+    padding: 2px 1px;
+    font-size: 0.9rem;
+  }
+  .certs-card h2 { font-size: 1rem; }
+  .certs-grid { grid-template-columns: 1fr; gap: 6px; }
+  .cert.card { padding: 4px; font-size: 0.9rem; }
+  .cert.card img { height: 40px; }
+  .modal img { max-width: 98vw; max-height: 40vh; }
+}

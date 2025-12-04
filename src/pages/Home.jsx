@@ -91,7 +91,8 @@ export default function Home() {
 
           {/* Typing Animated Text */}
           <p className="typing-effect">
-            Business & Data Analyst | PowerBI | Tech Explorer
+            Business & Data Analyst | PowerBI |{" "}
+            <span className="tech-explorer">Tech Explorer</span>
           </p>
 
           {/* Profession Tags */}

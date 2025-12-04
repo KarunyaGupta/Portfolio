@@ -115,3 +115,62 @@
   margin-bottom: 6px;
   transition: color 0.2s, transform 0.2s;
 }
+
+/* ---------- Main container: horizontal padding ---------- */
+.skills-container {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+@media (max-width: 400px) {
+  .skills-header {
+    margin-left: 2%;
+    font-size: 0.9rem;
+  }
+  .skills-header h2 {
+    font-size: 0.85rem;
+  }
+  .skills-stage {
+    height: 120px;
+    width: 99vw;
+  }
+  .skill-circle {
+    width: 32px;
+    height: 32px;
+  }
+  .skill-circle img {
+    width: 12px;
+    height: 12px;
+  }
+  .skill-circle span {
+    font-size: 7px;
+  }
+  .skills-table {
+    margin-top: 10px;
+    gap: 8px;
+  }
+  .skills-row {
+    gap: 6px;
+  }
+  .skill-box {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+  .skills-container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-stage {
+    display: none !important;
+  }
+}
+
+@media (max-width: 786px) {
+  .skills-stage {
+    display: none !important;
+  }
+}
