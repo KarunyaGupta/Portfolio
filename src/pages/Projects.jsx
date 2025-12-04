@@ -40,8 +40,8 @@ const PROJECTS = [
 		desc: 'Smart data profiling and preprocessing web app for CSV datasets - feature summary, missing value handling, and data visualization.',
 		ss: '/ProfileX.png',
 		tech: ['Streamlit', 'Pandas', 'Plotly', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Visualization'],
-		live: 'https://profilex.streamlit.app/',
-		code: 'https://github.com/kunjdesai/ProfileX',
+		live: '#',
+		code: '#',
 	},
 	{
 		title: '💰 Loan Status Prediction',
