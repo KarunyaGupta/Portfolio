@@ -37,7 +37,7 @@ const PROJECTS = [
 	},
 	{
 		title: '📊 ProfileX – Data Profiler',
-		desc: 'Smart data profiling and preprocessing web app for CSV datasets — feature summary, missing value handling, and data visualization.',
+		desc: 'Smart data profiling and preprocessing web app for CSV datasets - feature summary, missing value handling, and data visualization.',
 		ss: '/ProfileX.png',
 		tech: ['Streamlit', 'Pandas', 'Plotly', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Visualization'],
 		live: 'https://profilex.streamlit.app/',
@@ -62,7 +62,7 @@ const PROJECTS = [
 	{
 		title: '🚓Bengaluru Rides Analysis (OLA)',
 		desc: 'This is a data analysis and exploration project focused on understanding patterns and insights from a dataset of 100,000 rides taken in the city of Bengaluru.',
-		ss: '/uber.jpg',
+		ss: '/ola.jpg',
 		tech: ['CSV', 'Numpy', 'Pandas', 'Matplotlib'],
 		live: '#',
 		code: '#',
@@ -85,24 +85,40 @@ export default function Projects() {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6 }}
 			id="projects"
+			style={{ background: '#1A1A1A', borderRadius: 16, padding: 0 }}
 		>
 			<div
 				className="card"
 				style={{
-					background: 'rgba(255,255,255,0.03)',
+					background: '#1A1A1A',
 					borderRadius: 16,
-					padding: 30,
+					padding: 24,
+					boxShadow: '0 0 20px rgba(0,255,255,0.04)',
 				}}
 			>
 				<motion.h2
-					className="text-4xl font-semibold text-cyan-400 mb-2"
+					className="projects-title"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.1 }}
+					style={{
+						fontSize: '1.5rem', // -2px
+						fontWeight: 600,
+						color: '#06b6d4',
+						marginBottom: '0.3rem',
+					}}
 				>
 					🚀 Projects
 				</motion.h2>
-				<p className="text-gray-400 mb-10">
+				<p
+					className="projects-subtitle"
+					style={{
+						fontSize: '0.88rem',
+						marginBottom: '1.5rem',
+						color: '#9aa0a6',
+						textAlign: 'justify'
+					}}
+				>
 					A collection of my major works - blending research, AI innovation.
 				</p>
 
@@ -116,9 +132,17 @@ export default function Projects() {
 							transition={{ duration: 0.4, delay: idx * 0.15 }}
 							whileHover={{ scale: 1.03 }}
 							viewport={{ once: true }}
+							style={{
+								background: '#181818',
+								border: '1px solid rgba(6,182,212,0.18)',
+								borderRadius: 16,
+								padding: 14,
+								fontSize: '0.88rem', // -2px
+								boxShadow: '0 0 12px rgba(6,182,212,0.07)',
+							}}
 						>
 							<motion.div
-								className="ss"
+								className="project-ss"
 								whileHover={{ scale: 1.05 }}
 								style={{ borderRadius: 12, overflow: 'hidden' }}
 							>
@@ -127,30 +151,78 @@ export default function Projects() {
 									alt={p.title}
 									style={{
 										width: '100%',
-										height: '200px',
+										height: '200px', // restored to previous value
 										objectFit: 'cover',
 										borderRadius: 12,
 									}}
 								/>
 							</motion.div>
 
-							<div style={{ marginTop: 12 }}>
-								<h3 className="project-title">{p.title}</h3>
-								<p className="project-desc">{p.desc}</p>
-								<div className="project-tech">
+							<div className="project-content" style={{ marginTop: 10 }}>
+								<h3 className="project-title" style={{
+									fontSize: '1rem',
+									color: '#0ea5e9',
+									marginBottom: 4,
+									fontWeight: 500,
+									textAlign: 'left' // changed from 'justify' to 'left'
+								}}>
+									{p.title}
+								</h3>
+								<p className="project-desc" style={{
+									fontSize: '0.9rem',
+									color: '#bbb',
+									marginBottom: 7,
+									lineHeight: 1.5,
+									textAlign: 'justify'
+								}}>
+									{p.desc}
+								</p>
+								<div className="project-tech" style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 18 }}>
 									{p.tech.map((t) => (
-										<span key={t} className="tech-badge">
+										<span
+											key={t}
+											className="tech-badge"
+											style={{
+												background: 'rgba(6,182,212,0.08)',
+												border: '1px solid #06b6d4',
+												padding: '2px 8px',
+												borderRadius: 6,
+												fontSize: '0.73rem', // -2px
+												color: '#06b6d4',
+												fontWeight: 500,
+											}}
+										>
 											{t}
 										</span>
 									))}
 								</div>
-								<div className="project-links">
+								<div className="project-links" style={{
+									display: 'flex',
+									justifyContent: 'flex-end',
+									gap: 8,
+									marginTop: 18, // increased margin for more space
+								}}>
 									<motion.a
 										href={p.code}
 										target="_blank"
 										rel="noreferrer"
 										className="btn code-btn"
 										whileHover={{ scale: 1.08 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											gap: 4,
+											padding: '4px 10px', // decreased
+											borderRadius: 6,     // decreased
+											fontSize: '0.78rem', // decreased
+											textDecoration: 'none',
+											cursor: 'pointer',
+											background: '#181818',
+											color: '#06b6d4',
+											border: '1px solid #06b6d4',
+											fontWeight: 500,
+											transition: 'background 0.2s, color 0.2s',
+										}}
 									>
 										<Github size={14} /> Source
 									</motion.a>
@@ -160,6 +232,21 @@ export default function Projects() {
 										rel="noreferrer"
 										className="btn live-btn"
 										whileHover={{ scale: 1.08 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											gap: 4,
+											padding: '4px 10px', // decreased
+											borderRadius: 6,     // decreased
+											fontSize: '0.78rem', // decreased
+											textDecoration: 'none',
+											cursor: 'pointer',
+											background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+											color: '#fff',
+											border: 'none',
+											fontWeight: 500,
+											transition: 'background 0.2s, color 0.2s',
+										}}
 									>
 										<ExternalLink size={14} /> Live
 									</motion.a>
