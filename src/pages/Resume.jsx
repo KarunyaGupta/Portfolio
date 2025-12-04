@@ -241,50 +241,41 @@ export default function Resume() {
           ))}
         </motion.div>
 
-        {/* PDF Viewer */}
+        {/* PDF Download Button */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
           style={{
-            marginTop: 50,
-            borderRadius: 12,
-            overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.1)",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 32,
           }}
         >
-          <iframe
-            src="/Resume.pdf"
-            title="Karunya Gupta Resume"
+          <motion.a
+            href="/Resume.pdf"
+            download="Karunya_Gupta_Resume.pdf"
+            className="btn code-btn"
+            whileHover={{ scale: 1.08 }}
             style={{
-              width: "100%",
-              height: "650px",
-              border: "none",
-              background: "#111",
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8, // increased gap
+              padding: '12px 28px', // increased padding
+              borderRadius: 10,     // increased radius
+              fontSize: '1.1rem',   // increased font size
+              textDecoration: 'none',
+              cursor: 'pointer',
+              background: '#181818',
+              color: '#06b6d4',
+              border: '2px solid #06b6d4', // thicker border
+              fontWeight: 600,
+              transition: 'background 0.2s, color 0.2s',
             }}
-          />
+          >
+            <span style={{ fontSize: "1.3em" }}>⬇️</span> Download Resume
+          </motion.a>
         </motion.div>
-
-
-        {/* <motion.a
-          href="/resume.pdf"
-          download
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          style={{
-            display: "inline-block",
-            marginTop: 20,
-            background: "#00b4ff",
-            color: "#fff",
-            padding: "10px 22px",
-            borderRadius: 8,
-            textDecoration: "none",
-            fontWeight: 500,
-            letterSpacing: 0.3,
-          }}
-        >
-          Download Resume
-        </motion.a> */}
 
 
       </motion.div>

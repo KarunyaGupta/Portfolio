@@ -21,7 +21,7 @@ const IMAGES = {
     {
       id: 1,
       caption: "I am deeply honored and thrilled to announce my appointment as the Chairperson of the IEEE-CIET Student Branch at Chitkara University for the academic year 2025-26. This esteemed position is a recognition of the collective hard work, dedication, and collaborative spirit that defines our branch. I am eager to lead our dedicated team, guiding impactful initiatives that will continue to advance the mission and vision of IEEE WIE within our university community.",
-      photos: ["/gallery/loaChair.jpg","/gallery/Chair2.JPG"],
+      photos: ["/gallery/Chair2.JPG"],
     },
     {
       id: 2,

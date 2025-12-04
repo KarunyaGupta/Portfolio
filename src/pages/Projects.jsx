@@ -85,12 +85,6 @@ export default function Projects() {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6 }}
 			id="projects"
-			style={{
-				background: '#1A1A1A',
-				borderRadius: 16,
-				padding: 0,
-				marginTop: 0, // ensure no extra margin
-			}}
 		>
 			<div
 				className="card"
@@ -99,7 +93,6 @@ export default function Projects() {
 					borderRadius: 16,
 					padding: 24,
 					boxShadow: '0 0 20px rgba(0,255,255,0.04)',
-					marginTop: 0, // ensure no extra margin
 				}}
 			>
 				<motion.h2
