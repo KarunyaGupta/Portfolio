@@ -33,6 +33,14 @@ export default function Home() {
 
   return (
     <section className="home-section">
+      {/* Typing Effect Styles */}
+      <style>
+        {`
+          @keyframes typing { from { width: 0; } to { width: 100%; } }
+          @keyframes blink { 50% { border-color: transparent; } }
+        `}
+      </style>
+
       {/* Top Section: Photo + Info */}
       <div className="home-top">
         {/* Left: Glowing Photo */}
@@ -80,6 +88,11 @@ export default function Home() {
               Karunya Gupta
             </motion.span>
           </h1>
+
+          {/* Enhanced Typing Animated Text */}
+          <p className="typing-effect">
+            Business & Data Analyst&nbsp;|&nbsp;Data Visualization
+          </p>
 
           {/* Profession Tags */}
           <motion.div className="profession-tags">
