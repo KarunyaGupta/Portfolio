@@ -56,7 +56,7 @@ const PROJECTS = [
 		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
 		ss: '/netflix.png',
 		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: '#',
+		live: 'https://app.powerbi.com/links/f2md6kaNCx?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing',
 	},
 	{
@@ -72,7 +72,7 @@ const PROJECTS = [
 		desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
 		ss: '/portfolio.jpg',
 		tech: ['React', 'Framer Motion', 'Tailwind CSS'],
-		live: '#',
+		live: 'https://karunyagupta.vercel.app',
 		code: 'https://github.com/KarunyaGupta/Portfolio',
 	},
 ]
