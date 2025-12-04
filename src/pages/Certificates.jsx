@@ -142,9 +142,9 @@ export default function Certificates() {
       </style>
 
       <div className="card" style={{ marginTop: 0 }}>
-        <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 4 }}>Certificates 🏅</h2>
-        <p className="lead" style={{ color: "#aaa" }}>
-          Explore my certifications — technical & others.
+        <h2 style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}>Certificates 🏅</h2>
+        <p className="lead" style={{ color: "#aaa", textAlign: "center" }}>
+          Explore my certifications - technical & others.
         </p>
 
         {/* Tabs */}

@@ -7,7 +7,7 @@ export default function Resume() {
       className="container"
       style={{
         padding: "60px 0",
-        marginTop: 0, // ensure no extra margin
+        marginTop: 0,
       }}
     >
       {/* Responsive style for mobile */}
@@ -31,7 +31,7 @@ export default function Resume() {
           padding: "40px 30px",
           color: "#e5e5e5",
           boxShadow: "0 0 25px rgba(0, 153, 255, 0.1)",
-          marginTop: 0, // ensure no extra margin
+          marginTop: 0,
         }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Resume() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12 }}
+          style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
         >
           📄 Resume
         </motion.h2>
@@ -50,9 +50,9 @@ export default function Resume() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          style={{ color: "#aaa", marginBottom: 25 }}
+          style={{ color: "#aaa", marginBottom: 25, textAlign: "center" }}
         >
-          {/* A quick glance at my journey. */}
+          A quick glance at my journey, skills, and achievements.
         </motion.p>
 
         {/* Profile Header */}
@@ -75,7 +75,7 @@ export default function Resume() {
             <h3 style={{ fontSize: 24, color: "#00b4ff", marginBottom: 4 }}>
               👨‍💻 Karunya Gupta
             </h3>
-            <p style={{ margintop: 10, fontSize: 15, color: "#ccc" }}>
+            <p style={{ marginTop: 10, fontSize: 15, color: "#ccc" }}>
               3rd year Computer Science and Engineering Student | Chitkara University
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
@@ -100,10 +100,10 @@ export default function Resume() {
           >
             <strong style={{ color: "#00b4ff" }}>Professional Summary:</strong>
             <p style={{ marginTop: 6, color: "#ccc" }}>
-              Highly motivated and results-oriented Computer Science and Engineering graduate with a strong foundation in data
+              Highly motivated and results-oriented Computer Science and Engineering student with a strong foundation in data
               analysis and business intelligence. Proficient in Python, SQL, and tools like Power BI and Tableau. Proven ability to create
               insightful dashboards, analyze complex datasets, and deliver data-driven solutions to improve business efficiency and
-              decision-making
+              decision-making.
             </p>
           </motion.div>
         </motion.div>
@@ -151,11 +151,10 @@ export default function Resume() {
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>1️⃣ Financial Data Analysis: Google Stock Performance and Market Volatility</li>
-            <li>2️⃣ E-commerce Sales Performance & Profitability Analysis (Amazon Store Data) </li>
+            <li>2️⃣ E-commerce Sales Performance & Profitability Analysis (Amazon Store Data)</li>
             <li>3️⃣ Transportation & Operations Data Analysis: Uber Ride Performance</li>
-            <li>4️⃣ Pharma Insights: A Complete Sales Analysis Dashboard </li>
+            <li>4️⃣ Pharma Insights: A Complete Sales Analysis Dashboard</li>
             <li>5️⃣ Codereview.ai: An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
-
           </ul>
         </motion.div>
 
@@ -187,7 +186,7 @@ export default function Resume() {
               "Teamwork",
               "Adaptability",
               "Creativity",
-              "Google suits",
+              "Google Suite",
               "Excel",
               "Tableau",
             ].map((skill) => (
@@ -260,24 +259,22 @@ export default function Resume() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 8, // increased gap
-              padding: '12px 28px', // increased padding
-              borderRadius: 10,     // increased radius
-              fontSize: '1.1rem',   // increased font size
+              gap: 8,
+              padding: '14px 32px',
+              borderRadius: 12,
+              fontSize: '1.15rem',
               textDecoration: 'none',
               cursor: 'pointer',
               background: '#181818',
               color: '#06b6d4',
-              border: '2px solid #06b6d4', // thicker border
-              fontWeight: 600,
+              border: '2px solid #06b6d4',
+              fontWeight: 700,
               transition: 'background 0.2s, color 0.2s',
             }}
           >
-            <span style={{ fontSize: "1.3em" }}>⬇️</span> Download Resume
+            <span style={{ fontSize: "1.3em" }}>⬇️</span> Download Resume (PDF)
           </motion.a>
         </motion.div>
-
-
       </motion.div>
     </section>
   );

@@ -63,6 +63,7 @@ export default function Blog() {
         initial={{ y: -15, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
+        style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
       >
         📝 My Blog
       </motion.h2>

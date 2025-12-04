@@ -6,6 +6,7 @@
   --accent-2:#070c38;
   --glass: rgba(255,255,255,0.03);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 *{box-sizing:border-box}
 html,body,#root{height:100%}

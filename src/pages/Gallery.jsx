@@ -117,7 +117,7 @@ export default function Gallery() {
       style={{ marginLeft: "10px", marginRight: "10px" }}
     >
       {/* 🌟 Title */}
-      <motion.h2 className="gallery-title" variants={childVariants}>
+      <motion.h2 className="gallery-title" variants={childVariants} style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}>
         Gallery
       </motion.h2>
 

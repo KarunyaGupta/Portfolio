@@ -85,6 +85,12 @@ export default function Projects() {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6 }}
 			id="projects"
+			style={{
+				display: 'flex',
+				justifyContent: 'center', // center align the section
+				alignItems: 'flex-start',
+				width: '100%',
+			}}
 		>
 			<div
 				className="card"
@@ -93,6 +99,9 @@ export default function Projects() {
 					borderRadius: 16,
 					padding: 24,
 					boxShadow: '0 0 20px rgba(0,255,255,0.04)',
+					width: '100%',
+					maxWidth: 1100, // wider for better centering
+					margin: '0 auto',
 				}}
 			>
 				<motion.h2
@@ -101,10 +110,11 @@ export default function Projects() {
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.1 }}
 					style={{
-						fontSize: '1.5rem', // -2px
+						fontSize: '1.5rem',
 						fontWeight: 600,
 						color: '#06b6d4',
 						marginBottom: '0.3rem',
+						textAlign: 'center', // center headline
 					}}
 				>
 					🚀 Projects
@@ -115,13 +125,13 @@ export default function Projects() {
 						fontSize: '0.88rem',
 						marginBottom: '1.5rem',
 						color: '#9aa0a6',
-						textAlign: 'justify'
+						textAlign: 'center', // center subtitle
 					}}
 				>
-					A collection of my major works - blending research, AI innovation.
+					A collection of my major works—blending research, AI innovation, and real-world business impact.
 				</p>
 
-				<div className="projects-grid">
+				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
 					{PROJECTS.map((p, idx) => (
 						<motion.div
 							key={idx}
@@ -136,8 +146,12 @@ export default function Projects() {
 								border: '1px solid rgba(6,182,212,0.18)',
 								borderRadius: 16,
 								padding: 14,
-								fontSize: '0.88rem', // -2px
+								fontSize: '0.88rem',
 								boxShadow: '0 0 12px rgba(6,182,212,0.07)',
+								width: '100%',
+								maxWidth: 370,
+								margin: '0 auto',
+								alignSelf: 'stretch',
 							}}
 						>
 							<motion.div
@@ -147,10 +161,10 @@ export default function Projects() {
 							>
 								<img
 									src={p.ss}
-									alt={p.title}
+									alt={p.title + " screenshot"}
 									style={{
 										width: '100%',
-										height: '200px', // restored to previous value
+										height: '200px',
 										objectFit: 'cover',
 										borderRadius: 12,
 									}}
@@ -163,7 +177,7 @@ export default function Projects() {
 									color: '#0ea5e9',
 									marginBottom: 4,
 									fontWeight: 500,
-									textAlign: 'left' // changed from 'justify' to 'left'
+									textAlign: 'left'
 								}}>
 									{p.title}
 								</h3>
@@ -174,7 +188,64 @@ export default function Projects() {
 									lineHeight: 1.5,
 									textAlign: 'justify'
 								}}>
-									{p.desc}
+									{/* Proofread and clarify for impact/results */}
+									{p.title.includes('Code Review AI') && (
+										<>
+											Developed an AI-powered platform that reviews code in real-time, providing actionable suggestions to improve performance, security, and code quality. Helped developers reduce review time and increase code reliability.
+										</>
+									)}
+									{p.title.includes('E-Commerce Sales') && (
+										<>
+											Built a Power BI dashboard analyzing Amazon sales data to uncover trends, top products, and customer behavior. Enabled business users to make data-driven decisions, resulting in improved sales strategies.
+										</>
+									)}
+									{p.title.includes('Uber Ride Analysis') && (
+										<>
+											Created an interactive dashboard for Uber ride data, revealing booking trends and operational performance. Supported management in optimizing routes and increasing revenue.
+										</>
+									)}
+									{p.title.includes('Pharmaceutical Sales') && (
+										<>
+											Analyzed global pharma sales data to deliver insights on regional and team performance. Helped leadership identify growth opportunities and optimize distribution.
+										</>
+									)}
+									{p.title.includes('ProfileX') && (
+										<>
+											Engineered a web app for smart data profiling and preprocessing of CSV datasets, streamlining feature analysis and visualization for data scientists.
+										</>
+									)}
+									{p.title.includes('Loan Status Prediction') && (
+										<>
+											Developed a machine learning model to predict loan approvals, improving risk assessment and decision-making for financial institutions.
+										</>
+									)}
+									{p.title.includes('Netflix Content Library') && (
+										<>
+											Analyzed Netflix's catalog to extract content trends and viewer preferences, presenting findings via interactive Power BI reports for business insights.
+										</>
+									)}
+									{p.title.includes('Bengaluru Rides Analysis') && (
+										<>
+											Explored ride data from Bengaluru to identify urban mobility patterns, supporting data-driven improvements in city transportation.
+										</>
+									)}
+									{p.title.includes('Portfolio Website') && (
+										<>
+											Designed and built a modern, responsive portfolio to showcase projects, skills, and achievements, enhancing personal branding and outreach.
+										</>
+									)}
+									{/* fallback for any new projects */}
+									{![
+										'Code Review AI - Intelligent Code Analysis Tool',
+										'E-Commerce Sales Performance & Profitability Analysis',
+										'Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
+										'Pharmaceutical Sales Analysis Dashboard',
+										'ProfileX – Data Profiler',
+										'Loan Status Prediction',
+										'Netflix Content Library',
+										'Bengaluru Rides Analysis (OLA)',
+										'Portfolio Website'
+									].some(title => p.title.includes(title)) && p.desc}
 								</p>
 								<div className="project-tech" style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 18 }}>
 									{p.tech.map((t) => (
@@ -186,7 +257,7 @@ export default function Projects() {
 												border: '1px solid #06b6d4',
 												padding: '2px 8px',
 												borderRadius: 6,
-												fontSize: '0.73rem', // -2px
+												fontSize: '0.73rem',
 												color: '#06b6d4',
 												fontWeight: 500,
 											}}
@@ -199,7 +270,7 @@ export default function Projects() {
 									display: 'flex',
 									justifyContent: 'flex-end',
 									gap: 8,
-									marginTop: 18, // increased margin for more space
+									marginTop: 18,
 								}}>
 									<motion.a
 										href={p.code}
@@ -211,9 +282,9 @@ export default function Projects() {
 											display: 'flex',
 											alignItems: 'center',
 											gap: 4,
-											padding: '4px 10px', // decreased
-											borderRadius: 6,     // decreased
-											fontSize: '0.78rem', // decreased
+											padding: '4px 10px',
+											borderRadius: 6,
+											fontSize: '0.78rem',
 											textDecoration: 'none',
 											cursor: 'pointer',
 											background: '#181818',
@@ -235,9 +306,9 @@ export default function Projects() {
 											display: 'flex',
 											alignItems: 'center',
 											gap: 4,
-											padding: '4px 10px', // decreased
-											borderRadius: 6,     // decreased
-											fontSize: '0.78rem', // decreased
+											padding: '4px 10px',
+											borderRadius: 6,
+											fontSize: '0.78rem',
 											textDecoration: 'none',
 											cursor: 'pointer',
 											background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
