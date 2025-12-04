@@ -3,29 +3,39 @@ import { motion } from "framer-motion";
 
 export default function Resume() {
   return (
-    <section className="container" style={{ padding: "60px 0" }}>
+    <section
+      className="container"
+      style={{
+        padding: "60px 0",
+        marginTop: 0, // ensure no extra margin
+      }}
+    >
       {/* Responsive style for mobile */}
       <style>
         {`
           @media (max-width: 600px) {
-            .container { padding: 8px 2px !important; }
-            .card { padding: 10px 4px !important; }
-            .resume-section { padding: 0 2px !important; }
+            .container { padding-top: 0 !important; margin-top: 0 !important; }
+            .card { padding-top: 8px !important; margin-top: 0 !important; }
+          }
+          @media (max-width: 400px) {
+            .container { padding-top: 0 !important; margin-top: 0 !important; }
+            .card { padding-top: 4px !important; margin-top: 0 !important; }
           }
         `}
       </style>
       <motion.div
         className="card"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
         style={{
           background: "#0b0b0b",
           borderRadius: 16,
           padding: "40px 30px",
           color: "#e5e5e5",
           boxShadow: "0 0 25px rgba(0, 153, 255, 0.1)",
+          marginTop: 0, // ensure no extra margin
         }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <motion.h2
           initial={{ opacity: 0, y: -10 }}

@@ -120,19 +120,28 @@ export default function Certificates() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   return (
-    <section className="container certificates-section">
+    <section
+      className="container"
+      style={{
+        padding: "40px 0",
+        marginTop: 0, // ensure no extra margin
+      }}
+    >
       {/* Responsive style for mobile */}
       <style>
         {`
           @media (max-width: 600px) {
-            .container { padding: 8px 2px !important; }
-            .card { padding: 10px 4px !important; }
-            .certificates-section { padding: 0 2px !important; }
+            .container { padding-top: 0 !important; margin-top: 0 !important; }
+            .card { padding-top: 8px !important; margin-top: 0 !important; }
+          }
+          @media (max-width: 400px) {
+            .container { padding-top: 0 !important; margin-top: 0 !important; }
+            .card { padding-top: 4px !important; margin-top: 0 !important; }
           }
         `}
       </style>
 
-      <div className="card" style={{ background: "#111", borderRadius: 12, padding: 24 }}>
+      <div className="card" style={{ marginTop: 0 }}>
         <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 4 }}>Certificates 🏅</h2>
         <p className="lead" style={{ color: "#aaa" }}>
           Explore my certifications — technical & others.
