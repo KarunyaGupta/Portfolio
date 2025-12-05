@@ -79,10 +79,12 @@ export default function Blog() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
+            
             whileHover={{
               scale: 1.02,
               boxShadow: "0 0 20px rgba(255,255,255,0.1)",
-            }}
+            }
+          }
           >
             <h3 className="post-title">{p.title}</h3>
             <p className="post-text">{p.text}</p>

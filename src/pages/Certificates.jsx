@@ -229,7 +229,7 @@ export default function Certificates() {
                       cursor: "pointer",
                     }}
                   >
-                    View
+                    View Certificate
                   </button>
                 </div>
               </motion.div>
