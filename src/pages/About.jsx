@@ -55,6 +55,7 @@ const AboutMe = () => {
             fontSize: "clamp(1rem, 1.6vw, 1.1rem)",
             color: "rgba(255,255,255,0.85)",
             marginBottom: "1rem",
+            textAlign: "justify",
           }}
         >
           Hi, I’m <strong>Karunya Gupta</strong> - an aspiring{" "}
@@ -62,7 +63,7 @@ const AboutMe = () => {
           <strong></strong> with a passion for turning
           data into actionable insights.
         </p>
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 mb-4" style={{textAlign: "justify" }}>
           As a pre-final year
           <strong> B.E. Computer Science and Engineering</strong> student at
           <strong> Chitkara University</strong>, I combine academic learning with
@@ -72,7 +73,7 @@ const AboutMe = () => {
 
         <div className="mb-4">
           <h2 className="text-xl font-medium mb-2">What I do</h2>
-          <ul className="list-disc list-inside text-gray-700">
+          <ul className="list-disc list-inside text-gray-700" style={{textAlign: "justify" }}>
           <li>
           <strong>Data Analysis & Visualization</strong> (Excel, Power BI, DAX, SQL, Python)
           </li>
@@ -93,7 +94,7 @@ const AboutMe = () => {
 
           <div className="mb-4">
           <h2 className="text-xl font-medium mb-2">My approach</h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700" style={{textAlign: "justify" }}>
           I believe technology should be people-centered. I focus on building
           solutions that are insightful, easy to understand, and useful for
           decision-making. Leading IEEE WIE, organizing events, and collaborating
@@ -105,7 +106,7 @@ const AboutMe = () => {
 
           <div>
           <h2 className="text-xl font-medium mb-2">Open to</h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700" style={{textAlign: "justify" }}>
           Internships or projects in <strong>Data Analysis</strong> /{' '}
           <strong>Business Analysis</strong>, semi-technical roles bridging
           technology and business, and collaborations in <strong>AI</strong>,
@@ -114,7 +115,7 @@ const AboutMe = () => {
           </div>
 
 
-          <footer className="mt-6 text-sm text-gray-600">
+          <footer className="mt-6 text-sm text-gray-600" style={{textAlign: "justify" }}>
           <p>
           Let’s connect if you’re looking for an enthusiastic learner who combines
           <strong> technical skills</strong> with <strong>analytical thinking</strong> and

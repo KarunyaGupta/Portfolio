@@ -160,7 +160,10 @@ export default function Skills() {
 					My Skills
 				</h2>
 				<div className="w-28 h-[2px] bg-cyan-400 mx-auto mb-6"></div>
-				<p className="text-gray-400 text-lg max-w-xl mx-auto">
+				<p
+					className="text-gray-400 text-lg max-w-xl mx-auto"
+					style={{ textAlign: "justify" }}
+				>
 					✨ Technical expertise blended with creativity - explore my core
 					competencies below.
 				</p>

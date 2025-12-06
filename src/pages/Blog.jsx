@@ -7,8 +7,8 @@ export default function Blog() {
   const defaultPosts = [
     {
       id: 1,
-      title: "Behind the Scenes: My Life as a WIE Chairperson at IEEE-CIET SB",
-      text: "Being a WIE Chairperson Is Not Just a Role — It’s a Responsibility Behind every poster, every event, and every initiative, there is a team working with dedication and passion.As a WIE Chairperson, I’m proud to be the bridge between ideas and execution, between juniors and opportunities, and between effort and impact. Leading WIE has taught me that leadership is not about power — it’s about purpose. And I’m grateful to have found mine.",
+      title: "My Life as a WIE Chairperson at IEEE-CIET SB",
+      text: "Being a WIE Chairperson Is Not Just a Role - It’s a Responsibility Behind every poster, every event, and every initiative, there is a team working with dedication and passion.As a WIE Chairperson, I’m proud to be the bridge between ideas and execution, between juniors and opportunities, and between effort and impact. Leading WIE has taught me that leadership is not about power - it’s about purpose. And I’m grateful to have found mine.",
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ export default function Blog() {
         📝 My Blog
       </motion.h2>
       <p className="blog-sub">
-        Personal thoughts, experiences, and reflections — feel free to react!
+        Personal thoughts, experiences, and reflections - feel free to react!
       </p>
 
       <div className="blog-grid">
@@ -87,7 +87,7 @@ export default function Blog() {
           }
           >
             <h3 className="post-title">{p.title}</h3>
-            <p className="post-text">{p.text}</p>
+            <p className="post-text" style={{ textAlign: "justify" }}>{p.text}</p>
 
             <div className="vote-container">
               <motion.button

@@ -75,7 +75,7 @@ export default function Resume() {
             <h3 style={{ fontSize: 24, color: "#00b4ff", marginBottom: 4 }}>
               👨‍💻 Karunya Gupta
             </h3>
-            <p style={{ marginTop: 10, fontSize: 15, color: "#ccc" }}>
+            <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "justify" }}>
               3rd year Computer Science and Engineering Student | Chitkara University
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
@@ -98,8 +98,8 @@ export default function Resume() {
               lineHeight: 1.6,
             }}
           >
-            <strong style={{ color: "#00b4ff" }}>Professional Summary:</strong>
-            <p style={{ marginTop: 6, color: "#ccc" }}>
+            <strong style={{ color: "#00b4ff"}}>Professional Summary:</strong>
+            <p style={{ marginTop: 6, color: "#ccc", textAlign: "justify" }}>
               Highly motivated and results-oriented Computer Science and Engineering student with a strong foundation in data
               analysis and business intelligence. Proficient in Python, SQL, and tools like Power BI and Tableau. Proven ability to create
               insightful dashboards, analyze complex datasets, and deliver data-driven solutions to improve business efficiency and
@@ -149,7 +149,7 @@ export default function Resume() {
           style={{ marginTop: 40 }}
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
             <li>1️⃣ Financial Data Analysis: Google Stock Performance and Market Volatility</li>
             <li>2️⃣ E-commerce Sales Performance & Profitability Analysis (Amazon Store Data)</li>
             <li>3️⃣ Transportation & Operations Data Analysis: Uber Ride Performance</li>

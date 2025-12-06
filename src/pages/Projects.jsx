@@ -128,7 +128,7 @@ export default function Projects() {
 						textAlign: 'center', // center subtitle
 					}}
 				>
-					A collection of my major works—blending research, AI innovation, and real-world business impact.
+					A collection of my major works-blending research, AI innovation, and real-world business impact.
 				</p>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>

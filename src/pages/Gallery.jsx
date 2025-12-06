@@ -50,7 +50,7 @@ const pageVariants = {
     transition: {
       when: "beforeChildren",
       staggerChildren: 0.2,
-      duration: 0.8,
+      duration: 0.6,
       ease: "easeOut",
     },
   },
@@ -58,7 +58,7 @@ const pageVariants = {
 
 const childVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // reduced from 0.6 to 0.3
 };
 
 // ✨ Tab Switching Animations
