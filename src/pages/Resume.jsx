@@ -99,7 +99,7 @@ export default function Resume() {
             }}
           >
             <strong style={{ color: "#00b4ff"}}>Professional Summary:</strong>
-            <p style={{ marginTop: 6, color: "#ccc", textAlign: "justify" }}>
+            <p style={{ marginTop: 6, color: "#ccc"  }}>
               Highly motivated and results-oriented Computer Science and Engineering student with a strong foundation in data
               analysis and business intelligence. Proficient in Python, SQL, and tools like Power BI and Tableau. Proven ability to create
               insightful dashboards, analyze complex datasets, and deliver data-driven solutions to improve business efficiency and
