@@ -156,13 +156,35 @@ export default function Skills() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1 }}
 			>
-				<h2 className="text-5xl text-cyan-400 font-semibold mb-3">
+				<h2
+					style={{
+						fontSize: '1.5rem',
+						fontWeight: 600,
+						color: '#06b6d4',
+						marginBottom: '0.3rem',
+						textAlign: 'center',
+						marginTop: 40, // <-- add this line for top margin
+						marginBottom: 12
+					}}
+				>
 					My Skills
 				</h2>
-				<div className="w-28 h-[2px] bg-cyan-400 mx-auto mb-6"></div>
+				<div
+					// style={{
+					// 	width: 112,
+					// 	height: 2,
+					// 	background: "#00b4ff",
+					// 	margin: "0 auto 24px auto",
+					// 	borderRadius: 2,
+					// }}
+				></div>
 				<p
-					className="text-gray-400 text-lg max-w-xl mx-auto"
-					style={{ textAlign: "justify" }}
+					style={{
+						fontSize: '0.88rem',
+						marginBottom: '1.5rem',
+						color: '#9aa0a6',
+						textAlign: 'center', // center subtitle
+					}}
 				>
 					✨ Technical expertise blended with creativity - explore my core
 					competencies below.
