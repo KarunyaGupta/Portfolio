@@ -218,7 +218,7 @@ const AboutMe = () => {
                   <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Gujarat Board | Percentage: 89.8%
+                  Himachal Pradesh Board | Percentage: 89.8%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2023</p>
               </div>
@@ -252,7 +252,7 @@ const AboutMe = () => {
                   <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh,
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Gujarat Board | Percentage: 88.9%
+                  Himachal Pradesh Board | Percentage: 88.9%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2021</p>
               </div>
