@@ -34,6 +34,7 @@ const SKILLS = [
 		logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
 	},
 	{ name: "Pandas", logo: "/logos/pandas-img.png" },
+	{ name: "DataBricks", logo: "/logos/DataBricks.png" },
 	{ name: "Numpy", logo: "/logos/numpy.png" },
 	{ name: "Matplotlib", logo: "/logos/matplotlib.png" },
 	{ name: "GitHub", logo: "/logos/github.png" },
@@ -60,6 +61,7 @@ const ROWS = [
 				"Excel",
 				"Power Point",
 				"Git-GitHub",
+				"DataBricks",
 			],
 		},
 		{
