@@ -77,6 +77,7 @@ const ROWS = [
 		{
 			title: "Soft Skills",
 			items: [
+				"Story Telling",
 				"Teamwork",
 				"Problem Solving",
 				"Creativity",

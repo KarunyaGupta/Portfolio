@@ -17,7 +17,7 @@ export default function Home() {
   const professions = [
     'Pre-Final Year Engineering Student',
     'Chairperson, WIE IEEE-CIET',
-    "Learning Data Visiualization",
+    "Learning DataBricks & PowerBI",
     'Certified Analyst',
     'Exploring AI Technologies',
   ]
@@ -123,7 +123,7 @@ export default function Home() {
           <motion.div className="info-cards">
             {[
               { label: '📍 Location', value: 'Mandi, Himachal Pradesh, India' },
-              { label: '💼 Expertise', value: 'Data Analyst, Problem Solving' },
+              { label: '💼 Expertise', value: 'Data Analysis, Problem Solving' },
               { label: '📧 Contact', value: 'mails.karunyagupta@gmail.com' },
             ].map((info, i) => (
               <motion.div key={i} whileHover={{ y: -4, scale: 1.05 }} transition={{ type: 'spring', stiffness: 250 }} className="info-card">
