@@ -42,6 +42,7 @@ export default function Contact() {
 
     setStatus("Sending...");
 
+    // EmailJS usage: serviceId, templateId, templateParams, publicKey
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -51,12 +52,13 @@ export default function Contact() {
           contact_info: form.contact,
           subject: form.subject,
           message: form.message,
+          to_email: "mails.karunyagupta@gmail.com", // this must match your EmailJS template variable
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
-          setStatus("✅ Message sent successfully!");
+          setStatus("Sent! Karunya Gupta will get back to you.");
           setForm({ name: "", contact: "", subject: "", message: "" });
         },
         (error) => {
