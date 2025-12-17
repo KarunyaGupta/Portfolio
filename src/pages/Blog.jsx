@@ -8,21 +8,21 @@ export default function Blog() {
     {
       id: 1,
       title: "Behind the Scenes: My Life as a WIE Chairperson at IEEE-CIET SB",
-      text: `Being a WIE Chairperson is more than a role—it’s a responsibility driven by purpose. At IEEE-CIET Student Branch, my journey as WIE Chairperson has been about creating opportunities, encouraging participation, and building a supportive environment for growth.
+      text: `Being a WIE Chairperson is more than a role - it’s a responsibility driven by purpose. At IEEE-CIET Student Branch, my journey as WIE Chairperson has been about creating opportunities, encouraging participation, and building a supportive environment for growth.
 
 Behind every event and initiative lies teamwork, coordination, and thoughtful execution. Acting as a bridge between ideas and implementation, juniors and opportunities, I learned that leadership is rooted in listening, collaboration, and consistency.
 
 Balancing academics with responsibilities taught me time management, adaptability, and resilience. Most importantly, seeing members gain confidence and take initiative made every effort worthwhile.
 
-Leading WIE reshaped my perspective on leadership—it’s not about authority, but impact. I’m grateful for this experience that strengthened my skills and gave me a deeper sense of purpose.
+Leading WIE reshaped my perspective on leadership - it’s not about authority, but impact. I’m grateful for this experience that strengthened my skills and gave me a deeper sense of purpose.
 `,
     },
     {
       id: 2,
       title: "Why I Chose Analyst as My Career Path",
-      text: `Choosing the analyst path was not a sudden decision—it was a realization shaped by my curiosity and interest in understanding how things work. I’ve always enjoyed analyzing patterns, asking the right questions, and turning information into meaningful insights. The analyst role allows me to combine logic, data, and communication to support informed decision-making.
+      text: `Choosing the analyst path was not a sudden decision - it was a realization shaped by my curiosity and interest in understanding how things work. I’ve always enjoyed analyzing patterns, asking the right questions, and turning information into meaningful insights. The analyst role allows me to combine logic, data, and communication to support informed decision-making.
 
-What attracts me most is the impact an analyst creates—transforming raw data into clarity and direction. This role also offers continuous learning, adaptability across industries, and long-term growth opportunities.
+What attracts me most is the impact an analyst creates - transforming raw data into clarity and direction. This role also offers continuous learning, adaptability across industries, and long-term growth opportunities.
 
 For me, being an analyst means more than working with data; it means creating value through insight. It aligns with my strengths, mindset, and long-term goals, making it a career path I’m genuinely excited to pursue.
 `,
@@ -34,7 +34,7 @@ For me, being an analyst means more than working with data; it means creating va
 
 I learned that skills and projects often matter more than perfect grades, and comparison only slows personal growth. Self-learning is essential, and real progress comes from building, failing, and improving. Most importantly, engineering is a long journey, not a race.
 
-If I had known one thing earlier, it would be this: growth takes time. Stay curious, stay patient, and trust the process—you’re learning more than you realize.
+If I had known one thing earlier, it would be this: growth takes time. Stay curious, stay patient, and trust the process - you’re learning more than you realize.
 `
     },
     {
@@ -44,7 +44,7 @@ If I had known one thing earlier, it would be this: growth takes time. Stay curi
 
 Mutual funds make investing accessible by allowing you to invest small amounts while professionals manage diversification across assets and sectors. For students, they offer a practical way to start early, learn market behavior, and build financial discipline.
 
-Understanding these basics helped me see investing not as gambling, but as long-term planning. Even small, consistent investments can create meaningful impact over time. Learning finance early isn’t about money alone—it’s about making informed decisions for the future.
+Understanding these basics helped me see investing not as gambling, but as long-term planning. Even small, consistent investments can create meaningful impact over time. Learning finance early isn’t about money alone - it’s about making informed decisions for the future.
 `
     },
   ];
@@ -106,7 +106,7 @@ Understanding these basics helped me see investing not as gambling, but as long-
         📝 My Blog
       </motion.h2>
       <p className="blog-sub">
-        Personal thoughts, experiences, and reflections — feel free to react!
+        Personal thoughts, experiences, and reflections - feel free to react!
       </p>
 
       <div className="blog-grid">

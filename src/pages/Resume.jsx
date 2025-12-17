@@ -150,11 +150,11 @@ export default function Resume() {
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
-            <li>1️⃣ Financial Data Analysis: Google Stock Performance and Market Volatility</li>
-            <li>2️⃣ E-commerce Sales Performance & Profitability Analysis (Amazon Store Data)</li>
-            <li>3️⃣ Transportation & Operations Data Analysis: Uber Ride Performance</li>
-            <li>4️⃣ Pharma Insights: A Complete Sales Analysis Dashboard</li>
-            <li>5️⃣ Codereview.ai: An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
+            <li>1️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
+            <li>2️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
+            <li>3️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
+            <li>4️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
+            <li>5️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
           </ul>
         </motion.div>
 
@@ -240,7 +240,7 @@ export default function Resume() {
           ))}
         </motion.div>
 
-        {/* PDF Download Button */}
+        {/* PDF Download & View Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -249,6 +249,7 @@ export default function Resume() {
             display: "flex",
             justifyContent: "center",
             marginTop: 32,
+            gap: 16, // Add gap between buttons
           }}
         >
           <motion.a
@@ -272,7 +273,31 @@ export default function Resume() {
               transition: 'background 0.2s, color 0.2s',
             }}
           >
-            <span style={{ fontSize: "1.3em" }}>⬇️</span> Download Resume (PDF)
+            <span style={{ fontSize: "1.3em", textAlign: "center" }}>⬇️</span> Download Resume (PDF)
+          </motion.a>
+          <motion.a
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn code-btn"
+            whileHover={{ scale: 1.08 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '14px 32px',
+              borderRadius: 12,
+              fontSize: '1.15rem',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              background: '#181818',
+              color: '#06b6d4',
+              border: '2px solid #06b6d4',
+              fontWeight: 700,
+              transition: 'background 0.2s, color 0.2s',
+            }}
+          >
+            <span style={{ fontSize: "1.3em", textAlign: "center" }}>👁️</span> View Resume
           </motion.a>
         </motion.div>
       </motion.div>
