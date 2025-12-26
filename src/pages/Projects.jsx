@@ -12,12 +12,39 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/CodeReview.ai',
 	},
 	{
-		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
-		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
-		ss: '/ecom.jpg',
-		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: '/e-commerce.png',
-		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
+		title:'Indian Domestic Flight Price Analysis',
+		desc:'Comming soon... working on it!',
+		// desc:'This project analyzes domestic flight fare trends in India to uncover insights related to airline pricing, routes, travel duration, and number of stops. An interactive dashboard was created to compare ticket prices across airlines, sources, and destinations.',
+		ss:'/flight.webp',
+		tech:['Data Cleaning','EDA','PowerBI','Dash'],
+		live:'#',
+		code:'',
+	},
+	
+	{
+		title:'Workforce Attrition Analysis for HR Decision-Making',
+		desc:'Comming soon... working on it!',
+		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
+		ss:'/hr.png',
+		tech:['PowerBI','Excel'],
+		live:'#',
+		code:''
+	},
+	{
+		title: '📊 ProfileX – Data Profiler',
+		desc: 'Smart data profiling and preprocessing web app for CSV datasets - feature summary, missing value handling, and data visualization.',
+		ss: '/ProfileX.png',
+		tech: ['Streamlit', 'Pandas', 'Plotly', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Visualization'],
+		live: '#',
+		code: '#',
+	},
+		{
+		title: '💰 Loan Status Prediction',
+		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
+		ss: '/loan.png',
+		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
+		live: '#',
+		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
 	},
 	{
 		title: '🚓 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
@@ -35,22 +62,16 @@ const PROJECTS = [
 		live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
 		code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
 	},
+	
 	{
-		title: '📊 ProfileX – Data Profiler',
-		desc: 'Smart data profiling and preprocessing web app for CSV datasets - feature summary, missing value handling, and data visualization.',
-		ss: '/ProfileX.png',
-		tech: ['Streamlit', 'Pandas', 'Plotly', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Visualization'],
-		live: '#',
-		code: '#',
+		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
+		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
+		ss: '/ecom.jpg',
+		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
+		live: '/e-commerce.png',
+		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
 	},
-	{
-		title: '💰 Loan Status Prediction',
-		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
-		ss: '/loan.png',
-		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
-		live: '#',
-		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
-	},
+
 	{
 		title: '📽 Netflix Content Library',
 		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
@@ -272,30 +293,7 @@ export default function Projects() {
 									gap: 8,
 									marginTop: 18,
 								}}>
-									<motion.a
-										href={p.code}
-										target="_blank"
-										rel="noreferrer"
-										className="btn code-btn"
-										whileHover={{ scale: 1.08 }}
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-											gap: 4,
-											padding: '4px 10px',
-											borderRadius: 6,
-											fontSize: '0.78rem',
-											textDecoration: 'none',
-											cursor: 'pointer',
-											background: '#181818',
-											color: '#06b6d4',
-											border: '1px solid #06b6d4',
-											fontWeight: 500,
-											transition: 'background 0.2s, color 0.2s',
-										}}
-									>
-										<Github size={14} /> Source
-									</motion.a>
+									   {/* Code button removed as requested */}
 									<motion.a
 										href={p.live}
 										target="_blank"
