@@ -47,6 +47,15 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
 	},
 	{
+		title:'Google Stock Price Analysis and Prediction',
+		// desc:'Comming soon... working on it!',
+		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
+		ss:'/google.jpg',
+		tech:['Data Cleaning','EDA','Time Series Forecasting','LSTM'],
+		live:'#',
+		code:''
+	},
+	{
 		title: '🚓 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
 		desc: 'An interactive Power BI dashboard that analyzes Uber ride data to uncover booking trends, revenue patterns, rider behavior, and operational performance. The report supports data-driven decision-making through KPIs, drill-downs, vehicle insights, and location-based metrics.',
 		ss: '/uber.jpg',
@@ -293,7 +302,33 @@ export default function Projects() {
 									gap: 8,
 									marginTop: 18,
 								}}>
-									   {/* Code button removed as requested */}
+									   {/* Show Source button only for 1st, 3rd, 4th (ProfileX), and last project */}
+									   {([0, 2, PROJECTS.length - 1].includes(idx) && p.code && p.code !== '#') && (
+										   <motion.a
+											   href={p.code}
+											   target="_blank"
+											   rel="noreferrer"
+											   className="btn code-btn"
+											   whileHover={{ scale: 1.08 }}
+											   style={{
+												   display: 'flex',
+												   alignItems: 'center',
+												   gap: 4,
+												   padding: '4px 10px',
+												   borderRadius: 6,
+												   fontSize: '0.78rem',
+												   textDecoration: 'none',
+												   cursor: 'pointer',
+												   background: '#181818',
+												   color: '#06b6d4',
+												   border: '1px solid #06b6d4',
+												   fontWeight: 500,
+												   transition: 'background 0.2s, color 0.2s',
+											   }}
+										   >
+											   <Github size={14} /> Source
+										   </motion.a>
+									   )}
 									<motion.a
 										href={p.live}
 										target="_blank"

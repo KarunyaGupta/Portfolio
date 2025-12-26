@@ -240,8 +240,26 @@ export default function Resume() {
           ))}
         </motion.div>
 
-        {/* PDF Download & View Buttons */}
+        {/* PDF Download & View Buttons - Responsive */}
+        <style>
+          {`
+            @media (max-width: 600px) {
+              .resume-btns {
+                flex-direction: column !important;
+                gap: 10px !important;
+                align-items: stretch !important;
+              }
+              .resume-btns a {
+                width: 100% !important;
+                justify-content: center !important;
+                font-size: 1rem !important;
+                padding: 12px 0 !important;
+              }
+            }
+          `}
+        </style>
         <motion.div
+          className="resume-btns"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
@@ -249,7 +267,7 @@ export default function Resume() {
             display: "flex",
             justifyContent: "center",
             marginTop: 32,
-            gap: 16, // Add gap between buttons
+            gap: 16,
           }}
         >
           <motion.a
