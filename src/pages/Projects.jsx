@@ -12,7 +12,7 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/CodeReview.ai',
 	},
 	{
-		title:'Indian Domestic Flight Price Analysis',
+		title:'✈️ Indian Domestic Flight Price Analysis',
 		desc:'Comming soon... working on it!',
 		// desc:'This project analyzes domestic flight fare trends in India to uncover insights related to airline pricing, routes, travel duration, and number of stops. An interactive dashboard was created to compare ticket prices across airlines, sources, and destinations.',
 		ss:'/flight.webp',
@@ -20,9 +20,9 @@ const PROJECTS = [
 		live:'#',
 		code:'',
 	},
-	
+
 	{
-		title:'Workforce Attrition Analysis for HR Decision-Making',
+		title:'👥 Workforce Attrition Analysis for HR Decision-Making',
 		desc:'Comming soon... working on it!',
 		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
 		ss:'/hr.png',
@@ -38,7 +38,7 @@ const PROJECTS = [
 		live: '#',
 		code: '#',
 	},
-		{
+	{
 		title: '💰 Loan Status Prediction',
 		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
 		ss: '/loan.png',
@@ -47,7 +47,7 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
 	},
 	{
-		title:'Google Stock Price Analysis and Prediction',
+		title:'📈 Google Stock Price Analysis and Prediction',
 		// desc:'Comming soon... working on it!',
 		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
 		ss:'/google.jpg',
@@ -56,7 +56,15 @@ const PROJECTS = [
 		code:''
 	},
 	{
-		title: '🚓 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
+		title: '💬 Social Media Analysis',
+		desc: 'This SQL-driven project architects a comprehensive relational database to simulate a dynamic social media ecosystem, featuring interconnected schemas for Users, Posts, Messages, Followers, and Comments.',
+		ss: '/SocialMedia.webp',
+		tech: ['SQL','Relational Schema Design','Data Aggregation'],
+		live: '#',
+		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
+	},
+	{
+		title: '🚕 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
 		desc: 'An interactive Power BI dashboard that analyzes Uber ride data to uncover booking trends, revenue patterns, rider behavior, and operational performance. The report supports data-driven decision-making through KPIs, drill-downs, vehicle insights, and location-based metrics.',
 		ss: '/uber.jpg',
 		tech: ['Pandas', 'DAX', 'PowerBI', 'KPIs'],
@@ -71,7 +79,6 @@ const PROJECTS = [
 		live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
 		code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
 	},
-	
 	{
 		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
 		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
@@ -80,7 +87,6 @@ const PROJECTS = [
 		live: '/e-commerce.png',
 		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
 	},
-
 	{
 		title: '📽 Netflix Content Library',
 		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
@@ -90,7 +96,7 @@ const PROJECTS = [
 		code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing',
 	},
 	{
-		title: '🚓Bengaluru Rides Analysis (OLA)',
+		title: '🚗 Bengaluru Rides Analysis (OLA)',
 		desc: 'This is a data analysis and exploration project focused on understanding patterns and insights from a dataset of 100,000 rides taken in the city of Bengaluru.',
 		ss: '/ola.jpg',
 		tech: ['CSV', 'Numpy', 'Pandas', 'Matplotlib'],
@@ -98,7 +104,7 @@ const PROJECTS = [
 		code: '#',
 	},
 	{
-		title: '💼 Portfolio Website',
+		title: '🌐 Portfolio Website',
 		desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
 		ss: '/portfolio.jpg',
 		tech: ['React', 'Framer Motion', 'Tailwind CSS'],
@@ -108,6 +114,10 @@ const PROJECTS = [
 ]
 
 export default function Projects() {
+	const [showAll, setShowAll] = React.useState(false);
+
+	const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 6);
+
 	return (
 		<motion.section
 			className="container"
@@ -117,7 +127,7 @@ export default function Projects() {
 			id="projects"
 			style={{
 				display: 'flex',
-				justifyContent: 'center', // center align the section
+				justifyContent: 'center',
 				alignItems: 'flex-start',
 				width: '100%',
 			}}
@@ -130,7 +140,7 @@ export default function Projects() {
 					padding: 24,
 					boxShadow: '0 0 20px rgba(0,255,255,0.04)',
 					width: '100%',
-					maxWidth: 1100, // wider for better centering
+					maxWidth: 1100,
 					margin: '0 auto',
 				}}
 			>
@@ -144,7 +154,7 @@ export default function Projects() {
 						fontWeight: 600,
 						color: '#06b6d4',
 						marginBottom: '0.3rem',
-						textAlign: 'center', // center headline
+						textAlign: 'center',
 					}}
 				>
 					🚀 Projects
@@ -155,14 +165,14 @@ export default function Projects() {
 						fontSize: '0.88rem',
 						marginBottom: '1.5rem',
 						color: '#9aa0a6',
-						textAlign: 'center', // center subtitle
+						textAlign: 'center',
 					}}
 				>
 					A collection of my major works-blending research, AI innovation, and real-world business impact.
 				</p>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
-					{PROJECTS.map((p, idx) => (
+					{displayedProjects.map((p, idx) => (
 						<motion.div
 							key={idx}
 							className="project-card"
@@ -350,14 +360,36 @@ export default function Projects() {
 											fontWeight: 500,
 											transition: 'background 0.2s, color 0.2s',
 										}}
-									>
-										<ExternalLink size={14} /> Live
-									</motion.a>
+										>
+											<ExternalLink size={14} /> Live
+										</motion.a>
 								</div>
 							</div>
 						</motion.div>
 					))}
 				</div>
+
+				{/* See More button */}
+				{!showAll && PROJECTS.length > 6 && (
+					<div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
+						<button
+							onClick={() => setShowAll(true)}
+							style={{
+								padding: '8px 24px',
+								borderRadius: 8,
+								background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+								color: '#fff',
+								border: 'none',
+								fontWeight: 600,
+								fontSize: '1rem',
+								cursor: 'pointer',
+								boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+							}}
+						>
+							See More
+						</button>
+					</div>
+				)}
 			</div>
 		</motion.section>
 	)
