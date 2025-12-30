@@ -142,10 +142,23 @@ export default function Certificates() {
       </style>
 
       <div className="card" style={{ marginTop: 0 }}>
-        <h2 style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}>Certificates 🏅</h2>
-        <p className="lead" style={{ color: "#aaa", textAlign: "center" }}>
+        <motion.h2
+          style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Certificates 🏅
+        </motion.h2>
+        <motion.p
+          className="lead"
+          style={{ color: "#aaa", textAlign: "center" }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           Explore my certifications - technical & others.
-        </p>
+        </motion.p>
 
         {/* Tabs */}
         <div style={{ display: "flex", gap: 10, marginTop: 16 }}>

@@ -25,7 +25,7 @@ const PROJECTS = [
 		title:'👥 Employee Attrition Analytics & Insights Dashboard',
 		desc:'Developed an interactive HR Attrition Analysis Dashboard to identify key factors influencing employee turnover and workforce stability. The dashboard provides insights into attrition trends based on departments, job roles, age groups, gender, salary slabs, and years of experience.',
 		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
-		ss:'/hr.png',
+		ss:'/hr.webp',
 		tech:['PowerBI','Excel','SQL','Python'],
 		live:'https://app.powerbi.com/links/lOUQUNocKo?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=eaff1f69-8e2d-4893-ab13-8d31fffd15ca',
 		code:'https://drive.google.com/drive/folders/1dGRGEU1IBvB9peVusqSLPnZJ-mYy5cxS?usp=drive_link'
@@ -171,7 +171,7 @@ export default function Projects() {
 							className="project-card"
 							initial={{ opacity: 0, y: 20, scale: 0.95 }}
 							whileInView={{ opacity: 1, y: 0, scale: 1 }}
-							transition={{ duration: 0.4, delay: idx * 0.15 }}
+							transition={{ duration: 0.4, delay: idx * 0.07 }}
 							whileHover={{ scale: 1.03 }}
 							viewport={{ once: true }}
 							style={{
