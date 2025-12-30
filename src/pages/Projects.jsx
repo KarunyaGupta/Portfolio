@@ -17,27 +17,20 @@ const PROJECTS = [
 		// desc:'This project analyzes domestic flight fare trends in India to uncover insights related to airline pricing, routes, travel duration, and number of stops. An interactive dashboard was created to compare ticket prices across airlines, sources, and destinations.',
 		ss:'/flight.webp',
 		tech:['Pandas','Numpy','PowerBI','Advance DAX','ETL'],
-		live:'#',
-		code:'',
+		live:'https://app.powerbi.com/links/0rqcrSBW6x?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
+		code:'https://drive.google.com/drive/folders/111KBXnTK5GZONYFYYao4tDjTej1qi6lI?usp=drive_link',
 	},
 
 	{
-		title:'👥 Workforce Attrition Analysis for HR Decision-Making',
-		desc:'Comming soon... working on it!',
+		title:'👥 Employee Attrition Analytics & Insights Dashboard',
+		desc:'Developed an interactive HR Attrition Analysis Dashboard to identify key factors influencing employee turnover and workforce stability. The dashboard provides insights into attrition trends based on departments, job roles, age groups, gender, salary slabs, and years of experience.',
 		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
 		ss:'/hr.png',
-		tech:['PowerBI','Excel'],
-		live:'#',
-		code:''
+		tech:['PowerBI','Excel','SQL','Python'],
+		live:'https://app.powerbi.com/links/lOUQUNocKo?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=eaff1f69-8e2d-4893-ab13-8d31fffd15ca',
+		code:'https://drive.google.com/drive/folders/1dGRGEU1IBvB9peVusqSLPnZJ-mYy5cxS?usp=drive_link'
 	},
-	{
-		title: '📊 ProfileX – Data Profiler',
-		desc: 'Smart data profiling and preprocessing web app for CSV datasets - feature summary, missing value handling, and data visualization.',
-		ss: '/ProfileX.png',
-		tech: ['Streamlit', 'Pandas', 'Plotly', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Visualization'],
-		live: '#',
-		code: '#',
-	},
+	   // ProfileX project removed as requested
 	{
 		title: '💰 Loan Status Prediction',
 		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
@@ -306,19 +299,23 @@ export default function Projects() {
 										</span>
 									))}
 								</div>
-								<div className="project-links" style={{
-									display: 'flex',
-									justifyContent: 'flex-end',
-									gap: 8,
-									marginTop: 18,
-								}}>
-									   {/* Show Source button only for 1st, 3rd, 4th (ProfileX), and last project */}
-									   {([0, 2, PROJECTS.length - 1].includes(idx) && p.code && p.code !== '#') && (
+								   <div className="project-links" style={{
+									   display: 'flex',
+									   justifyContent: 'flex-end',
+									   gap: 8,
+									   marginTop: 18,
+								   }}>
+									   {/* Source button removed as requested */}
+									   {/* Show Drive button if PowerBI is in tech stack and code is a drive link, or for SkyMetrics project */}
+									   {(
+										   (p.tech.includes('PowerBI') && p.code && p.code.includes('drive.google.com')) ||
+										   p.title.includes('SkyMetrics')
+									   ) && (
 										   <motion.a
-											   href={p.code}
+											   href={p.title.includes('SkyMetrics') ? 'https://drive.google.com/drive/folders/sky-metrics-drive-link' : p.code}
 											   target="_blank"
 											   rel="noreferrer"
-											   className="btn code-btn"
+											   className="btn drive-btn"
 											   whileHover={{ scale: 1.08 }}
 											   style={{
 												   display: 'flex',
@@ -330,66 +327,105 @@ export default function Projects() {
 												   textDecoration: 'none',
 												   cursor: 'pointer',
 												   background: '#181818',
-												   color: '#06b6d4',
-												   border: '1px solid #06b6d4',
+												   color: '#22c55e',
+												   border: '1px solid #22c55e',
 												   fontWeight: 500,
 												   transition: 'background 0.2s, color 0.2s',
 											   }}
 										   >
-											   <Github size={14} /> Source
+											   Drive
 										   </motion.a>
 									   )}
-									<motion.a
-										href={p.live}
-										target="_blank"
-										rel="noreferrer"
-										className="btn live-btn"
-										whileHover={{ scale: 1.08 }}
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-											gap: 4,
-											padding: '4px 10px',
-											borderRadius: 6,
-											fontSize: '0.78rem',
-											textDecoration: 'none',
-											cursor: 'pointer',
-											background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
-											color: '#fff',
-											border: 'none',
-											fontWeight: 500,
-											transition: 'background 0.2s, color 0.2s',
-										}}
-										>
-											<ExternalLink size={14} /> Live
-										</motion.a>
-								</div>
+									   {/* For Code Review AI, Loan Status Prediction, and Social Media Analysis, show Source instead of Live */}
+									   {['Code Review AI', 'Loan Status Prediction', 'Social Media Analysis'].some(title => p.title.includes(title)) ? (
+										   p.code && p.code !== '#' && (
+											   <motion.a
+												   href={p.code}
+												   target="_blank"
+												   rel="noreferrer"
+												   className="btn code-btn"
+												   whileHover={{ scale: 1.08 }}
+												   style={{
+													   display: 'flex',
+													   alignItems: 'center',
+													   gap: 4,
+													   padding: '4px 10px',
+													   borderRadius: 6,
+													   fontSize: '0.78rem',
+													   textDecoration: 'none',
+													   cursor: 'pointer',
+													   background: '#181818',
+													   color: '#06b6d4',
+													   border: '1px solid #06b6d4',
+													   fontWeight: 500,
+													   transition: 'background 0.2s, color 0.2s',
+												   }}
+											   >
+												   <Github size={14} /> Source
+											   </motion.a>
+										   )
+									   ) : (
+										   <motion.a
+											   href={p.live}
+											   target="_blank"
+											   rel="noreferrer"
+											   className="btn live-btn"
+											   whileHover={{ scale: 1.08 }}
+											   style={{
+												   display: 'flex',
+												   alignItems: 'center',
+												   gap: 4,
+												   padding: '4px 10px',
+												   borderRadius: 6,
+												   fontSize: '0.78rem',
+												   textDecoration: 'none',
+												   cursor: 'pointer',
+												   background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+												   color: '#fff',
+												   border: 'none',
+												   fontWeight: 500,
+												   transition: 'background 0.2s, color 0.2s',
+											   }}
+										   >
+											   <ExternalLink size={14} /> Live
+										   </motion.a>
+									   )}
+								   </div>
 							</div>
 						</motion.div>
 					))}
 				</div>
 
-				{/* See More button */}
-				{!showAll && PROJECTS.length > 6 && (
-					<div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-						<button
-							onClick={() => setShowAll(true)}
-							style={{
-								padding: '8px 24px',
-								borderRadius: 8,
-								background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
-								color: '#fff',
-								border: 'none',
-								fontWeight: 600,
-								fontSize: '1rem',
-								cursor: 'pointer',
-								boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-							}}
-						>
-							See More
-						</button>
-					</div>
-				)}
+				   {/* See More button */}
+				   {!showAll && PROJECTS.length > 6 && (
+					   <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
+						   <button
+							   onClick={() => setShowAll(true)}
+							   style={{
+								   padding: '8px 24px',
+								   borderRadius: 6,
+								   background: '#181818',
+								   color: '#06b6d4',
+								   border: '1px solid #06b6d4',
+								   fontWeight: 500,
+								   fontSize: '1rem',
+								   cursor: 'pointer',
+								   boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+								   transition: 'background 0.2s, color 0.2s',
+							   }}
+							   onMouseOver={e => {
+								   e.currentTarget.style.background = '#222';
+								   e.currentTarget.style.color = '#fff';
+							   }}
+							   onMouseOut={e => {
+								   e.currentTarget.style.background = '#181818';
+								   e.currentTarget.style.color = '#06b6d4';
+							   }}
+						   >
+							   See More
+						   </button>
+					   </div>
+				   )}
 			</div>
 		</motion.section>
 	)
