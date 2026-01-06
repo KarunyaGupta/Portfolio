@@ -43,6 +43,7 @@ const SKILLS = [
 	{ name: "Excel", logo: "/logos/excel.png" },
 	{ name: "Visualization", logo: "/logos/dataVis.png" },
 	{ name: "Google Suits", logo: "/logos/google.png" },
+	{ name: "Google Analytics", logo: "/logos/GoogleAnalytics.png" },
 	// { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
 	// { name: "OpenCV", logo: "https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" },
 ];
@@ -61,6 +62,7 @@ const ROWS = [
 				"Excel",
 				"Power Point",
 				"Git-GitHub",
+				"Google Analytics",
 				"DataBricks",
 			],
 		},
@@ -71,7 +73,7 @@ const ROWS = [
 	],
 	[
 		{
-			title: "Data Analysis Libraries",
+			title: "Libraries",
 			items: ["Pandas", "Numpy", "Matplotlib", "Seaborn", "Scikit-Learn"],
 		},
 		{
@@ -242,6 +244,7 @@ export default function Skills() {
 								border: "1px solid rgba(0,255,255,0.25)",
 								backdropFilter: "blur(8px)",
 								cursor: "pointer",
+								textAlign: "center",
 								transition:
 									"box-shadow 0.4s ease, background 0.4s ease",
 							}}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import html2canvas from "html2canvas";
+// import jsPDF from "jspdf";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
@@ -20,6 +22,44 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("");
+
+  // Helper to capture a screenshot of a selector and return a data URL
+  const captureScreenshot = async (selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return null;
+    const canvas = await html2canvas(el, { backgroundColor: null, useCORS: true });
+    return canvas.toDataURL("image/png");
+  };
+
+  // Main handler to generate PDF with screenshots of main pages
+  const handleDownloadPortfolioPDF = async () => {
+    setStatus("Generating portfolio PDF...");
+    // List of routes and selectors to capture
+    const pages = [
+      { path: "/", selector: "body", label: "Home" },
+      { path: "/about", selector: "body", label: "About" },
+      { path: "/projects", selector: "body", label: "Projects" },
+      { path: "/resume", selector: "body", label: "Resume" },
+      { path: "/contact", selector: "body", label: "Contact" },
+    ];
+    const pdf = new jsPDF({ orientation: "portrait", unit: "px", format: "a4" });
+    let first = true;
+    for (const page of pages) {
+      // Navigate to the page
+      window.history.pushState({}, "", page.path);
+      // Wait for the page to render (may need adjustment for SPA)
+      await new Promise((res) => setTimeout(res, 800));
+      const imgData = await captureScreenshot(page.selector);
+      if (imgData) {
+        if (!first) pdf.addPage();
+        pdf.text(page.label, 20, 30);
+        pdf.addImage(imgData, "PNG", 20, 40, 400, 500, undefined, "FAST");
+        first = false;
+      }
+    }
+    pdf.save("Portfolio_Screenshots.pdf");
+    setStatus("Portfolio PDF downloaded!");
+  };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -184,6 +224,37 @@ export default function Contact() {
             />
           </motion.a>
         ))}
+      </motion.div>
+
+      {/* Download Portfolio Screenshots Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        style={{ display: 'flex', justifyContent: 'center', margin: '18px 0' }}
+      >
+        <motion.button
+          onClick={handleDownloadPortfolioPDF}
+          className="btn code-btn"
+          whileHover={{ scale: 1.08 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '12px 28px',
+            borderRadius: 12,
+            fontSize: '1.08rem',
+            textDecoration: 'none',
+            cursor: 'pointer',
+            background: '#181818',
+            color: '#06b6d4',
+            border: '2px solid #06b6d4',
+            fontWeight: 700,
+            transition: 'background 0.2s, color 0.2s',
+          }}
+        >
+          <span style={{ fontSize: "1.2em", textAlign: "center" }}>📸</span> Download Portfolio (Screenshots PDF)
+        </motion.button>
       </motion.div>
 
       {/* Contact Form */}

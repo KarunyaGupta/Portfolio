@@ -44,6 +44,7 @@ const AboutMe = () => {
             background: "linear-gradient(90deg, var(--accent), var(--accent-2))",
             WebkitBackgroundClip: "text",
             color: "transparent",
+            textAlign: "center",
           }}
         >
           About Me
@@ -174,12 +175,15 @@ const AboutMe = () => {
                 <h4
                   style={{
                     color: "var(--accent)",
-                    marginBottom: "0.4rem",
+                    marginBottom: 0,
                     fontSize: "1.05rem",
                   }}
                 >
                   Bachelor of Engineering in Computer Science and Engineering
                 </h4>
+                <span style={{ display: "block", fontWeight: 500, color: "#00ffd0", marginTop: 0, marginBottom: "0.2rem", fontSize: "0.98rem", lineHeight: 1.2 }}>
+                  Specialisation: Full Stack Development
+                </span>
                 <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
                   <strong>Chitkara University</strong> - Rajpura, Punjab
                 </p>

@@ -76,13 +76,28 @@ export default function Resume() {
               👨‍💻 Karunya Gupta
             </h3>
             <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "justify" }}>
-              3rd year Computer Science and Engineering Student | Chitkara University
+              Pre-final year Computer Science and Engineering Student | Chitkara University
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
               📍 Rajpura, Punjab, India
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
-              ✉️ mails.karunyagupta@gmail.com | 📞 +91 9805946982
+              ✉️ 
+              <a 
+                href="mailto:mails.karunyagupta@gmail.com" 
+                style={{cursor: 'pointer', color: '#00b4ff', textDecoration: 'none' }}
+              >
+                mails.karunyagupta@gmail.com
+              </a>
+              |
+              📞 
+              <span
+                style={{cursor: 'pointer' }}
+                
+                title="Click to copy number"
+              >
+                +91 9805946982
+              </span>
             </p>
           </div>
 
@@ -127,7 +142,7 @@ export default function Resume() {
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>
               <strong>B.E. Computer Science and Engineering</strong> - Chitkara University, 2023–2027 <br />
-              <span style={{ color: "#aaa" }}>GPA: 9.0</span>
+              <span style={{ color: "#aaa" }}>GPA: 8.97</span>
             </li>
             <li style={{ marginTop: 8 }}>
               <strong>12th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2023) <br />
@@ -150,11 +165,13 @@ export default function Resume() {
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
-            <li>1️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
-            <li>2️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
-            <li>3️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
-            <li>4️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
-            <li>5️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
+            <li>1️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
+            <li>2️⃣ <b>skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
+            <li>3️⃣ <b>Employ Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li>
+            <li>4️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
+            <li>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
+            <li>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
+            <li>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
           </ul>
         </motion.div>
 
