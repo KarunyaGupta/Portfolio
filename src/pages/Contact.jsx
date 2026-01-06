@@ -226,36 +226,7 @@ export default function Contact() {
         ))}
       </motion.div>
 
-      {/* Download Portfolio Screenshots Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        style={{ display: 'flex', justifyContent: 'center', margin: '18px 0' }}
-      >
-        <motion.button
-          onClick={handleDownloadPortfolioPDF}
-          className="btn code-btn"
-          whileHover={{ scale: 1.08 }}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            padding: '12px 28px',
-            borderRadius: 12,
-            fontSize: '1.08rem',
-            textDecoration: 'none',
-            cursor: 'pointer',
-            background: '#181818',
-            color: '#06b6d4',
-            border: '2px solid #06b6d4',
-            fontWeight: 700,
-            transition: 'background 0.2s, color 0.2s',
-          }}
-        >
-          <span style={{ fontSize: "1.2em", textAlign: "center" }}>📸</span> Download Portfolio (Screenshots PDF)
-        </motion.button>
-      </motion.div>
+      
 
       {/* Contact Form */}
       <motion.form
