@@ -85,18 +85,27 @@ export default function Resume() {
               ✉️ 
               <a 
                 href="mailto:mails.karunyagupta@gmail.com" 
-                style={{cursor: 'pointer', color: '#00b4ff', textDecoration: 'none' }}
+                style={{cursor: 'pointer', color: '#ccc', textDecoration: 'none' }}
               >
                 mails.karunyagupta@gmail.com
               </a>
-              |
+              <br />
               📞 
               <span
-                style={{cursor: 'pointer' }}
-                
-                title="Click to copy number"
+                style={{cursor: 'pointer', color: '#ccc', textDecoration: 'none'}}
+                title="Click to call or copy number"
+                onClick={() => {
+                  navigator.clipboard.writeText('+91 9805946982');
+                  // alert('Phone number copied to clipboard!');
+                }}
               >
-                +91 9805946982
+                <a 
+                  href="tel:+919805946982"
+                  style={{ cursor: 'pointer', color: '#ccc', textDecoration: 'none' }}
+                  onClick={e => e.stopPropagation()}
+                >
+                  +91 9805946982
+                </a>
               </span>
             </p>
           </div>
