@@ -6,7 +6,7 @@ const PROJECTS = [
 	{
 		title: '🤖 Code Review AI - Intelligent Code Analysis Tool',
 		desc: 'An AI-powered platform that reviews code in real-time and provides instant suggestions for improvement. It helps developers enhance performance, security, and code quality with smart, automated insights.',
-		ss: '/codereview.png',
+		ss: '/projects/codereview.webp',
 		tech: ['React', 'Vite', 'Express', 'Google Generative AI(Gemini)'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/CodeReview.ai',
@@ -15,7 +15,7 @@ const PROJECTS = [
 		title:'✈️ SkyMetrics: 360° Aviation Intelligence & Strategic Dashboard',
 		desc:'"SkyMetrics" is a comprehensive data engineering and business intelligence solution designed to transform complex aviation datasets into actionable strategic insights.This project decodes the intricate relationship between flight logistics, airline business models, and market pricing behaviors.',
 		// desc:'This project analyzes domestic flight fare trends in India to uncover insights related to airline pricing, routes, travel duration, and number of stops. An interactive dashboard was created to compare ticket prices across airlines, sources, and destinations.',
-		ss:'/skymatrix.png',
+		ss:'/projects/skymatrix.webp',
 		tech:['Pandas','Numpy','PowerBI','Advance DAX','ETL'],
 		live:'https://app.powerbi.com/links/0rqcrSBW6x?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code:'https://drive.google.com/drive/folders/111KBXnTK5GZONYFYYao4tDjTej1qi6lI?usp=drive_link',
@@ -25,7 +25,7 @@ const PROJECTS = [
 		title:'👥 Employee Attrition Analytics & Insights Dashboard',
 		desc:'Developed an interactive HR Attrition Analysis Dashboard to identify key factors influencing employee turnover and workforce stability. The dashboard provides insights into attrition trends based on departments, job roles, age groups, gender, salary slabs, and years of experience.',
 		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
-		ss:'/hr.png',
+		ss:'/projects/hr.webp',
 		tech:['PowerBI','Excel','SQL','Python'],
 		live:'https://app.powerbi.com/links/lOUQUNocKo?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=eaff1f69-8e2d-4893-ab13-8d31fffd15ca',
 		code:'https://drive.google.com/drive/folders/1dGRGEU1IBvB9peVusqSLPnZJ-mYy5cxS?usp=drive_link'
@@ -34,7 +34,7 @@ const PROJECTS = [
 	{
 		title: '💰 Loan Status Prediction',
 		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
-		ss: '/Loan.png',
+		ss: '/projects/Loan.webp',
 		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
@@ -43,7 +43,7 @@ const PROJECTS = [
 		title:'📈 Google Stock Price Analysis and Prediction',
 		// desc:'Comming soon... working on it!',
 		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
-		ss:'/googlestock.png',
+		ss:'/projects/googlestock.webp',
 		tech:['Data Cleaning','EDA','Time Series Forecasting','LSTM'],
 		live:'#',
 		code:''
@@ -51,7 +51,7 @@ const PROJECTS = [
 	{
 		title: '💬 Social Media Analysis',
 		desc: 'This SQL-driven project architects a comprehensive relational database to simulate a dynamic social media ecosystem, featuring interconnected schemas for Users, Posts, Messages, Followers, and Comments.',
-		ss: '/socialMedia.png',
+		ss: '/projects/socialMedia.webp',
 		tech: ['SQL','Relational Schema Design','Data Aggregation'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
@@ -59,7 +59,7 @@ const PROJECTS = [
 	{
 		title: '🚕 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
 		desc: 'An interactive Power BI dashboard that analyzes Uber ride data to uncover booking trends, revenue patterns, rider behavior, and operational performance. The report supports data-driven decision-making through KPIs, drill-downs, vehicle insights, and location-based metrics.',
-		ss: '/uber.png',
+		ss: '/projects/uber.webp',
 		tech: ['Pandas', 'DAX', 'PowerBI', 'KPIs'],
 		live: 'https://app.powerbi.com/links/UgR2hEsl46?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code: 'https://drive.google.com/drive/folders/1T_n-1GsqTFy4hSpwvh56Ca4ufjxtppff?usp=drive_link',
@@ -67,7 +67,7 @@ const PROJECTS = [
 	{
 		title: '🩺 Pharmaceutical Sales Analysis Dashboard',
 		desc: "This project analyzes a global Pharmaceutical Manufacturing Company's raw sales data to derive meaningful insights. The analysis focuses on performance metrics across different regions, distributors, customers, and sales teams.",
-		ss: '/pharma.png',
+		ss: '/projects/pharma.webp',
 		tech: ['Pandas', 'EDA', 'Python', 'Data Visiualization'],
 		live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
 		code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
@@ -75,15 +75,15 @@ const PROJECTS = [
 	{
 		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
 		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
-		ss: '/ecom.png',
+		ss: '/projects/ecom.webp',
 		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: '/e-commerce.png',
+		live: '/projects/e-commerce.webp',
 		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
 	},
 	{
 		title: '📽 Netflix Content Library',
 		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
-		ss: '/netflix.png',
+		ss: '/projects/netflix.webp',
 		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
 		live: 'https://app.powerbi.com/links/f2md6kaNCx?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing',
@@ -99,7 +99,7 @@ const PROJECTS = [
 	{
 		title: '🌐 Portfolio Website',
 		desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
-		ss: '/portfolio.jpg',
+		ss: '/projects/portfolio.webp',
 		tech: ['React', 'Framer Motion', 'Tailwind CSS'],
 		live: 'https://karunyagupta.vercel.app',
 		code: 'https://github.com/KarunyaGupta/Portfolio',
