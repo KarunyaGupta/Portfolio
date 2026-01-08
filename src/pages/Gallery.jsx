@@ -8,35 +8,35 @@ const IMAGES = {
     {
       id: 1,
       caption: "One year ago, as a Promotion Coordinator, I stood in the crowd on IEEE Day, watching the cake being cut and thinking, \"I wish I were the one up there.\" 🎂 hat simple desire felt like a distant dream. 💫\n\n That wish feels like a prophecy fulfilled. I'm overwhelmed with emotion and gratitude to be celebrating IEEE Day as the nominated WIE Chairperson, standing not in the crowd, but right there, cutting the cake. 🥳",
-      photos: ["/gallery/IEEE.jpg"],
+      photos: ["/gallery/IEEE.webp"],
     },
     {
       id: 2,
       caption:
         "Over the past five Saturdays, I embarked on a truly transformative learning journey. From conquering stage fear and engaging in debates to mastering LinkedIn strategy and delivering compelling product pitches like a seasoned seller, each session pushed the boundaries of my comfort zone. These classes went beyond mere communication techniques, teaching me the invaluable skills of connecting, expressing, and collaborating confidently and impactfully with peers and colleagues.",
-      photos: [ "/gallery/communication.jpg"],
+      photos: [ "/gallery/communication.webp"],
     },
   ],
   achievements: [
     {
       id: 1,
       caption: "I am deeply honored and thrilled to announce my appointment as the Chairperson of the IEEE-CIET Student Branch at Chitkara University for the academic year 2025-26. This esteemed position is a recognition of the collective hard work, dedication, and collaborative spirit that defines our branch. I am eager to lead our dedicated team, guiding impactful initiatives that will continue to advance the mission and vision of IEEE WIE within our university community.",
-      photos: ["/gallery/Chair2.JPG"],
+      photos: ["/gallery/Chair2.webp"],
     },
     {
       id: 2,
       caption: "I have been selected as the IEEEXtreme 19.0 Student Ambassador for the IEEE-CIET Student Branch! This incredible opportunity allows me to proudly represent our branch on a global stage by promoting IEEEXtreme, the highly prestigious international 24-hour coding competition.",
-      photos: ["/gallery/IEEE-Xtreme.jpg"],
+      photos: ["/gallery/IEEE-Xtreme.webp"],
     },
     {
       id: 2,
       caption: "\"Automatic Car Wash System\" - Our 1st Prize Winner! This is the innovative project model that clinched the top spot at DICE TECHNOVISION 2.0. A testament to teamwork and technical ingenuity!",
-      photos: ["/gallery/DICE.jpg"],
+      photos: ["/gallery/DICE.webp"],
     },
     {
       id: 2,
       caption: "\"E-Waste Creations\" - Our 1st Prize Innovation! This gallery showcases the unique creations- like photo frames and décor- made from repurposed e-waste for the National Science Day 2024 Carnival. A powerful display of creativity, sustainability, and commitment to a Viksit Bharat!",
-      photos: ["/gallery/Carnival2.jpg"],
+      photos: ["/gallery/Carnival2.webp"],
     },
   ],
 };

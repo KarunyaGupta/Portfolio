@@ -94,8 +94,9 @@
   opacity: 0.3;
 }
 
-@media (max-width: 600px) {
-  .post-divider {
+  max-width: none;
+  max-height: none;
+  display: block;
     display: block;
   }
 }
