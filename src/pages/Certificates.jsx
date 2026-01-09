@@ -119,6 +119,12 @@ export default function Certificates() {
   const [tab, setTab] = useState("tech");
   const [selectedCert, setSelectedCert] = useState(null);
 
+  // Sort certificates by year (latest to oldest)
+  const sortedCerts = {
+    tech: [...CERTS.tech].sort((a, b) => Number(b.date) - Number(a.date)),
+    other: [...CERTS.other].sort((a, b) => Number(b.date) - Number(a.date)),
+  };
+
   return (
     <section
       className="container"
@@ -194,7 +200,7 @@ export default function Certificates() {
           }}
         >
           <AnimatePresence mode="wait">
-            {CERTS[tab].map((c, idx) => (
+            {sortedCerts[tab].map((c, idx) => (
               <motion.div
                 key={c.title}
                 className="cert card"

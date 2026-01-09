@@ -535,7 +535,7 @@ export default function Projects() {
 				</div>
 
 				   {/* See More button */}
-				   {!showAll && PROJECTS.length > 6 && (
+				   {!showAll && filteredProjects.length > 6 && (
 					   <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
 						   <button
 							   onClick={() => setShowAll(true)}
