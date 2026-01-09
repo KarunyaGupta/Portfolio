@@ -6,6 +6,31 @@ import "./blog.css";
 export default function Blog() {
   const defaultPosts = [
     {
+      id: 0,
+      title: "Four Years of Engineering: A Journey Beyond Books",
+      text: `The first day of engineering didn’t feel special. New faces, heavy bags, awkward smiles, and a silent question in everyone’s mind - *What have I signed up for?* We came with dreams, confusion, and a lot of expectations. Little did we know, these four years were going to shape us in ways no syllabus ever could.
+
+    **First Year: Lost but Hopeful**
+    First year was all about survival. New subjects, new environment, and the sudden realization that school life was officially over. We pretended to understand lectures, copied assignments, and discovered that *attendance actually mattered*. Friendships began over shared notes, canteen chai, and late-night hostel talks. Everything felt uncertain, yet exciting.
+
+    **Second Year: Reality Check**
+    By second year, the excitement faded and reality hit hard. Subjects became tougher, pressure increased, and comparisons started. Some found their passion, others doubted their choices. We learned the art of managing deadlines, internal exams, and expectations - from teachers, parents, and ourselves. It was the year we realized engineering wasn’t just about marks, but about patience.
+
+    **Third Year: Hustle Mode On**
+    Third year was chaos. Projects, internships, coding, placements preparation, and constant stress. Sleep became a luxury. Everyone was busy building something - skills, resumes, confidence. Failures hurt more now, but they also taught us resilience. This was the year we truly started growing, even when we didn’t realize it.
+
+    **Final Year: Holding On and Letting Go**
+    Final year came with mixed emotions. On one side, the pressure of placements and future plans; on the other, the fear of endings. Every last lecture, every group photo, every farewell felt heavier. We weren’t just graduating with a degree - we were carrying memories, friendships, and lessons for life.
+
+    **What Engineering Really Taught Us**
+    Engineering didn’t just teach us coding or equations. It taught us how to fail, how to adapt, how to stay strong when things didn’t go as planned. It taught us teamwork, discipline, and self-belief. Most importantly, it taught us that growth happens quietly, day by day.
+
+    **A Chapter That Stays Forever**
+    Four years passed in deadlines and dreams, in laughter and late nights. Engineering life wasn’t perfect - but it was real. And someday, when life gets busy, we’ll look back and smile, realizing that these were the years that made us who we are.
+
+    Not just engineers - but survivors, learners, and dreamers.`
+    },
+    {
       id: 1,
       title: "Behind the Scenes: My Life as a WIE Chairperson at IEEE-CIET SB",
       text: `Being a WIE Chairperson is more than a role - it’s a responsibility driven by purpose. At IEEE-CIET Student Branch, my journey as WIE Chairperson has been about creating opportunities, encouraging participation, and building a supportive environment for growth.
@@ -116,46 +141,59 @@ Understanding these basics helped me see investing not as gambling, but as long-
           const displayText = isLong && !isExpanded ? p.text.slice(0, 400) + "..." : p.text;
 
           // Enhanced formatting for blog text
+          // Markdown-like rendering for bold (**text**) and italic (*text*)
+          function renderMarkdown(line) {
+            // Replace **bold** and *italic* with <strong> and <em>
+            let elements = [];
+            let text = line;
+            let idx = 0;
+            const regex = /\*\*([^*]+)\*\*|\*([^*]+)\*/g;
+            let lastIndex = 0;
+            let match;
+            while ((match = regex.exec(text)) !== null) {
+              if (match.index > lastIndex) {
+                elements.push(text.slice(lastIndex, match.index));
+              }
+              if (match[1]) {
+                elements.push(<strong key={idx++}>{match[1]}</strong>);
+              } else if (match[2]) {
+                elements.push(<em key={idx++}>{match[2]}</em>);
+              }
+              lastIndex = regex.lastIndex;
+            }
+            if (lastIndex < text.length) {
+              elements.push(text.slice(lastIndex));
+            }
+            return elements;
+          }
+
           function renderBlogText(text) {
             const lines = text.split("\n");
             return lines.map((line, i) => {
               const trimmed = line.trim();
-              // Blank line -> horizontal line
               if (trimmed === "") {
                 return <hr className="blog-hr" key={i} />;
               }
               // Numbered title or section (e.g., "1. Title" or "Conclusion:")
-              if (
-                /^\d+\.\s/.test(trimmed) || // numbered
-                trimmed.endsWith(":")      // ends with colon
-              ) {
+              if (/^\d+\.\s/.test(trimmed) || trimmed.endsWith(":")) {
                 return (
-                  <div
-                    key={i}
-                    className="blog-section-title blog-white"
-                  >
-                    {trimmed}
+                  <div key={i} className="blog-section-title blog-white">
+                    {renderMarkdown(trimmed)}
                   </div>
                 );
               }
               // Subtitle: line starts with uppercase and is short (heuristic)
-              if (
-                /^[A-Z][^:]+$/.test(trimmed) &&
-                trimmed.length < 60
-              ) {
+              if (/^[A-Z][^:]+$/.test(trimmed) && trimmed.length < 60) {
                 return (
-                  <div
-                    key={i}
-                    className="blog-section-subtitle blog-white"
-                  >
-                    {trimmed}
+                  <div key={i} className="blog-section-subtitle blog-white">
+                    {renderMarkdown(trimmed)}
                   </div>
                 );
               }
               // Normal text
               return (
                 <div key={i} className="blog-white" style={{ margin: "0 0 4px 0" }}>
-                  {trimmed}
+                  {renderMarkdown(trimmed)}
                 </div>
               );
             });
