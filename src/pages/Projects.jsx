@@ -10,6 +10,7 @@ const PROJECTS = [
 		tech: ['React', 'Vite', 'Express', 'Google Generative AI(Gemini)'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/CodeReview.ai',
+        category: 'Development',
 	},
 	{
 		title:'✈️ SkyMetrics: 360° Aviation Intelligence & Strategic Dashboard',
@@ -19,6 +20,8 @@ const PROJECTS = [
 		tech:['Pandas','Numpy','PowerBI','Advance DAX','ETL'],
 		live:'https://app.powerbi.com/links/0rqcrSBW6x?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code:'https://drive.google.com/drive/folders/111KBXnTK5GZONYFYYao4tDjTej1qi6lI?usp=drive_link',
+		category: 'Dashboards',
+		drive: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
 	},
 
 	{
@@ -29,6 +32,8 @@ const PROJECTS = [
 		tech:['PowerBI','Excel','SQL','Python'],
 		live:'https://app.powerbi.com/links/lOUQUNocKo?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=eaff1f69-8e2d-4893-ab13-8d31fffd15ca',
 		code:'https://drive.google.com/drive/folders/1dGRGEU1IBvB9peVusqSLPnZJ-mYy5cxS?usp=drive_link'
+		,category: 'Dashboards',
+		drive: 'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
 	},
 	   // ProfileX project removed as requested
 	{
@@ -38,15 +43,17 @@ const PROJECTS = [
 		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
+        category: 'Others',
 	},
 	{
 		title:'📈 Google Stock Price Analysis and Prediction',
 		// desc:'Comming soon... working on it!',
 		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
 		ss:'/projects/googlestock.webp',
-		tech:['Data Cleaning','EDA','Time Series Forecasting','LSTM'],
+		tech:['PowerBI','Data Cleaning','EDA','Time Series Forecasting','LSTM'],
 		live:'#',
-		code:''
+		code:'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
+        ,category: 'Dashboards'
 	},
 	{
 		title: '💬 Social Media Analysis',
@@ -55,6 +62,7 @@ const PROJECTS = [
 		tech: ['SQL','Relational Schema Design','Data Aggregation'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
+        category: 'Others',
 	},
 	{
 		title: '🚕 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
@@ -63,22 +71,25 @@ const PROJECTS = [
 		tech: ['Pandas', 'DAX', 'PowerBI', 'KPIs'],
 		live: 'https://app.powerbi.com/links/UgR2hEsl46?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code: 'https://drive.google.com/drive/folders/1T_n-1GsqTFy4hSpwvh56Ca4ufjxtppff?usp=drive_link',
+        category: 'Dashboards',
 	},
 	{
 		title: '🩺 Pharmaceutical Sales Analysis Dashboard',
 		desc: "This project analyzes a global Pharmaceutical Manufacturing Company's raw sales data to derive meaningful insights. The analysis focuses on performance metrics across different regions, distributors, customers, and sales teams.",
 		ss: '/projects/pharma.webp',
-		tech: ['Pandas', 'EDA', 'Python', 'Data Visiualization'],
+		tech: ['PowerBI','Pandas', 'EDA', 'Python', 'Data Visiualization'],
 		live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
 		code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
+        category: 'Dashboards',
 	},
 	{
 		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
 		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
 		ss: '/projects/ecom.webp',
 		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: '/projects/e-commerce.webp',
+		live: '',
 		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
+        category: 'Dashboards',
 	},
 	{
 		title: '📽 Netflix Content Library',
@@ -87,6 +98,7 @@ const PROJECTS = [
 		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
 		live: 'https://app.powerbi.com/links/f2md6kaNCx?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing',
+        category: 'Dashboards',
 	},
 	// {
 	// 	title: '🚗 Bengaluru Rides Analysis (OLA)',
@@ -97,19 +109,50 @@ const PROJECTS = [
 	// 	code: '#',
 	// },
 	{
+		title: '🌟 Personal Expense Tracker',
+		desc: 'A user-friendly web application to track personal expenses, categorize spending, and visualize financial data through interactive charts and reports. Built with React for the frontend and Node.js for the backend.',
+		ss: '/projects/expensetracker.webp',
+		tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+		live: '',
+		code: 'https://github.com/KarunyaGupta/ExpenseTracker',
+		category: 'Development',
+	},
+	{
+		title: '☕Coffee Day - A Coffee Ordering Website',
+		desc:' A responsive Coffee Shop website built with HTML, CSS, and JavaScript. Features include a dynamic menu, smooth scrolling, and an engaging user interface to enhance the online coffee ordering experience.',
+		ss:'/projects/coffeeday.webp',
+		tech:['HTML','CSS','JavaScript','Bootstrap','Vercel'],
+		live:'https://coffee-day-web.vercel.app/',
+		code:'https://github.com/KarunyaGupta/Coffee-Day',
+		category: 'Development',
+	},
+	{
 		title: '🌐 Portfolio Website',
 		desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
 		ss: '/projects/portfolio.webp',
 		tech: ['React', 'Framer Motion', 'Tailwind CSS'],
 		live: 'https://karunyagupta.vercel.app',
 		code: 'https://github.com/KarunyaGupta/Portfolio',
+        category: 'Development',
 	},
 ]
 
+
+// Category tabs config
+const CATEGORIES = [
+	{ key: 'All', label: 'All' },
+	{ key: 'Dashboards', label: 'Dashboards' },
+	{ key: 'Development', label: 'Development' },
+	{ key: 'Others', label: 'Others' },
+];
+
 export default function Projects() {
 	const [showAll, setShowAll] = React.useState(false);
+	const [category, setCategory] = React.useState('All');
 
-	const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 6);
+	// Filter projects by category
+	const filteredProjects = category === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === category);
+	const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
 	return (
 		<motion.section
@@ -152,17 +195,58 @@ export default function Projects() {
 				>
 					🚀 Projects
 				</motion.h2>
-				<p
-					className="projects-subtitle"
-					style={{
-						fontSize: '0.88rem',
-						marginBottom: '1.5rem',
-						color: '#9aa0a6',
-						textAlign: 'center',
-					}}
-				>
-					A collection of my major works-blending research, AI innovation, and real-world business impact.
-				</p>
+
+								<p
+										className="projects-subtitle"
+										style={{
+												fontSize: '0.88rem',
+												marginBottom: '1.1rem',
+												color: '#9aa0a6',
+												textAlign: 'center',
+										}}
+								>
+										A collection of my major works-blending research, AI innovation, and real-world business impact.
+								</p>
+
+								{/* Category Buttons - Responsive */}
+								<div
+									className="category-buttons"
+									style={{
+										display: 'flex',
+										flexWrap: 'wrap',
+										justifyContent: 'center',
+										gap: 12,
+										marginBottom: 24,
+									}}
+								>
+									{CATEGORIES.map((cat) => (
+										<motion.button
+											key={cat.key}
+											className={`category-btn${category === cat.key ? ' active' : ''}`}
+											onClick={() => { setCategory(cat.key); setShowAll(false); }}
+											whileHover={{ scale: 1.05 }}
+											whileTap={{ scale: 0.97 }}
+											style={{
+												padding: '6px 18px',
+												borderRadius: 6,
+												background: category === cat.key ? 'linear-gradient(90deg, #06b6d4, #0891b2)' : '#181818',
+												color: category === cat.key ? '#fff' : '#06b6d4',
+												border: '1px solid #06b6d4',
+												fontWeight: 500,
+												fontSize: '0.98rem',
+												cursor: 'pointer',
+												transition: 'background 0.2s, color 0.2s',
+												outline: 'none',
+												minWidth: 110,
+												marginBottom: 8,
+												flex: '1 1 120px',
+												maxWidth: '180px',
+											}}
+										>
+											{cat.label}
+										</motion.button>
+									))}
+								</div>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
 					{displayedProjects.map((p, idx) => (
@@ -306,13 +390,14 @@ export default function Projects() {
 									   marginTop: 18,
 								   }}>
 									   {/* Source button removed as requested */}
-									   {/* Show Drive button if PowerBI is in tech stack and code is a drive link, or for SkyMetrics project */}
+									   {/* Show Drive button if PowerBI is in tech stack and code is a drive link, or for SkyMetrics project, or if drive property exists */}
 									   {(
 										   (p.tech.includes('PowerBI') && p.code && p.code.includes('drive.google.com')) ||
-										   p.title.includes('SkyMetrics')
+										   p.title.includes('SkyMetrics') ||
+										   p.drive
 									   ) && (
 										   <motion.a
-											   href={p.title.includes('SkyMetrics') ? 'https://drive.google.com/drive/folders/sky-metrics-drive-link' : p.code}
+											   href={p.drive ? p.drive : (p.title.includes('SkyMetrics') ? 'https://drive.google.com/drive/folders/sky-metrics-drive-link' : p.code)}
 											   target="_blank"
 											   rel="noreferrer"
 											   className="btn drive-btn"
@@ -336,8 +421,8 @@ export default function Projects() {
 											   Drive Link
 										   </motion.a>
 									   )}
-									   {/* For Code Review AI, Loan Status Prediction, and Social Media Analysis, show Source instead of Live */}
-									   {['Code Review AI', 'Loan Status Prediction', 'Social Media Analysis'].some(title => p.title.includes(title)) ? (
+									   {/* For Code Review AI, Loan Status Prediction, Social Media Analysis, Personal Expense Tracker, and Coffee Day, show Source instead of Live (but for Coffee Day, show both) */}
+									   {['Code Review AI', 'Loan Status Prediction', 'Social Media Analysis', 'Personal Expense Tracker'].some(title => p.title.includes(title)) ? (
 										   p.code && p.code !== '#' && (
 											   <motion.a
 												   href={p.code}
@@ -364,32 +449,85 @@ export default function Projects() {
 												   <Github size={14} /> Source Code
 											   </motion.a>
 										   )
-									   ) : (
-										   <motion.a
-											   href={p.live}
-											   target="_blank"
-											   rel="noreferrer"
-											   className="btn live-btn"
-											   whileHover={{ scale: 1.08 }}
-											   style={{
-												   display: 'flex',
-												   alignItems: 'center',
-												   gap: 4,
-												   padding: '4px 10px',
-												   borderRadius: 6,
-												   fontSize: '0.78rem',
-												   textDecoration: 'none',
-												   cursor: 'pointer',
-												   background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
-												   color: '#fff',
-												   border: 'none',
-												   fontWeight: 500,
-												   transition: 'background 0.2s, color 0.2s',
-											   }}
-										   >
-											   <ExternalLink size={14} /> Live
-										   </motion.a>
-									   )}
+																			 ) : (
+																				 p.title.includes('Coffee Day') ? (
+																					 <>
+																						 <motion.a
+																							 href={p.code}
+																							 target="_blank"
+																							 rel="noreferrer"
+																							 className="btn code-btn"
+																							 whileHover={{ scale: 1.08 }}
+																							 style={{
+																								 display: 'flex',
+																								 alignItems: 'center',
+																								 gap: 4,
+																								 padding: '4px 10px',
+																								 borderRadius: 6,
+																								 fontSize: '0.78rem',
+																								 textDecoration: 'none',
+																								 cursor: 'pointer',
+																								 background: '#181818',
+																								 color: '#06b6d4',
+																								 border: '1px solid #06b6d4',
+																								 fontWeight: 500,
+																								 transition: 'background 0.2s, color 0.2s',
+																							 }}
+																						 >
+																							 <Github size={14} /> Source Code
+																						 </motion.a>
+																						 <motion.a
+																							 href={p.live}
+																							 target="_blank"
+																							 rel="noreferrer"
+																							 className="btn live-btn"
+																							 whileHover={{ scale: 1.08 }}
+																							 style={{
+																								 display: 'flex',
+																								 alignItems: 'center',
+																								 gap: 4,
+																								 padding: '4px 10px',
+																								 borderRadius: 6,
+																								 fontSize: '0.78rem',
+																								 textDecoration: 'none',
+																								 cursor: 'pointer',
+																								 background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+																								 color: '#fff',
+																								 border: 'none',
+																								 fontWeight: 500,
+																								 transition: 'background 0.2s, color 0.2s',
+																							 }}
+																						 >
+																							 <ExternalLink size={14} /> Live
+																						 </motion.a>
+																					 </>
+																				 ) : (
+																					 <motion.a
+																							 href={p.live}
+																							 target="_blank"
+																							 rel="noreferrer"
+																							 className="btn live-btn"
+																							 whileHover={{ scale: 1.08 }}
+																							 style={{
+																									 display: 'flex',
+																									 alignItems: 'center',
+																									 gap: 4,
+																									 padding: '4px 10px',
+																									 borderRadius: 6,
+																									 fontSize: '0.78rem',
+																									 textDecoration: 'none',
+																									 cursor: 'pointer',
+																									 background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+																									 color: '#fff',
+																									 border: 'none',
+																									 fontWeight: 500,
+																									 transition: 'background 0.2s, color 0.2s',
+																							 }}
+																					 >
+																							 <ExternalLink size={14} /> Live
+																					 </motion.a>
+																				 )
+																			 )}
 								   </div>
 							</div>
 						</motion.div>
