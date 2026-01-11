@@ -35,16 +35,6 @@ const PROJECTS = [
 		,category: 'Dashboards',
 		drive: 'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
 	},
-	   // ProfileX project removed as requested
-	{
-		title: '💰 Loan Status Prediction',
-		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
-		ss: '/projects/Loan.webp',
-		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
-		live: '#',
-		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
-        category: 'Others',
-	},
 	{
 		title:'📈 Google Stock Price Analysis and Prediction',
 		// desc:'Comming soon... working on it!',
@@ -55,13 +45,14 @@ const PROJECTS = [
 		code:'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
         ,category: 'Dashboards'
 	},
+	   // ProfileX project removed as requested
 	{
-		title: '💬 Social Media Analysis',
-		desc: 'This SQL-driven project architects a comprehensive relational database to simulate a dynamic social media ecosystem, featuring interconnected schemas for Users, Posts, Messages, Followers, and Comments.',
-		ss: '/projects/socialMedia.webp',
-		tech: ['SQL','Relational Schema Design','Data Aggregation'],
+		title: '💰 Loan Status Prediction',
+		desc: 'This is a Data Science and Machine Learning project aimed at building a classification model to predict whether a loan application will be approved or rejected based on applicant and loan attributes.',
+		ss: '/projects/Loan.webp',
+		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
 		live: '#',
-		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
+		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
         category: 'Others',
 	},
 	{
@@ -92,6 +83,16 @@ const PROJECTS = [
         category: 'Dashboards',
 	},
 	{
+		title: '💬 Social Media Analysis',
+		desc: 'This SQL-driven project architects a comprehensive relational database to simulate a dynamic social media ecosystem, featuring interconnected schemas for Users, Posts, Messages, Followers, and Comments.',
+		ss: '/projects/socialMedia.webp',
+		tech: ['SQL','Relational Schema Design','Data Aggregation'],
+		live: '#',
+		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
+        category: 'Others',
+	},
+	
+	{
 		title: '📽 Netflix Content Library',
 		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
 		ss: '/projects/netflix.webp',
@@ -108,6 +109,7 @@ const PROJECTS = [
 	// 	live: '#',
 	// 	code: '#',
 	// },
+	
 	{
 		title: '🌟 Personal Expense Tracker',
 		desc: 'A user-friendly web application to track personal expenses, categorize spending, and visualize financial data through interactive charts and reports. Built with React for the frontend and Node.js for the backend.',
@@ -115,6 +117,15 @@ const PROJECTS = [
 		tech: ['React', 'Node.js', 'Express', 'MongoDB'],
 		live: '',
 		code: 'https://github.com/KarunyaGupta/ExpenseTracker',
+		category: 'Development',
+	},
+	{
+		title:'😄 MemeHub',
+		desc:'A Meme Maker web application that allows users to create memes easily. It features image uploading, text overlay, and various customization options to generate memes.',
+		ss:'/projects/MemeHub.webp',
+		tech:['HTML','CSS','JavaScript'],
+		live:'',
+		code:'https://github.com/KarunyaGupta/MemeHub',
 		category: 'Development',
 	},
 	{
@@ -126,6 +137,7 @@ const PROJECTS = [
 		code:'https://github.com/KarunyaGupta/Coffee-Day',
 		category: 'Development',
 	},
+	
 	{
 		title: '🌐 Portfolio Website',
 		desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
@@ -422,7 +434,7 @@ export default function Projects() {
 										   </motion.a>
 									   )}
 									   {/* For Code Review AI, Loan Status Prediction, Social Media Analysis, Personal Expense Tracker, and Coffee Day, show Source instead of Live (but for Coffee Day, show both) */}
-									   {['Code Review AI', 'Loan Status Prediction', 'Social Media Analysis', 'Personal Expense Tracker'].some(title => p.title.includes(title)) ? (
+									   {['Code Review AI', 'Loan Status Prediction', 'Social Media Analysis', 'Personal Expense Tracker', 'Coffee Day','MemeHub'].some(title => p.title.includes(title)) ? (
 										   p.code && p.code !== '#' && (
 											   <motion.a
 												   href={p.code}

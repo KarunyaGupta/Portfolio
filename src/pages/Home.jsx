@@ -17,9 +17,10 @@ export default function Home() {
   const professions = [
     'Pre-Final Year Engineering Student',
     'Chairperson, WIE IEEE-CIET',
-    "Learning DataBricks & PowerBI",
+    'Specializing in FinTech',
+    'Business & Data Analytics',
     'Certified Analyst',
-    'Exploring AI Technologies',
+    'Learning DataBricks & AI Technologies',
   ]
 
   const quickLinks = [

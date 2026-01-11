@@ -77,8 +77,8 @@ export default function Gallery() {
   const [tab, setTab] = useState("personal");
   const [zoom, setZoom] = useState({ img: null, post: null, index: 0 });
 
-  const openZoom = (post, index) =>
-    setZoom({ img: post.photos[index], post, index });
+  // Disabled: openZoom does nothing
+  const openZoom = (post, index) => {};
 
   const closeZoom = () => setZoom({ img: null, post: null, index: 0 });
 
