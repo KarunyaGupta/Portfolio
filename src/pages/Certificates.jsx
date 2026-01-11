@@ -51,8 +51,37 @@ const CERTS = {
       org: "Deloitte",
       date: "2025",
       img: "/certs/Deloitte.png",
-      link: "/certs/Deloitte.ong",
+      link: "/certs/Deloitte.png",
     },
+    {
+      title:"Microsoft Excel - Excel from Beginner to Advanced",
+      org: "Udemy/Kyle Pew",
+      date: "2025",
+      img: "/certs/MSExcel.jpg",
+      link: "/certs/MSExcel.jpg",
+    },
+        {
+      title:"Introduction to Blockchain Technology",
+      org: "INSEAD",
+      date: "2025",
+      img: "/certs/BlockTech.png",
+      link: "/certs/BlockTech.png",
+    },
+    {
+      title: "Blockchain and Business",
+      org: "INSEAD",
+      date: "2025",
+      img: "/certs/blockchain.jpg",
+      link: "/certs/blockchain.jpg",
+    },
+    {
+      title: "Introduction to Blockchain for Financial Services",
+      org: "INSEAD",
+      date: "2025",
+      img: "/certs/blockFin.jpg",
+      link: "/certs/blockFin.jpg",
+    },
+
     
   ],
   other: [
@@ -99,31 +128,29 @@ const CERTS = {
       link: "/certs/Stat.jpg",
     },
     {
-      title: "Blockchain and Business",
-      org: "INSEAD",
-      date: "2025",
-      img: "/certs/blockchain.jpg",
-      link: "/certs/blockchain.jpg",
+      title: "Basics of Stock Market",
+      org: "IIT Roorkee/Groww",
+      date: "2024",
+      img: "/certs/StockMarket.png",
+      link: "/certs/StockMarket.png",
     },
-    {
-      title: "Introduction to Blockchain for Financial Services",
-      org: "INSEAD",
-      date: "2025",
-      img: "/certs/blockFin.jpg",
-      link: "/certs/blockFin.jpg",
-    },
+    
   ],
 };
 
 export default function Certificates() {
   const [tab, setTab] = useState("tech");
   const [selectedCert, setSelectedCert] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   // Sort certificates by year (latest to oldest)
   const sortedCerts = {
     tech: [...CERTS.tech].sort((a, b) => Number(b.date) - Number(a.date)),
     other: [...CERTS.other].sort((a, b) => Number(b.date) - Number(a.date)),
   };
+
+  // Show all or first 8 certificates
+  const displayedCerts = showAll ? sortedCerts[tab] : sortedCerts[tab].slice(0, 8);
 
   return (
     <section
@@ -200,7 +227,7 @@ export default function Certificates() {
           }}
         >
           <AnimatePresence mode="wait">
-            {sortedCerts[tab].map((c, idx) => (
+            {displayedCerts.map((c, idx) => (
               <motion.div
                 key={c.title}
                 className="cert card"
@@ -255,6 +282,29 @@ export default function Certificates() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* See More Button Only */}
+        {sortedCerts[tab].length > 8 && !showAll && (
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }}>
+            <button
+              className="btn"
+              onClick={() => setShowAll(true)}
+              style={{
+                background: "#007bff",
+                border: "none",
+                color: "white",
+                borderRadius: 8,
+                padding: "10px 28px",
+                fontSize: 16,
+                cursor: "pointer",
+                fontWeight: 500,
+                transition: "0.3s",
+              }}
+            >
+              See More
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Modal Preview */}

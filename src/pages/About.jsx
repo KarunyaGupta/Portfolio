@@ -182,7 +182,7 @@ const AboutMe = () => {
                   Bachelor of Engineering in Computer Science and Engineering
                 </h4>
                 <span style={{ display: "block", fontWeight: 500, color: "#00ffd0", marginTop: 0, marginBottom: "0.2rem", fontSize: "0.98rem", lineHeight: 1.2 }}>
-                  Specialisation: Full Stack Development
+                  Specialization: Financial Technology (FinTech)
                 </span>
                 <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
                   <strong>Chitkara University</strong> - Rajpura, Punjab

@@ -151,6 +151,7 @@ export default function Resume() {
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>
               <strong>B.E. Computer Science and Engineering</strong> - Chitkara University, 2023–2027 <br />
+              <span style={{ color: "#00ffd0" }}>Specialization: Financial Technology (FinTech)</span><br />
               <span style={{ color: "#aaa" }}>GPA: 8.97</span>
             </li>
             <li style={{ marginTop: 8 }}>
@@ -181,6 +182,26 @@ export default function Resume() {
             <li>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
             <li>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
             <li>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
+          </ul>
+        </motion.div>
+
+        {/* Achievements */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          style={{ marginTop: 40 }}
+        >
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>🏅 Achievements</h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
+            <li>• <b>Winner</b> - DICE Technovision 2.0 Hackathon, Chitkara University</li>
+            <li>• <b>First Place</b> - Model Making, Science Carnival, Chitkara University</li>
+            <li>• <b>Amar Ujala Excellence Award</b> (2023)</li>
+            <li>• <b>Chairperson</b> - IEEE-CIET WIE Student Affinity Group</li>
+            {/* <li>• <b>Successfully organized National level hackathons</b> - HACK INDIA</li> */}
+            <li>• <b>300+ LeetCode Questions</b> solved</li>
+            <li>• <b>Meta Certified Data Analyst</b> (2024)</li>
+            <li>• <b>Power BI Data Analytics Certification</b></li>
           </ul>
         </motion.div>
 
