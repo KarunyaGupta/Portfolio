@@ -16,10 +16,10 @@ import facebookLogo from '../../public/facebook.png'
 export default function Home() {
   const professions = [
     'Pre-Final Year Engineering Student',
-    'Chairperson, WIE IEEE-CIET',
+    'Chairperson, WIE IEEE-CIET SB',
     'Specializing in FinTech',
     'Business & Data Analytics',
-    'Certified Analyst',
+    'Meta Certified Analyst',
     'Learning DataBricks & AI Technologies',
   ]
 
@@ -108,7 +108,7 @@ export default function Home() {
 
           {/* Typing effect only for big screens, plain text for mobile */}
           <p className="typing-effect">
-            Business & Data Analyst&nbsp;|&nbsp;Data Visualization
+            Business & Data Analyst&nbsp;|&nbsp;FinTech Enthusiast
           </p>
 
           {/* Profession Tags */}

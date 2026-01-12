@@ -136,7 +136,7 @@ export default function Navbar() {
                 opacity: 0.95,
               }}
             >
-              Business & Data Analyst
+              Business Analyst | FinTech Enthusiast
             </div>
           </div>
         </div>

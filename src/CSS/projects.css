@@ -1,3 +1,30 @@
+/* Category Tabs (imported from Gallery.css for Projects.jsx) */
+.tab-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid #444;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  background: #191818;
+  color: #fff;
+  border-color: #666;
+  font-style: bold;
+}
 /* Projects.css */
 
 .projects-container {

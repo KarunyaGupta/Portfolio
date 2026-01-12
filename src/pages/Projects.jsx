@@ -166,99 +166,45 @@ export default function Projects() {
 	const filteredProjects = category === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === category);
 	const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
+	// Tab config for categories (for consistent naming)
+	const TABS = [
+		{ key: 'All', label: 'All' },
+		{ key: 'Dashboards', label: 'Dashboards' },
+		{ key: 'Development', label: 'Development' },
+		{ key: 'Others', label: 'Others' },
+	];
+
 	return (
 		<motion.section
-			className="container"
-			initial={{ opacity: 0, y: 30 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6 }}
+			className="gallery-container"
+			initial="hidden"
+			animate="visible"
+			exit="hidden"
 			id="projects"
-			style={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'flex-start',
-				width: '100%',
-			}}
+			style={{ width: '100%' }}
 		>
-			<div
-				className="card"
-				style={{
-					background: '#1A1A1A',
-					borderRadius: 16,
-					padding: 24,
-					boxShadow: '0 0 20px rgba(0,255,255,0.04)',
-					width: '100%',
-					maxWidth: 1100,
-					margin: '0 auto',
-				}}
-			>
-				<motion.h2
-					className="projects-title"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 0.1 }}
-					style={{
-						fontSize: '1.5rem',
-						fontWeight: 600,
-						color: '#06b6d4',
-						marginBottom: '0.3rem',
-						textAlign: 'center',
-					}}
-				>
+			<div className="card" style={{ background: '#1A1A1A', borderRadius: 16, padding: 24, boxShadow: '0 0 20px rgba(0,255,255,0.04)', width: '100%', maxWidth: 1100, margin: '0 auto' }}>
+				<motion.h2 className="projects-title" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} style={{ fontSize: '1.5rem', fontWeight: 600, color: '#06b6d4', marginBottom: '0.3rem', textAlign: 'center' }}>
 					🚀 Projects
 				</motion.h2>
+				<p className="projects-subtitle" style={{ fontSize: '0.88rem', marginBottom: '1.1rem', color: '#9aa0a6', textAlign: 'center' }}>
+					A collection of my major works-blending research, AI innovation, and real-world business impact.
+				</p>
 
-								<p
-										className="projects-subtitle"
-										style={{
-												fontSize: '0.88rem',
-												marginBottom: '1.1rem',
-												color: '#9aa0a6',
-												textAlign: 'center',
-										}}
-								>
-										A collection of my major works-blending research, AI innovation, and real-world business impact.
-								</p>
-
-								{/* Category Buttons - Responsive */}
-								<div
-									className="category-buttons"
-									style={{
-										display: 'flex',
-										flexWrap: 'wrap',
-										justifyContent: 'center',
-										gap: 12,
-										marginBottom: 24,
-									}}
-								>
-									{CATEGORIES.map((cat) => (
-										<motion.button
-											key={cat.key}
-											className={`category-btn${category === cat.key ? ' active' : ''}`}
-											onClick={() => { setCategory(cat.key); setShowAll(false); }}
-											whileHover={{ scale: 1.05 }}
-											whileTap={{ scale: 0.97 }}
-											style={{
-												padding: '6px 18px',
-												borderRadius: 6,
-												background: category === cat.key ? 'linear-gradient(90deg, #06b6d4, #0891b2)' : '#181818',
-												color: category === cat.key ? '#fff' : '#06b6d4',
-												border: '1px solid #06b6d4',
-												fontWeight: 500,
-												fontSize: '0.98rem',
-												cursor: 'pointer',
-												transition: 'background 0.2s, color 0.2s',
-												outline: 'none',
-												minWidth: 110,
-												marginBottom: 8,
-												flex: '1 1 120px',
-												maxWidth: '180px',
-											}}
-										>
-											{cat.label}
-										</motion.button>
-									))}
-								</div>
+				{/* Category Tabs - Styled like Gallery */}
+				<motion.div className="tab-buttons" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
+					{TABS.map((t) => (
+						<motion.button
+							key={t.key}
+							className={`tab${category === t.key ? ' active' : ''}`}
+							onClick={() => { setCategory(t.key); setShowAll(false); }}
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.97 }}
+						>
+							{t.label}
+						</motion.button>
+					))}
+				</motion.div>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
 					{displayedProjects.map((p, idx) => (
