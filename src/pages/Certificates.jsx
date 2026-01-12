@@ -255,6 +255,7 @@ export default function Certificates() {
                     borderRadius: 10,
                     objectFit: "cover",
                     marginBottom: 12,
+                    filter: "brightness(0.7)",
                   }}
                 />
                 <strong style={{ fontSize: 16 }}>{c.title}</strong>
@@ -263,20 +264,32 @@ export default function Certificates() {
                 </div>
 
                 <div style={{ marginTop: 12 }}>
-                  <button
-                    className="btn"
-                    onClick={() => setSelectedCert(c)}
-                    style={{
-                      background: "#007bff",
-                      border: "none",
-                      color: "white",
-                      borderRadius: 6,
-                      padding: "6px 14px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    View Certificate
-                  </button>
+                      <button
+                        className="btn"
+                        onClick={() => setSelectedCert(c)}
+                        style={{
+                          padding: '8px 24px',
+                          borderRadius: 6,
+                          background: '#181818',
+                          color: '#06b6d4',
+                          border: '1px solid #06b6d4',
+                          fontWeight: 500,
+                          fontSize: '0.82rem',
+                          cursor: 'pointer',
+                          boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+                          transition: 'background 0.2s, color 0.2s',
+                        }}
+                        onMouseOver={e => {
+                          e.currentTarget.style.background = '#222';
+                          e.currentTarget.style.color = '#fff';
+                        }}
+                        onMouseOut={e => {
+                          e.currentTarget.style.background = '#181818';
+                          e.currentTarget.style.color = '#06b6d4';
+                        }}
+                      >
+                        View Certificate
+                      </button>
                 </div>
               </motion.div>
             ))}
@@ -286,23 +299,32 @@ export default function Certificates() {
         {/* See More Button Only */}
         {sortedCerts[tab].length > 8 && !showAll && (
           <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }}>
-            <button
-              className="btn"
-              onClick={() => setShowAll(true)}
-              style={{
-                background: "#007bff",
-                border: "none",
-                color: "white",
-                borderRadius: 8,
-                padding: "10px 28px",
-                fontSize: 16,
-                cursor: "pointer",
-                fontWeight: 500,
-                transition: "0.3s",
-              }}
-            >
-              See More
-            </button>
+                <button
+                  className="btn"
+                  onClick={() => setShowAll(true)}
+                  style={{
+                    padding: '8px 24px',
+                    borderRadius: 6,
+                    background: '#181818',
+                    color: '#06b6d4',
+                    border: '1px solid #06b6d4',
+                    fontWeight: 500,
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+                    transition: 'background 0.2s, color 0.2s',
+                  }}
+                  onMouseOver={e => {
+                    e.currentTarget.style.background = '#222';
+                    e.currentTarget.style.color = '#fff';
+                  }}
+                  onMouseOut={e => {
+                    e.currentTarget.style.background = '#181818';
+                    e.currentTarget.style.color = '#06b6d4';
+                  }}
+                >
+                  See More
+                </button>
           </div>
         )}
       </div>
