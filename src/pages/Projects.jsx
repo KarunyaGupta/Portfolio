@@ -41,7 +41,7 @@ const PROJECTS = [
 		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
 		ss:'/projects/googlestock.webp',
 		tech:['PowerBI','Data Cleaning','EDA','Time Series Forecasting','LSTM'],
-		live:'#',
+		live:'https://app.powerbi.com/links/9FaS_bofXm?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
 		code:'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
         ,category: 'Dashboards'
 	},
@@ -53,7 +53,7 @@ const PROJECTS = [
 		tech: ['scikit-learn', 'Numpy', 'Pandas', 'Matplotlib'],
 		live: '#',
 		code: 'https://github.com/KarunyaGupta/Loan-Prediction-Py',
-        category: 'Others',
+        category: 'FinTech',
 	},
 	{
 		title: '🚕 Uber Ride Analysis - End-to-End Business Intelligence Dashboard',
@@ -155,6 +155,7 @@ const CATEGORIES = [
 	{ key: 'All', label: 'All' },
 	{ key: 'Dashboards', label: 'Dashboards' },
 	{ key: 'Development', label: 'Development' },
+	{ key: 'Fintech', label: 'Fintech' },
 	{ key: 'Others', label: 'Others' },
 ];
 
@@ -162,17 +163,18 @@ export default function Projects() {
 	const [showAll, setShowAll] = React.useState(false);
 	const [category, setCategory] = React.useState('All');
 
-	// Filter projects by category
-	const filteredProjects = category === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === category);
-	const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
-
-	// Tab config for categories (for consistent naming)
-	const TABS = [
+	// Use CATEGORIES for dropdown
+	const CATEGORY_OPTIONS = [
 		{ key: 'All', label: 'All' },
 		{ key: 'Dashboards', label: 'Dashboards' },
 		{ key: 'Development', label: 'Development' },
+		{ key: 'FinTech', label: 'FinTech' },
 		{ key: 'Others', label: 'Others' },
 	];
+
+	// Filter projects by category
+	const filteredProjects = category === 'All' ? PROJECTS : PROJECTS.filter(p => (p.category || '').toLowerCase() === category.toLowerCase());
+	const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
 	return (
 		<motion.section
@@ -191,20 +193,34 @@ export default function Projects() {
 					A collection of my major works-blending research, AI innovation, and real-world business impact.
 				</p>
 
-				{/* Category Tabs - Styled like Gallery */}
-				<motion.div className="tab-buttons" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
-					{TABS.map((t) => (
-						<motion.button
-							key={t.key}
-							className={`tab${category === t.key ? ' active' : ''}`}
-							onClick={() => { setCategory(t.key); setShowAll(false); }}
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.97 }}
-						>
-							{t.label}
-						</motion.button>
-					))}
-				</motion.div>
+				{/* Category Search Dropdown */}
+				<div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+					<label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center' }}>
+						Projects by Category:
+					</label>
+					<select
+						id="category-search"
+						value={category}
+						onChange={e => { setCategory(e.target.value); setShowAll(false); }}
+						style={{
+							padding: '8px 24px',
+							borderRadius: 6,
+							background: '#181818',
+							color: '#06b6d4',
+							border: '1px solid #06b6d4',
+							fontWeight: 500,
+							fontSize: '1rem',
+							cursor: 'pointer',
+							boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+							transition: 'background 0.2s, color 0.2s',
+							outline: 'none',
+						}}
+					>
+						{CATEGORY_OPTIONS.map(opt => (
+							<option key={opt.key} value={opt.key}>{opt.label}</option>
+						))}
+					</select>
+				</div>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
 					{displayedProjects.map((p, idx) => (
