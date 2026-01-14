@@ -193,34 +193,78 @@ export default function Projects() {
 					A collection of my major works-blending research, AI innovation, and real-world business impact.
 				</p>
 
-				{/* Category Search Dropdown */}
-				<div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-					<label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center' }}>
-						Projects by Category:
-					</label>
-					<select
-						id="category-search"
-						value={category}
-						onChange={e => { setCategory(e.target.value); setShowAll(false); }}
-						style={{
-							padding: '8px 24px',
-							borderRadius: 6,
-							background: '#181818',
-							color: '#06b6d4',
-							border: '1px solid #06b6d4',
-							fontWeight: 500,
-							fontSize: '1rem',
-							cursor: 'pointer',
-							boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-							transition: 'background 0.2s, color 0.2s',
-							outline: 'none',
-						}}
-					>
-						{CATEGORY_OPTIONS.map(opt => (
-							<option key={opt.key} value={opt.key}>{opt.label}</option>
-						))}
-					</select>
-				</div>
+				   {/* Category Search Dropdown (Responsive) */}
+				   <div className="category-dropdown-responsive" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 10 }}>
+					   <label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center', marginBottom: 6 }}>
+						   Category:
+					   </label>
+					   <select
+						   id="category-search"
+						   value={category}
+						   onChange={e => { setCategory(e.target.value); setShowAll(false); }}
+						   style={{
+							   padding: '8px 24px',
+							   borderRadius: 6,
+							   background: '#181818',
+							   color: '#06b6d4',
+							   border: '1px solid #06b6d4',
+							   fontWeight: 500,
+							   fontSize: '1rem',
+							   cursor: 'pointer',
+							   boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+							   transition: 'background 0.2s, color 0.2s',
+							   outline: 'none',
+							   minWidth: 180,
+							   width: 220,
+							   maxWidth: 260,
+						   }}
+					   >
+						   {CATEGORY_OPTIONS.map(opt => (
+							   <option key={opt.key} value={opt.key}>{opt.label}</option>
+						   ))}
+					   </select>
+					   <style>{`
+						   /* Only stack vertically on very small screens */
+						   @media (max-width: 480px) {
+							   .category-dropdown-responsive {
+								   flex-direction: column !important;
+								   align-items: stretch !important;
+								   gap: 6px !important;
+							   }
+							   .category-dropdown-responsive label {
+								   margin-right: 0 !important;
+								   margin-bottom: 4px !important;
+								   text-align: left !important;
+							   }
+							   .category-dropdown-responsive select {
+								   min-width: 160px !important;
+								   width: 200px !important;
+								   max-width: 98vw !important;
+								   font-size: 0.98rem !important;
+								   margin-left: auto !important;
+								   margin-right: auto !important;
+								   display: block !important;
+							   }
+						   }
+						   @media (min-width: 481px) {
+							   .category-dropdown-responsive {
+								   flex-direction: row !important;
+								   align-items: center !important;
+								   gap: 10px !important;
+							   }
+							   .category-dropdown-responsive label {
+								   margin-right: 12px !important;
+								   margin-bottom: 0 !important;
+								   text-align: center !important;
+							   }
+							   .category-dropdown-responsive select {
+								   width: 220px !important;
+								   min-width: 180px !important;
+								   max-width: 260px !important;
+							   }
+						   }
+					   `}</style>
+				   </div>
 
 				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
 					{displayedProjects.map((p, idx) => (
