@@ -166,9 +166,9 @@ export default function Projects() {
 	// Use CATEGORIES for dropdown
 	const CATEGORY_OPTIONS = [
 		{ key: 'All', label: 'All' },
-		{ key: 'Dashboards', label: 'Dashboards' },
-		{ key: 'Development', label: 'Development' },
-		{ key: 'FinTech', label: 'FinTech' },
+		{ key: 'Dashboards', label: 'Analytics Dashboards' },
+		{ key: 'Development', label: 'Web Development (MERN)' },
+		{ key: 'FinTech', label: 'Financial Technology (FinTech)' },
 		{ key: 'Others', label: 'Others' },
 	];
 

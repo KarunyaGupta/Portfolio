@@ -60,7 +60,7 @@ const AboutMe = () => {
           }}
         >
           Hi, I’m <strong>Karunya Gupta</strong> - an aspiring{" "}
-          <strong>Data Analyst</strong> and{" "}
+          <strong>Analyst</strong> and{" "}
           <strong></strong> with a passion for turning
           data into actionable insights.
         </p>
@@ -108,8 +108,8 @@ const AboutMe = () => {
           <div>
           <h2 className="text-xl font-medium mb-2">Open to</h2>
           <p className="text-gray-700" style={{textAlign: "justify" }}>
-          Internships or projects in <strong>Data Analysis</strong> /{' '}
-          <strong>Business Analysis</strong>, semi-technical roles bridging
+          Internships or projects in <strong>Business Analysis</strong> /{' '}
+          <strong>FinTech Domain</strong>, semi-technical roles bridging
           technology and business, and collaborations in <strong>AI</strong>,
           analytics, and innovation-driven projects.
           </p>
@@ -118,8 +118,8 @@ const AboutMe = () => {
 
           <footer className="mt-6 text-sm text-gray-600" style={{textAlign: "justify" }}>
           <p>
-          Let’s connect if you’re looking for an enthusiastic learner who combines
-          <strong> technical skills</strong> with <strong>analytical thinking</strong> and
+          Let’s connect if you’re looking for an enthusiastic learner who combines my
+          <strong> skills</strong> with <strong>analytical thinking</strong> and
           an eagerness to contribute to data-driven decision making.
           </p>
           </footer>
@@ -188,7 +188,7 @@ const AboutMe = () => {
                   <strong>Chitkara University</strong> - Rajpura, Punjab
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  3rd Year (Pursuing) | GPA: 8.98
+                  3rd Year (Pursuing) | GPA: 8.97
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>2023 – 2027</p>
               </div>
@@ -222,7 +222,7 @@ const AboutMe = () => {
                   <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Himachal Pradesh Board | Percentage: 89.8%
+                  Himachal Pradesh Board (HPBOSE) | Percentage: 89.8%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2023</p>
               </div>
@@ -256,7 +256,7 @@ const AboutMe = () => {
                   <strong>Lord's Convent School</strong> - Sarkaghat, Mandi, Himachal Pradesh,
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Himachal Pradesh Board | Percentage: 88.9%
+                  Himachal Pradesh Board (HPBOSE) | Percentage: 88.9%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2021</p>
               </div>

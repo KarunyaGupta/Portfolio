@@ -178,7 +178,7 @@ export default function Resume() {
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
             <li>1️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
-            <li>2️⃣ <b>skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
+            <li>2️⃣ <b>Skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
             <li>3️⃣ <b>Employ Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li>
             <li>4️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
             <li>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
