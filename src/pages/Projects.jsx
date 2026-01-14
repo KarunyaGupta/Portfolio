@@ -237,13 +237,24 @@ export default function Projects() {
 								   text-align: left !important;
 							   }
 							   .category-dropdown-responsive select {
-								   min-width: 160px !important;
-								   width: 200px !important;
-								   max-width: 98vw !important;
+								   width: calc(100% - 10px) !important;
+								   min-width: 0 !important;
+								   max-width: 100% !important;
 								   font-size: 0.98rem !important;
-								   margin-left: auto !important;
-								   margin-right: auto !important;
+								   margin: 0 auto 0 auto !important;
 								   display: block !important;
+								   overflow: auto !important;
+								   text-overflow: ellipsis !important;
+								   white-space: nowrap !important;
+								   box-sizing: border-box !important;
+								   padding: 5px !important;
+								   background: #181818 !important;
+							   }
+							   .category-dropdown-responsive option {
+								   text-overflow: ellipsis !important;
+								   white-space: nowrap !important;
+								   overflow: hidden !important;
+								   max-width: 95vw !important;
 							   }
 						   }
 						   @media (min-width: 481px) {
