@@ -41,6 +41,7 @@ export default function App() {
       </main>
       <footer className="footer">
         © {new Date().getFullYear()} Karunya Gupta | All Rights Reserved.
+        {/* Designed by [Your Name] | AI-Assisted via GitHub Copilot | 2026 */}
       </footer>
     </div>
   )

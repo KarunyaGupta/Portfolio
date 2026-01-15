@@ -50,32 +50,34 @@ const SKILLS = [
 
 const ROWS = [
 	[
-		{ title: "Languages", items: ["Python", "Java", "SQL"] },
-		// { title: "Web Technologies", items: ["HTML", "CSS", "JavaScript", "React"] },
+		{ title: "Languages", items: ["Python", "Java", "SQL", "R"] },
+		{ title: "Business Intelligence Tools", items: ["PowerBI", "Tableau", "DataBricks", "Google Analytics"] },
 		{
 			title: "Databases & Tools",
 			items: [
 				"MySQL",
 				"MongoDB",
-				"PowerBI",
-				"Tableau",
 				"Excel",
 				"Power Point",
 				"Git-GitHub",
-				"Google Analytics",
-				"DataBricks",
 			],
+		},
+	],
+	[
+		{
+			title: "AI Tools & Technologies",
+			items: ["Vibe Coding", "Prompt Engineering", "GitHub Copilot", "Cursor AI", "ChatGPT"],
 		},
 		{
 			title: "Development Environment",
 			items: ["PyCharm", "Jupyter Notebook", "Visual Studio Code", "IntelliJ IDEA"],
 		},
-	],
-	[
 		{
 			title: "Libraries",
 			items: ["Pandas", "Numpy", "Matplotlib", "Seaborn", "Scikit-Learn"],
 		},
+	],
+	[
 		{
 			title: "Soft Skills",
 			items: [
