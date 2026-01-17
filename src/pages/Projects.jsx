@@ -150,18 +150,21 @@ const PROJECTS = [
 ]
 
 
+
 // Category tabs config
 const CATEGORIES = [
-	{ key: 'All', label: 'All' },
-	{ key: 'Dashboards', label: 'Dashboards' },
-	{ key: 'Development', label: 'Development' },
-	{ key: 'Fintech', label: 'Fintech' },
-	{ key: 'Others', label: 'Others' },
+  { key: 'All', label: 'All' },
+  { key: 'Dashboards', label: 'Dashboards' },
+  { key: 'Development', label: 'Development' },
+  { key: 'FinTech', label: 'FinTech' },
+  { key: 'Others', label: 'Others' },
 ];
+
 
 export default function Projects() {
 	const [showAll, setShowAll] = React.useState(false);
 	const [category, setCategory] = React.useState('All');
+	const [skillQuery, setSkillQuery] = React.useState('');
 
 	// Use CATEGORIES for dropdown
 	const CATEGORY_OPTIONS = [
@@ -172,8 +175,19 @@ export default function Projects() {
 		{ key: 'Others', label: 'Others' },
 	];
 
-	// Filter projects by category
-	const filteredProjects = category === 'All' ? PROJECTS : PROJECTS.filter(p => (p.category || '').toLowerCase() === category.toLowerCase());
+	// Fuzzy match for skills (case-insensitive, partial match)
+	function fuzzySkillMatch(techArr, query) {
+		if (!query) return true;
+		const q = query.trim().toLowerCase();
+		return techArr.some(t => t.toLowerCase().includes(q));
+	}
+
+	// Filter projects by category and skill
+	const filteredProjects = PROJECTS.filter(p => {
+		const catMatch = category === 'All' ? true : (p.category || '').toLowerCase() === category.toLowerCase();
+		const skillMatch = fuzzySkillMatch(p.tech || [], skillQuery);
+		return catMatch && skillMatch;
+	});
 	const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
 	return (
@@ -193,92 +207,134 @@ export default function Projects() {
 					A collection of my major works-blending research, AI innovation, and real-world business impact.
 				</p>
 
-				   {/* Category Search Dropdown (Responsive) */}
-				   <div className="category-dropdown-responsive" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 10 }}>
-					   <label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center', marginBottom: 6 }}>
-						   Category:
-					   </label>
-					   <select
-						   id="category-search"
-						   value={category}
-						   onChange={e => { setCategory(e.target.value); setShowAll(false); }}
-						   style={{
-							   padding: '8px 24px',
-							   borderRadius: 6,
-							   background: '#181818',
-							   color: '#06b6d4',
-							   border: '1px solid #06b6d4',
-							   fontWeight: 500,
-							   fontSize: '1rem',
-							   cursor: 'pointer',
-							   boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-							   transition: 'background 0.2s, color 0.2s',
-							   outline: 'none',
-							   minWidth: 180,
-							   width: 220,
-							   maxWidth: 260,
-						   }}
-					   >
-						   {CATEGORY_OPTIONS.map(opt => (
-							   <option key={opt.key} value={opt.key}>{opt.label}</option>
-						   ))}
-					   </select>
-					   <style>{`
-						   /* Only stack vertically on very small screens */
-						   @media (max-width: 480px) {
-							   .category-dropdown-responsive {
-								   flex-direction: column !important;
-								   align-items: stretch !important;
-								   gap: 6px !important;
-							   }
-							   .category-dropdown-responsive label {
-								   margin-right: 0 !important;
-								   margin-bottom: 4px !important;
-								   text-align: left !important;
-							   }
-							   .category-dropdown-responsive select {
-								   width: calc(100% - 10px) !important;
-								   min-width: 0 !important;
-								   max-width: 100% !important;
-								   font-size: 0.98rem !important;
-								   margin: 0 auto 0 auto !important;
-								   display: block !important;
-								   overflow: auto !important;
-								   text-overflow: ellipsis !important;
-								   white-space: nowrap !important;
-								   box-sizing: border-box !important;
-								   padding: 5px !important;
-								   background: #181818 !important;
-							   }
-							   .category-dropdown-responsive option {
-								   text-overflow: ellipsis !important;
-								   white-space: nowrap !important;
-								   overflow: hidden !important;
-								   max-width: 95vw !important;
-							   }
-						   }
-						   @media (min-width: 481px) {
-							   .category-dropdown-responsive {
-								   flex-direction: row !important;
-								   align-items: center !important;
-								   gap: 10px !important;
-							   }
-							   .category-dropdown-responsive label {
-								   margin-right: 12px !important;
-								   margin-bottom: 0 !important;
-								   text-align: center !important;
-							   }
-							   .category-dropdown-responsive select {
-								   width: 220px !important;
-								   min-width: 180px !important;
-								   max-width: 260px !important;
-							   }
-						   }
-					   `}</style>
-				   </div>
 
-				<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
-					{displayedProjects.map((p, idx) => (
+							{/* Skill & Category Filter Row (desktop/tablet only) */}
+							  <div className="filter-row" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 32 }}>
+								{/* Category Dropdown */}
+								<div className="category-dropdown-responsive" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+									<label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center', marginBottom: 0 }}>
+										Category:
+									</label>
+									<select
+										id="category-search"
+										value={category}
+										onChange={e => { setCategory(e.target.value); setShowAll(false); }}
+										style={{
+											padding: '8px 24px',
+											borderRadius: 6,
+											background: '#181818',
+											color: '#06b6d4',
+											border: '1px solid #06b6d4',
+											fontWeight: 500,
+											fontSize: '1rem',
+											cursor: 'pointer',
+											boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+											transition: 'background 0.2s, color 0.2s',
+											outline: 'none',
+											minWidth: 180,
+											width: 220,
+											maxWidth: 260,
+										}}
+									>
+										{CATEGORY_OPTIONS.map(opt => (
+											<option key={opt.key} value={opt.key}>{opt.label}</option>
+										))}
+									</select>
+								</div>
+								{/* Skill Search (hidden on mobile, right side) */}
+								<div className="skill-search-container" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+									<label htmlFor="skill-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 8, alignSelf: 'center', marginBottom: 0 }}>
+										Filter by Skills:
+									</label>
+									<input
+										id="skill-search"
+										type="text"
+										value={skillQuery}
+										onChange={e => { setSkillQuery(e.target.value); setShowAll(false); }}
+										placeholder="e.g. SQL, PowerBI, React"
+										style={{
+											padding: '8px 16px',
+											borderRadius: 6,
+											background: '#181818',
+											color: '#06b6d4',
+											border: '1px solid #06b6d4',
+											fontWeight: 500,
+											fontSize: '1rem',
+											minWidth: 120,
+											width: 180,
+											maxWidth: 220,
+											outline: 'none',
+											transition: 'background 0.2s, color 0.2s',
+										}}
+										className="skill-search-input"
+									/>
+								</div>
+								<style>{`
+									/* Hide skill search on mobile, show on tablet/desktop */
+									@media (max-width: 768px) {
+										.skill-search-container {
+											display: none !important;
+										}
+									}
+									@media (max-width: 480px) {
+										.category-dropdown-responsive {
+											flex-direction: column !important;
+											align-items: stretch !important;
+											gap: 6px !important;
+										}
+										.category-dropdown-responsive label {
+											margin-right: 0 !important;
+											margin-bottom: 4px !important;
+											text-align: left !important;
+										}
+										.category-dropdown-responsive select {
+											width: calc(100% - 10px) !important;
+											min-width: 0 !important;
+											max-width: 100% !important;
+											font-size: 0.98rem !important;
+											margin: 0 auto 0 auto !important;
+											display: block !important;
+											overflow: auto !important;
+											text-overflow: ellipsis !important;
+											white-space: nowrap !important;
+											box-sizing: border-box !important;
+											padding: 5px !important;
+											background: #181818 !important;
+										}
+										.category-dropdown-responsive option {
+											text-overflow: ellipsis !important;
+											white-space: nowrap !important;
+											overflow: hidden !important;
+											max-width: 95vw !important;
+										}
+									}
+									@media (min-width: 481px) {
+										.category-dropdown-responsive {
+											flex-direction: row !important;
+											align-items: center !important;
+											gap: 10px !important;
+										}
+										.category-dropdown-responsive label {
+											margin-right: 12px !important;
+											margin-bottom: 0 !important;
+											text-align: center !important;
+										}
+										.category-dropdown-responsive select {
+											width: 220px !important;
+											min-width: 180px !important;
+											max-width: 260px !important;
+										}
+									}
+								`}</style>
+							</div>
+
+							<div className="projects-grid" style={{ justifyItems: 'center', alignItems: 'stretch' }}>
+								{displayedProjects.length === 0 && (
+									<div style={{ color: '#f87171', textAlign: 'center', margin: '2rem 0', fontWeight: 500 }}>
+										No projects found for the selected skill and category.
+									</div>
+								)}
+								{displayedProjects.map((p, idx) => (
 						<motion.div
 							key={idx}
 							className="project-card"
