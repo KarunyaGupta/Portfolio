@@ -27,22 +27,23 @@
   justify-content: center;
 }
 
+
 .tab {
-  background: transparent;
-  border: 1px solid #444;
-  padding: 8px 18px;
+  border: 1px solid var(--accent);
+  padding: 8px 16px;
   border-radius: 20px;
-  color: #ccc;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
   cursor: pointer;
+  background: rgba(255,255,255,0.05);
   transition: all 0.3s ease;
 }
 
 .tab.active,
 .tab:hover {
-  background: #1f1f1f;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
   color: #fff;
-  border-color: #666;
+  border-color: var(--accent);
 }
 
 .post-feed {

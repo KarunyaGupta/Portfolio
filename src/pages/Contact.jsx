@@ -21,7 +21,8 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
+  // status: { msg: string, type: 'success' | 'error' | 'info' }
+  const [status, setStatus] = useState({ msg: "", type: "info" });
 
   // Helper to capture a screenshot of a selector and return a data URL
   const captureScreenshot = async (selector) => {
@@ -69,18 +70,18 @@ export default function Contact() {
     e.preventDefault();
 
     if (!form.name || !form.contact || !form.subject || !form.message) {
-      setStatus("⚠️ Please fill in all fields.");
+      setStatus({ msg: "⚠️ Please fill in all fields.", type: "error" });
       return;
     }
 
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     const isEmail = emailPattern.test(form.contact);
     if (!isEmail && isNaN(form.contact)) {
-      setStatus("⚠️ Please enter a valid email or phone number.");
+      setStatus({ msg: "⚠️ Please enter a valid email or phone number.", type: "error" });
       return;
     }
 
-    setStatus("Sending...");
+    setStatus({ msg: "Sending...", type: "info" });
 
     // EmailJS usage: serviceId, templateId, templateParams, publicKey
     emailjs
@@ -98,12 +99,12 @@ export default function Contact() {
       )
       .then(
         () => {
-          setStatus("Sent! Karunya Gupta will get back to you.");
+          setStatus({ msg: "Message sent successfully!", type: "success" });
           setForm({ name: "", contact: "", subject: "", message: "" });
         },
         (error) => {
           console.error("FAILED...", error);
-          setStatus("❌ Failed to send. Try again later.");
+          setStatus({ msg: "Server error, Try Again after some time", type: "error" });
         }
       );
   };
@@ -251,7 +252,31 @@ export default function Contact() {
           🚀 Send Message
         </motion.button>
 
-        {status && <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="contact-status">{status}</motion.p>}
+        {status && status.msg && (
+          <motion.p
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className={`contact-status${status.type === 'error' ? ' error' : status.type === 'success' ? ' success' : ''}`}
+            style={{
+              border: '1.5px solid',
+              borderColor: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? '#06b6d4' : '#888',
+              color: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? '#06b6d4' : '#fff',
+              background: 'rgba(6,182,212,0.08)',
+              borderRadius: 6,
+              padding: '8px 18px',
+              fontWeight: 500,
+              fontSize: '0.95rem',
+              marginTop: 8,
+              textAlign: 'center',
+              maxWidth: 350,
+              alignSelf: 'center',
+              boxShadow: '0 2px 12px rgba(6,182,212,0.08)',
+            }}
+          >
+            {status.msg}
+          </motion.p>
+        )}
       </motion.form>
     </section>
   );

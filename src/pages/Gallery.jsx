@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Snackbar from "../components/Snackbar";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "../CSS/Gallery.css";
@@ -76,6 +77,19 @@ const tabContentVariants = {
 export default function Gallery() {
   const [tab, setTab] = useState("personal");
   const [zoom, setZoom] = useState({ img: null, post: null, index: 0 });
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMsg, setSnackbarMsg] = useState("");
+
+  // Show snackbar when tab changes
+  const handleTabChange = (key) => {
+    setTab(key);
+    if (key === "personal") {
+      setSnackbarMsg("Grow section");
+    } else if (key === "achievements") {
+      setSnackbarMsg("Achievement section");
+    }
+    setSnackbarOpen(true);
+  };
 
   // Disabled: openZoom does nothing
   const openZoom = (post, index) => {};
@@ -127,7 +141,7 @@ export default function Gallery() {
           <motion.button
             key={t.key}
             className={`tab ${tab === t.key ? "active" : ""}`}
-            onClick={() => setTab(t.key)}
+            onClick={() => handleTabChange(t.key)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -137,6 +151,8 @@ export default function Gallery() {
       </motion.div>
 
       {/* 🖼️ Posts with Animation on Tab Switch */}
+      {/* Snackbar for section info */}
+      <Snackbar open={snackbarOpen} message={snackbarMsg} onClose={() => setSnackbarOpen(false)} duration={2200} />
       <AnimatePresence mode="wait">
         <motion.div
           key={tab}

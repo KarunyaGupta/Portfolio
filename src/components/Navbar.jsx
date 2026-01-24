@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import Snackbar from "./Snackbar";
 import { NavLink } from "react-router-dom"; // add useLocation
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Home", to: "/" },
-  { label: "Projects", to: "/projects" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Skills", to: "/skills" },
-  { label: "Certificates", to: "/certificates" },
-  { label: "Blog", to: "/blog" },
-  { label: "Resume", to: "/resume" },
-  { label: "About Me", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", to: "/", snackbar: "Welcome Home!" },
+  { label: "Projects", to: "/projects", snackbar: "Projects Section" },
+  { label: "Gallery", to: "/gallery", snackbar: "Gallery Section" },
+  { label: "Skills", to: "/skills", snackbar: "Skills Section" },
+  { label: "Certificates", to: "/certificates", snackbar: "Certificates Section" },
+  { label: "Blog", to: "/blog", snackbar: "Blog Section" },
+  { label: "Resume", to: "/resume", snackbar: "Resume Section" },
+  { label: "About Me", to: "/about", snackbar: "About Me Section" },
+  { label: "Contact", to: "/contact", snackbar: "Contact Section" },
 ];
 
 export default function Navbar() {
@@ -19,6 +20,14 @@ export default function Navbar() {
   const [showButton, setShowButton] = useState(false);
   const navRef = useRef(null);
   const linksRef = useRef(null);
+  // Snackbar state
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMsg, setSnackbarMsg] = useState("");
+
+  const handleSectionClick = (msg) => {
+    setSnackbarMsg(msg);
+    setSnackbarOpen(true);
+  };
 
   // breakpoint to force mobile layout on narrow screens
   const MOBILE_BREAKPOINT = 920;
@@ -167,6 +176,7 @@ export default function Navbar() {
                 fontWeight: 500,
                 whiteSpace: "nowrap",
               }}
+              onClick={() => handleSectionClick(l.snackbar)}
             >
               {({ isActive }) => (
                 <motion.div
@@ -291,7 +301,10 @@ export default function Navbar() {
                 <NavLink
                   key={l.to}
                   to={l.to}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    handleSectionClick(l.snackbar);
+                  }}
                   style={{
                     color: "#fff",
                     textDecoration: "none",
@@ -309,6 +322,8 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Snackbar */}
+      <Snackbar open={snackbarOpen} message={snackbarMsg} onClose={() => setSnackbarOpen(false)} />
     </>
   );
 }
