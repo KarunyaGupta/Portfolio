@@ -8,6 +8,7 @@ const links = [
   { label: "Projects", to: "/projects", snackbar: "Projects Section" },
   { label: "Gallery", to: "/gallery", snackbar: "Gallery Section" },
   { label: "Skills", to: "/skills", snackbar: "Skills Section" },
+  { label: "Experience", to: "/experience", snackbar: "Experience Section" },
   { label: "Certificates", to: "/certificates", snackbar: "Certificates Section" },
   { label: "Blog", to: "/blog", snackbar: "Blog Section" },
   { label: "Resume", to: "/resume", snackbar: "Resume Section" },

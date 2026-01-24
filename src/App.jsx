@@ -11,6 +11,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import SkillNetwork from './pages/Skills'  
+import Experience from './pages/Experience';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/about" element={<About />} /> {/* ✅ fixed lowercase */}
           <Route path="/contact" element={<Contact />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

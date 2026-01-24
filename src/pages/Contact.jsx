@@ -33,34 +33,34 @@ export default function Contact() {
   };
 
   // Main handler to generate PDF with screenshots of main pages
-  const handleDownloadPortfolioPDF = async () => {
-    setStatus("Generating portfolio PDF...");
-    // List of routes and selectors to capture
-    const pages = [
-      { path: "/", selector: "body", label: "Home" },
-      { path: "/about", selector: "body", label: "About" },
-      { path: "/projects", selector: "body", label: "Projects" },
-      { path: "/resume", selector: "body", label: "Resume" },
-      { path: "/contact", selector: "body", label: "Contact" },
-    ];
-    const pdf = new jsPDF({ orientation: "portrait", unit: "px", format: "a4" });
-    let first = true;
-    for (const page of pages) {
-      // Navigate to the page
-      window.history.pushState({}, "", page.path);
-      // Wait for the page to render (may need adjustment for SPA)
-      await new Promise((res) => setTimeout(res, 800));
-      const imgData = await captureScreenshot(page.selector);
-      if (imgData) {
-        if (!first) pdf.addPage();
-        pdf.text(page.label, 20, 30);
-        pdf.addImage(imgData, "PNG", 20, 40, 400, 500, undefined, "FAST");
-        first = false;
-      }
-    }
-    pdf.save("Portfolio_Screenshots.pdf");
-    setStatus("Portfolio PDF downloaded!");
-  };
+  // const handleDownloadPortfolioPDF = async () => {
+  //   setStatus("Generating portfolio PDF...");
+  //   // List of routes and selectors to capture
+  //   const pages = [
+  //     { path: "/", selector: "body", label: "Home" },
+  //     { path: "/about", selector: "body", label: "About" },
+  //     { path: "/projects", selector: "body", label: "Projects" },
+  //     { path: "/resume", selector: "body", label: "Resume" },
+  //     { path: "/contact", selector: "body", label: "Contact" },
+  //   ];
+  //   const pdf = new jsPDF({ orientation: "portrait", unit: "px", format: "a4" });
+  //   let first = true;
+  //   for (const page of pages) {
+  //     // Navigate to the page
+  //     window.history.pushState({}, "", page.path);
+  //     // Wait for the page to render (may need adjustment for SPA)
+  //     await new Promise((res) => setTimeout(res, 800));
+  //     const imgData = await captureScreenshot(page.selector);
+  //     if (imgData) {
+  //       if (!first) pdf.addPage();
+  //       pdf.text(page.label, 20, 30);
+  //       pdf.addImage(imgData, "PNG", 20, 40, 400, 500, undefined, "FAST");
+  //       first = false;
+  //     }
+  //   }
+  //   pdf.save("Portfolio_Screenshots.pdf");
+  //   setStatus("Portfolio PDF downloaded!");
+  // };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

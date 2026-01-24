@@ -1,0 +1,110 @@
+.timeline {
+  position: relative;
+  margin-left: 32px;
+  padding-left: 24px;
+  border-left: 2px solid #444a;
+}
+.timeline-org {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+.timeline-org-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  background: #fff;
+  object-fit: contain;
+  border: 2px solid #00ffd0;
+  box-shadow: 0 2px 12px #00ffd033;
+}
+.timeline-org-info {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-org-title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #fff;
+}
+.timeline-org-meta {
+  color: #b3b3b3;
+  font-size: 0.98rem;
+  margin-top: 2px;
+}
+.timeline-role {
+  position: relative;
+  margin-bottom: 2.2rem;
+  padding-left: 32px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background: #00ffd0;
+  border-radius: 50%;
+  border: 3px solid #222;
+  box-shadow: 0 0 0 3px #00ffd033;
+}
+.timeline-role-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.timeline-role-meta {
+  color: #b3b3b3;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+.timeline-role-desc {
+  color: #e0e0e0;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+.timeline-role-skills {
+  color: #fff;
+  font-size: 0.97rem;
+  margin-bottom: 0.5rem;
+}
+.timeline-role-skills b {
+  color: #00ffd0;
+  font-weight: 600;
+}
+.timeline-role-img {
+  margin: 0.5rem 0 0.2rem 0;
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1.5px solid #00ffd0;
+  background: #fff;
+  box-shadow: 0 2px 12px #00ffd033;
+}
+.timeline-role-img-caption {
+  color: #fff;
+  font-size: 0.97rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 700px) {
+  .timeline {
+    margin-left: 0;
+    padding-left: 18px;
+    border-left: 2px solid #444a;
+  }
+  .timeline-org {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .timeline-role {
+    padding-left: 18px;
+  }
+  .timeline-dot {
+    left: -18px;
+  }
+}
