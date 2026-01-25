@@ -58,6 +58,7 @@ const ROWS = [
 				"MySQL",
 				"MongoDB",
 				"Excel",
+				"Notion",
 				"Power Point",
 				"Git-GitHub",
 			],
