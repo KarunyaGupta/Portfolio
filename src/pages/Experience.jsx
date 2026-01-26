@@ -212,6 +212,7 @@ export default function Experience() {
                 borderRadius: '12px',
                 boxShadow: '0 2px 18px 0 rgba(0,123,255,0.10)',
                 marginBottom: '1.5rem',
+                // textAlign:'justify',
                 padding: '1.5rem 1rem',
                 transition: 'box-shadow 0.2s',
                 width: '100%',
@@ -319,7 +320,9 @@ export default function Experience() {
                         ) : null}
                         {role.loc && <> | {role.loc}</>}
                       </div>
-                      {role.desc && <div className="timeline-role-desc">{role.desc}</div>}
+                      {role.desc && (
+                        <div className="timeline-role-desc" style={{ textAlign: 'justify' }}>{role.desc}</div>
+                      )}
                       {role.skills && (
                         <div className="timeline-role-skills">
                           <b>Skills:</b> {role.skills.join(' · ')}
