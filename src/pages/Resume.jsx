@@ -156,12 +156,12 @@ export default function Resume() {
             </li>
             <li style={{ marginTop: 8 }}>
               <strong>12th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2023) <br />
-              <span style={{ color: "#00ffd0", fontSize: "0.89em", marginTop: 1}}>(PCM, Non Medical)</span><br />
+              <span style={{ color: "#00ffd0", fontSize: "0.89em", marginTop: 1}}>Science Stream (PCM + Computer Science)</span><br />
 
               <span style={{ color: "#aaa" }}>Percentage: 89.8%</span>
             </li>
             <li style={{ marginTop: 8 }}>
-              <strong>10th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2020)
+              <strong>10th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2021)
               <br />
               <span style={{ color: "#aaa" }}>Percentage: 88.9%</span>
             </li>
