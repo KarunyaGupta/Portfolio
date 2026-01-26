@@ -9,7 +9,7 @@ const IMAGES = {
     {
       id: 1,
       caption: "One year ago, as a Promotion Coordinator, I stood in the crowd on IEEE Day, watching the cake being cut and thinking, \"I wish I were the one up there.\" 🎂 hat simple desire felt like a distant dream. 💫\n\n That wish feels like a prophecy fulfilled. I'm overwhelmed with emotion and gratitude to be celebrating IEEE Day as the nominated WIE Chairperson, standing not in the crowd, but right there, cutting the cake. 🥳",
-      photos: ["/gallery/ieee.webp"],
+      photos: ["/gallery/IEEE.webp"],
     },
     {
       id: 2,
