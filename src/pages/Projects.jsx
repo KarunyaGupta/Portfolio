@@ -147,6 +147,15 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/Portfolio',
         category: 'Development',
 	},
+	{
+		title: 'Productive Notion Dashboard',
+		desc: 'A comprehensive Notion dashboard template designed to enhance productivity and organization. It includes sections for task management, goal tracking, habit monitoring, and personal journaling.',
+		ss: '/projects/notiondash1.png',
+		tech: ['Notion','Creativity'],
+		live: 'https://www.notion.so/Dashboard-2f35ba28887a80cb8599fa64b9cd8a7c?source=copy_link',
+		code: '#',
+		category: 'Others',
+	}
 ]
 
 
