@@ -9,13 +9,19 @@ const IMAGES = {
     {
       id: 1,
       caption: "One year ago, as a Promotion Coordinator, I stood in the crowd on IEEE Day, watching the cake being cut and thinking, \"I wish I were the one up there.\" 🎂 hat simple desire felt like a distant dream. 💫\n\n That wish feels like a prophecy fulfilled. I'm overwhelmed with emotion and gratitude to be celebrating IEEE Day as the nominated WIE Chairperson, standing not in the crowd, but right there, cutting the cake. 🥳",
-      photos: ["/gallery/IEEE.webp"],
+      photos: ["/gallery/ieee.webp"],
     },
     {
       id: 2,
       caption:
         "Over the past five Saturdays, I embarked on a truly transformative learning journey. From conquering stage fear and engaging in debates to mastering LinkedIn strategy and delivering compelling product pitches like a seasoned seller, each session pushed the boundaries of my comfort zone. These classes went beyond mere communication techniques, teaching me the invaluable skills of connecting, expressing, and collaborating confidently and impactfully with peers and colleagues.",
       photos: [ "/gallery/communication.webp"],
+    },
+    {
+      id: 3,
+      caption:
+        "What started as a classroom activity soon turned into one of the most memorable learning experiences of my journey at Chitkara University. During our final Shark Tank–style session, my team and I stepped into the shoes of entrepreneurs to pitch an idea we passionately believed in — 'Calories Meter Spoon.' The idea was simple yet powerful: a smart solution that helps people track their calorie intake effortlessly, making healthier choices easier in everyday life. Standing in front of the panel, presenting our idea, answering questions, and defending our vision was both nerve-racking and exhilarating. It tested our creativity, teamwork, and communication skills — and reminded us that innovation thrives where collaboration meets courage. This experience taught me far more than pitching an idea. It taught me how to think like a problem-solver, work like a team player, and present like an entrepreneur. A simple spoon became a symbol of learning by doing, and a reminder that impactful ideas can come from anywhere — even a classroom.",
+      photos: ["/gallery/IMG_9442.jpg"],
     },
   ],
   achievements: [
@@ -161,6 +167,15 @@ export default function Gallery() {
           initial="hidden"
           animate="visible"
           exit="exit"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: isAchievements ? '1fr 1fr' : '1fr 1fr',
+            gap: '1.5rem',
+            marginTop: '1.2rem',
+            marginBottom: '1.2rem',
+            // Responsive: 1 column on mobile
+            ...(window.innerWidth <= 700 ? { gridTemplateColumns: '1fr' } : {}),
+          }}
         >
           {posts.map((post, postIdx) => (
             <React.Fragment key={`${post.id}-${postIdx}`}>

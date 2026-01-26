@@ -55,13 +55,14 @@ export default function Resume() {
           A quick glance at my journey, skills, and achievements.
         </motion.p>
 
-        {/* Profile Header */}
+        {/* Profile Header - Row with Columns */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           style={{
             display: "flex",
+            flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "flex-start",
             flexWrap: "wrap",
@@ -71,7 +72,7 @@ export default function Resume() {
             borderRadius: 12,
           }}
         >
-          <div>
+          <div style={{ flex: 1, minWidth: 220 }}>
             <h3 style={{ fontSize: 24, color: "#00b4ff", marginBottom: 4 }}>
               👨‍💻 Karunya Gupta
             </h3>
@@ -96,7 +97,6 @@ export default function Resume() {
                 title="Click to call or copy number"
                 onClick={() => {
                   navigator.clipboard.writeText('+91 9805946982');
-                  // alert('Phone number copied to clipboard!');
                 }}
               >
                 <a 
@@ -113,6 +113,8 @@ export default function Resume() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             style={{
+              flex: 1,
+              minWidth: 220,
               background: "linear-gradient(135deg, #00b4ff44, #0b0b0b)",
               borderRadius: 12,
               padding: "14px 20px",
