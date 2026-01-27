@@ -30,7 +30,7 @@ function getDuration(start, end) {
 const TIMELINE = [
   {
     org: 'IEEE-CIET Student Branch',
-    orgLogo: 'public/logos/ieeelogo.webp',
+    orgLogo: 'logos/ieeelogo.webp',
     orgMeta: { type: 'Full-time', start: '2023-09-01', end: 'Present' },
     orgLoc: 'On-site',
     roles: [
@@ -50,7 +50,7 @@ const TIMELINE = [
         end: '2025-06-30',
         desc: 'Developing and implemented comprehensive marketing strategies to promote IEEE-CIET events, resulting in 70% increase in student participation over the previous year. Successfully promoted over 15+ events, including webinars, workshops and Hackathons.',
         skills: ['Team Leadership', 'Promotional Marketing'],
-        img: 'public/certs/Tenure2024.jpg',
+        img: 'certs/Tenure2024.jpg',
         imgCaption: 'Tenure 2024-2025',
       },
       {
@@ -59,7 +59,7 @@ const TIMELINE = [
         end: '2024-08-31',
         loc: 'Chitkara University',
         skills: ['Advertising', 'Social Promotion', 'Team Leadership'],
-        img: 'public/certs/Tenure2023.jpg',
+        img: 'certs/Tenure2023.jpg',
         imgCaption: 'IEEE-Tenure 2023-2024.png',
         desc: '',
       },
@@ -67,7 +67,7 @@ const TIMELINE = [
   },
   {
     org: 'IEEEXtreme',
-    orgLogo: 'public/logos/xtreme.webp',
+    orgLogo: 'logos/xtreme.webp',
     orgMeta: { type: 'Full-time', start: '2024-08-01', end: '2025-10-31' },
     orgLoc: 'Hybrid',
     roles: [
@@ -89,7 +89,7 @@ const TIMELINE = [
   },
   {
     org: 'Hack With Her',
-    orgLogo: 'public/logos/hwh.webp',
+    orgLogo: 'logos/hwh.webp',
     orgMeta: { type: 'Full-time', start: '2025-01-01', end: '2025-03-31' },
     orgLoc: 'On-site',
     roles: [
@@ -99,14 +99,14 @@ const TIMELINE = [
         end: '2025-03-31',
         desc: 'Overseeing the registration of over 750+ team members. Skilled in strategic planning, team leadership. Receiving outstanding feedback from participants.',
         skills: ['Advertising'],
-        img: 'public/gallery/reg.jpg',
+        img: 'gallery/reg.jpg',
         imgCaption: 'Registrations',
       },
     ],
   },
   {
     org: 'Chitkara University',
-    orgLogo: 'public/logos/chitkara.webp',
+    orgLogo: 'logos/chitkara.webp',
     orgMeta: { type: '', start: '2023-08-01', end: 'Present' },
     orgLoc: 'Rajpura, Punjab, India',
     roles: [
@@ -121,7 +121,7 @@ const TIMELINE = [
   },
   {
     org: 'GirlScript Summer of Code',
-    orgLogo: 'public/logos/gssc.webp',
+    orgLogo: 'logos/gssc.webp',
     orgMeta: { type: '', start: '2024-05-01', end: '2024-07-31' },
     orgLoc: '',
     roles: [

@@ -300,7 +300,7 @@ const AboutMe = () => {
               gap: "0.7rem"
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                <img src="/public/rec_user/Arushi.jpg" alt="Arushi Agarwal" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
+                <img src="rec_user/Arushi.jpg" alt="Arushi Agarwal" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
                 <div>
                   <a href="https://www.linkedin.com/in/arushi-agarwal-568a48110/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
                     Arushi Agarwal
@@ -326,7 +326,7 @@ const AboutMe = () => {
               gap: "0.7rem"
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                <img src="/public/rec_user/Harsh.jpg" alt="Harsh Kumar Sahu" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
+                <img src="rec_user/Harsh.jpg" alt="Harsh Kumar Sahu" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
                 <div>
                   <a href="https://www.linkedin.com/in/hksahu/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
                     HARSH KUMAR SAHU
@@ -352,7 +352,7 @@ const AboutMe = () => {
               gap: "0.7rem"
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                <img src="/public/rec_user/Sarthak.jpg" alt="Sarthak Sadhotra" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
+                <img src="rec_user/Sarthak.jpg" alt="Sarthak Sadhotra" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
                 <div>
                   <a href="https://www.linkedin.com/in/sarthak-sadhotra-1b7b1b1b1/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
                     Sarthak Sadhotra
@@ -381,7 +381,7 @@ const AboutMe = () => {
               gap: "0.7rem"
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                <img src="/public/rec_user/Harshita.jpg" alt="Harshita Gupta" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
+                <img src="rec_user/Harshita.jpg" alt="Harshita Gupta" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--accent)" }} />
                 <div>
                   <a href="https://www.linkedin.com/in/harshita-gupta-090028290/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
                     Harshita Gupta
