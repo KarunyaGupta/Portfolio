@@ -40,7 +40,7 @@ const TIMELINE = [
         end: 'Present',
         loc: 'Chitkara University',
         skills: ['Team Management', 'Leadership Development', 'Event Planning', 'Event Management'],
-        img: 'public/certs/LOA_Chair.jpg',
+        img: 'certs/LOA_Chair.jpg',
         imgCaption: 'Letter of Appointment',
         desc: '',
       },
