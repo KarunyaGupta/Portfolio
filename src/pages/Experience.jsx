@@ -1,8 +1,10 @@
 
 
 import React, { useState } from 'react';
+import '../CSS/Resume.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../CSS/ExperienceTimeline.css';
+import { CgEnter } from 'react-icons/cg';
 
 
 
@@ -138,51 +140,63 @@ const TIMELINE = [
 export default function Experience() {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'radial-gradient(circle at top, #0d0d0d, #000)',
-        color: 'white',
-        padding: 'clamp(1rem, 4vw, 3rem) 1rem',
-      }}
-    >
+    <div className="resume-container" style={{ minHeight: '100vh', width: '100%', background: '#0b0b0b', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 0 32px 0' }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
+        className="resume-card"
         style={{
           width: '100%',
           maxWidth: '900px',
+          margin: '5px auto 10px auto',
           textAlign: 'left',
-          marginTop: '1rem',
           lineHeight: 1.7,
-          background: 'rgba(255,255,255,0.04)',
-          padding: 'clamp(1.5rem, 3vw, 3.5rem)',
-          borderRadius: '18px',
-          boxShadow: '0 0 25px rgba(0,255,200,0.08)',
-          backdropFilter: 'blur(10px)',
+          background: '#0b0b0b',
+          borderRadius: '16px',
+          color: '#e5e5e5',
+          boxShadow: '0 0 25px rgba(0, 153, 255, 0.1)',
           boxSizing: 'border-box',
+          padding: '28px 48px',
         }}
       >
+        <style>{`
+          @media (max-width: 900px) {
+            .resume-card {
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+            }
+            .experience-mobile-org-block {
+              padding-left: 12px !important;
+              padding-right: 12px !important;
+            }
+          }
+          @media (max-width: 600px) {
+            .resume-card {
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+            }
+            .experience-mobile-org-block {
+              padding-left: 6px !important;
+              padding-right: 6px !important;
+            }
+          }
+        `}</style>
         <motion.h2
-          style={{ fontSize: 28, color: '#00b4ff', marginBottom: 6, textAlign: 'center' }}
+          className="resume-title"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          style={{textAlign:'center'}}
         >
           Experience
         </motion.h2>
         <motion.p
-          className="lead"
-          style={{ color: '#aaa', textAlign: 'center', marginBottom: '2rem', fontSize: '0.97rem', letterSpacing: '0.01em' }}
+          className="resume-subtitle"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
+          style={{textAlign:'center'}}
         >
           My journey across organizations and roles.
         </motion.p>
@@ -207,15 +221,16 @@ export default function Experience() {
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '2.5rem',
-                background: '#1a1a1a',
-                border: '1.5px solid #222',
-                borderRadius: '12px',
-                boxShadow: '0 2px 18px 0 rgba(0,123,255,0.10)',
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 0 25px rgba(0, 153, 255, 0.1)',
                 marginBottom: '1.5rem',
-                // textAlign:'justify',
-                padding: '1.5rem 1rem',
+                padding: '20px 24px',
                 transition: 'box-shadow 0.2s',
                 width: '100%',
+                maxWidth: '880px',
+                margin: '5px auto',
               }}
             >
               <div className="timeline-org" style={{ minWidth: 170, textAlign: 'left', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
