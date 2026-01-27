@@ -30,7 +30,7 @@ function getDuration(start, end) {
 const TIMELINE = [
   {
     org: 'IEEE-CIET Student Branch',
-    orgLogo: 'logos/ieeelogo.webp',
+    orgLogo: 'logos/ieeeLogo.webp',
     orgMeta: { type: 'Full-time', start: '2023-09-01', end: 'Present' },
     orgLoc: 'On-site',
     roles: [
