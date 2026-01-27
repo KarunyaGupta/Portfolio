@@ -33,7 +33,7 @@ const IMAGES = {
     {
       id: 2,
       caption: "I have been selected as the IEEEXtreme 19.0 Student Ambassador for the IEEE-CIET Student Branch! This incredible opportunity allows me to proudly represent our branch on a global stage by promoting IEEEXtreme, the highly prestigious international 24-hour coding competition.",
-      photos: ["/gallery/IEEE-Xtreme.webp"],
+      photos: ["/gallery/ieeeXtreme.webp"],
     },
     {
       id: 2,
