@@ -15,7 +15,7 @@ import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
   const professions = [
-    'Pre-Final Year Engineering',
+    'Pre-Final Year Engineering Student',
     'Chairperson, WIE IEEE-CIET SB',
     'Specializing in FinTech',
     'Business & Data Analytics',
