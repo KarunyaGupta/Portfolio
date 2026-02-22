@@ -322,6 +322,31 @@ export default function Resume() {
           }}
         >
           <motion.a
+            href="/What_makes_me_unique.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn code-btn"
+            whileHover={{ scale: 1.08 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '14px 32px',
+              borderRadius: 12,
+              fontSize: '1.15rem',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              background: '#181818',
+              color: '#06b6d4',
+              border: '2px solid #06b6d4',
+              fontWeight: 700,
+              transition: 'background 0.2s, color 0.2s',
+            }}
+          >
+            <span style={{ fontSize: "1.3em", textAlign: "center" }}>🗣</span> Why Me? SharkTank Style Pitch
+          </motion.a>
+          
+          <motion.a
             href="/Resume.pdf"
             download="Karunya_Gupta_Resume.pdf"
             className="btn code-btn"

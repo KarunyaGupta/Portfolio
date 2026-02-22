@@ -36,6 +36,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/about" element={<About />} /> {/* ✅ fixed lowercase */}
+          {/* <Route path="/WhyMe" element={<WhyMe />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<NotFound />} />

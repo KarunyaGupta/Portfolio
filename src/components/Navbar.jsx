@@ -13,6 +13,7 @@ const links = [
   { label: "Blog", to: "/blog", snackbar: "Blog Section" },
   { label: "Resume", to: "/resume", snackbar: "Resume Section" },
   { label: "About Me", to: "/about", snackbar: "About Me Section" },
+  // { label: "Why Me?", to: "/WhyMe", snackbar: "Why Me Section" },
   { label: "Contact", to: "/contact", snackbar: "Contact Section" },
 ];
 
