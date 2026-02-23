@@ -29,6 +29,20 @@ function getDuration(start, end) {
 // Timeline data for demo (replace with your real data and images)
 const TIMELINE = [
   {
+    org: 'Snapdeal',
+    orgLogo: 'logos/snapdeal.webp',
+    orgMeta: { type: 'Internship', start: '2026-03-08', end: 'Present' },
+    orgLoc: 'On-site',
+    roles: [
+      {
+        title: 'Product Analyst Intern',
+        start: '2026-03-08',
+        end: 'Present',
+        desc: 'Conducting in-depth analysis of user behavior and product performance to identify growth opportunities. Collaborating with cross-functional teams to implement data-driven strategies that enhance user engagement and drive business growth.',
+        skills: ['Product Analytics', 'Cross-functional Collaboration','SQL', 'Python', 'Data Visualization'],
+
+  }
+  {
     org: 'IEEE-CIET Student Branch',
     orgLogo: 'logos/ieeeciet.webp',
     orgMeta: { type: 'Full-time', start: '2023-09-01', end: 'Present' },
