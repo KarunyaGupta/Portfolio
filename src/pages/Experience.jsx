@@ -49,14 +49,14 @@ const TIMELINE = [
     orgMeta: { type: 'Full-time', start: '2023-09-01', end: 'Present' },
     orgLoc: 'On-site',
     roles: [
-      // {
-      //   title: 'Mentor',
-      //   start: '2026-07-01',
-      //   end: 'Present',
-      //   desc: 'Guiding and mentoring a team of 150+ students in organizing and executing successful events, fostering leadership skills and promoting active participation within the IEEE-CIET community.',
-      //   skills: ['Mentorship', 'Leadership Development', 'Event Management'],
+      {
+        title: 'Mentor',
+        start: '2026-07-01',
+        end: 'Present',
+        desc: 'Guiding and mentoring a team of 150+ students in organizing and executing successful events, fostering leadership skills and promoting active participation within the IEEE-CIET community.',
+        skills: ['Mentorship', 'Leadership Development', 'Event Management'],
 
-      // },
+      },
       {
         title: 'WIE Chairperson',
         start: '2025-07-01',
