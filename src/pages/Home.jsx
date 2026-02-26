@@ -124,7 +124,7 @@ export default function Home() {
           <motion.div className="info-cards">
             {[
               { label: '📍 Location', value: 'Mandi, Himachal Pradesh, India' },
-              { label: '💼 Expertise', value: 'Pyhton | PowerBI | Analytics'  },
+              { label: '💼 Expertise', value: 'Python | PowerBI | Analytics'  },
               { label: '📧 Contact', value: 'mails.karunyagupta@gmail.com' },
             ].map((info, i) => (
               <motion.div key={i} whileHover={{ y: -4, scale: 1.05 }} transition={{ type: 'spring', stiffness: 250 }} className="info-card">

@@ -40,14 +40,23 @@ const TIMELINE = [
         end: 'Present',
         desc: 'Conducting in-depth analysis of user behavior and product performance to identify growth opportunities. Collaborating with cross-functional teams to implement data-driven strategies that enhance user engagement and drive business growth.',
         skills: ['Product Analytics', 'Cross-functional Collaboration','SQL', 'Python', 'Data Visualization'],
-
-  }
+      }
+    ],
+  },
   {
     org: 'IEEE-CIET Student Branch',
     orgLogo: 'logos/ieeeciet.webp',
     orgMeta: { type: 'Full-time', start: '2023-09-01', end: 'Present' },
     orgLoc: 'On-site',
     roles: [
+      // {
+      //   title: 'Mentor',
+      //   start: '2026-07-01',
+      //   end: 'Present',
+      //   desc: 'Guiding and mentoring a team of 150+ students in organizing and executing successful events, fostering leadership skills and promoting active participation within the IEEE-CIET community.',
+      //   skills: ['Mentorship', 'Leadership Development', 'Event Management'],
+
+      // },
       {
         title: 'WIE Chairperson',
         start: '2025-07-01',
@@ -124,6 +133,13 @@ const TIMELINE = [
     orgMeta: { type: '', start: '2023-08-01', end: 'Present' },
     orgLoc: 'Rajpura, Punjab, India',
     roles: [
+        {
+          title:'Peer Mentor',
+          start:'2025-12-05',
+          end:'Present',
+          desc:'Providing guidance and support to first-year students, fostering a positive learning environment and promoting academic success.',
+          skills: ['Peer Mentorship', 'Student Support', 'Academic Guidance'],
+        },
         {
         title: 'Undergraduate Student',
         start: '2023-08-01',
