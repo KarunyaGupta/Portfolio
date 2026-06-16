@@ -15,12 +15,12 @@ import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
   const professions = [
-    'Pre-Final Year Engineering Student',
+    'Product Analyst @Snapdeal',
     'Chairperson, WIE IEEE-CIET SB',
+    'Pre-Final Year Engineering Student',
     'Specializing in FinTech',
     'Business & Data Analytics',
     'Meta Certified Analyst',
-    'Learning DataBricks & AI Technologies',
   ]
 
   const quickLinks = [
@@ -124,7 +124,7 @@ export default function Home() {
           <motion.div className="info-cards">
             {[
               { label: '📍 Location', value: 'Mandi, Himachal Pradesh, India' },
-              { label: '💼 Expertise', value: 'Python | PowerBI | Analytics'  },
+              { label: '💼 Expertise', value: 'Python | PowerBI | Analytics | DataBricks'  },
               { label: '📧 Contact', value: 'mails.karunyagupta@gmail.com' },
             ].map((info, i) => (
               <motion.div key={i} whileHover={{ y: -4, scale: 1.05 }} transition={{ type: 'spring', stiffness: 250 }} className="info-card">

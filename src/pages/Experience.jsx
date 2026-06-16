@@ -38,7 +38,11 @@ const TIMELINE = [
         title: 'Product Analyst Intern',
         start: '2026-03-08',
         end: 'Present',
-        desc: 'Conducting in-depth analysis of user behavior and product performance to identify growth opportunities. Collaborating with cross-functional teams to implement data-driven strategies that enhance user engagement and drive business growth.',
+        desc: [
+          'Analyzed large datasets using SQL to derive actionable business insights for product improvement.',
+          'Contributed to data automation processes, enhancing reporting efficiency and accuracy.',
+          'Supported digital communication initiatives to boost post-order customer engagement.',
+        ],
         skills: ['Product Analytics', 'Cross-functional Collaboration','SQL', 'Python', 'Data Visualization'],
       }
     ],
@@ -366,7 +370,15 @@ export default function Experience() {
                         {role.loc && <> | {role.loc}</>}
                       </div>
                       {role.desc && (
-                        <div className="timeline-role-desc" style={{ textAlign: 'justify' }}>{role.desc}</div>
+                        Array.isArray(role.desc) ? (
+                          <ul className="timeline-role-desc" style={{ margin: '0.5rem 0', paddingLeft: '1.1rem', textAlign: 'justify' }}>
+                            {role.desc.map((bullet, idx) => (
+                              <li key={idx} style={{ marginBottom: '0.35rem' }}>{bullet}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <div className="timeline-role-desc" style={{ textAlign: 'justify' }}>{role.desc}</div>
+                        )
                       )}
                       {role.skills && (
                         <div className="timeline-role-skills">

@@ -77,7 +77,8 @@ export default function Resume() {
               👨‍💻 Karunya Gupta
             </h3>
             <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "justify" }}>
-              Pre-final year Computer Science and Engineering Student | Chitkara University
+              Final year Computer Science and Engineering Student, 
+              <br />Chitkara University
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
               📍 Rajpura, Punjab, India
@@ -125,7 +126,7 @@ export default function Resume() {
             }}
           >
             <strong style={{ color: "#00b4ff"}}>Professional Summary:</strong>
-            <p style={{ marginTop: 6, color: "#ccc"  }}>
+            <p style={{ marginTop: 6, color: "#ccc", textAlign:'justify'  }}>
               Highly motivated and results-oriented Computer Science and Engineering student with a strong foundation in data
               analysis and business intelligence. Proficient in Python, SQL, and tools like Power BI and Tableau. Proven ability to create
               insightful dashboards, analyze complex datasets, and deliver data-driven solutions to improve business efficiency and
@@ -204,8 +205,8 @@ export default function Resume() {
             <li>• <b>Chairperson</b> - IEEE-CIET WIE Student Affinity Group</li>
             {/* <li>• <b>Successfully organized National level hackathons</b> - HACK INDIA</li> */}
             <li>• <b>300+ LeetCode Questions</b> solved</li>
-            <li>• <b>Meta Certified Data Analyst</b> (2024)</li>
-            <li>• <b>Power BI Data Analytics Certification</b></li>
+            <li>• <b>Meta Certified Data Analyst</b> (2025)</li>
+            <li>• <b>Power BI Data Analytics Certification with ChatGPT</b></li>
           </ul>
         </motion.div>
 
