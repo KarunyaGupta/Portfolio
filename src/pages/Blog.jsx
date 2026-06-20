@@ -62,6 +62,7 @@ I learned that skills and projects often matter more than perfect grades, and co
 If I had known one thing earlier, it would be this: growth takes time. Stay curious, stay patient, and trust the process - you’re learning more than you realize.
 `
     },
+    
     {
       id: 4,
       title: "Understanding XIRR, Mutual Funds & Investments (Student View)",

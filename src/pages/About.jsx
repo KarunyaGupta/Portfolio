@@ -185,12 +185,12 @@ const AboutMe = () => {
                   Specialization: Financial Technology (FinTech)
                 </span>
                 <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "0.2rem" }}>
-                  <strong>Chitkara University</strong> - Rajpura, Punjab
+                  <strong>Chitkara University Institute of Engineering and Technology</strong> - Rajpura, Punjab
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  3rd Year (Pursuing) | GPA: 8.97
+                  Final Year | GPA: 9.2
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.7)" }}>2023 – 2027</p>
+                <p style={{ color: "rgba(255,255,255,0.7)" }}>2023 – Present</p>
               </div>
             </motion.div>
 

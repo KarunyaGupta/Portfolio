@@ -153,9 +153,9 @@ export default function Resume() {
           </h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>
-              <strong>B.E. Computer Science and Engineering</strong> - Chitkara University, 2023–2027 <br />
+              <strong>B.E. Computer Science and Engineering</strong> - Chitkara University, 2023–Present <br />
               <span style={{ color: "#00ffd0", fontSize: "0.89em"}}>Specialization: Financial Technology (FinTech)</span><br />
-              <span style={{ color: "#aaa" }}>GPA: 8.97</span>
+              <span style={{ color: "#aaa" }}>GPA: 9.2</span>
             </li>
             <li style={{ marginTop: 8 }}>
               <strong>12th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2023) <br />

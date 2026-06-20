@@ -35,7 +35,7 @@ const TIMELINE = [
     orgLoc: 'On-site',
     roles: [
       {
-        title: 'Product Analyst Intern',
+        title: 'Product Analyst',
         start: '2026-03-08',
         end: 'Present',
         desc: [
