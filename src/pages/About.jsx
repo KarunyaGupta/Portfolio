@@ -59,68 +59,59 @@ const AboutMe = () => {
             textAlign: "justify",
           }}
         >
-          Hi, I’m <strong>Karunya Gupta</strong> - an aspiring{" "}
-          <strong>Analyst</strong> and{" "}
-          <strong></strong> with a passion for turning
-          data into actionable insights.
+          Hi, I’m <strong>Karunya Gupta</strong> - a <strong>Product Analyst</strong> and
+          final-year <strong>B.E. Computer Science and Engineering</strong> student at
+          <strong> Chitkara University</strong>. I’m passionate about turning data,
+          user behavior, and business context into clear, actionable insights.
         </p>
-        <p className="text-gray-700 mb-4" style={{textAlign: "justify" }}>
-          As a pre-final year
-          <strong> B.E. Computer Science and Engineering</strong> student at
-          <strong> Chitkara University</strong>, I combine academic learning with
-          hands-on projects and leadership experience.
+        <p className="text-gray-700 mb-4" style={{ textAlign: "justify" }}>
+          Currently, I’m working in analytics and product-focused problem solving,
+          while also strengthening my skills in data analysis, business strategy,
+          and AI-driven decision making.
         </p>
 
 
         <div className="mb-4">
           <h2 className="text-xl font-medium mb-2">What I do</h2>
-          <ul className="list-disc list-inside text-gray-700" style={{textAlign: "justify" }}>
-          <li>
-          <strong>Data Analysis & Visualization</strong> (Excel, Power BI, DAX, SQL, Python)
-          </li>
-          <li>
-          <strong>Business Insights & Reporting</strong> : turning data into
-          action
-          </li>
-          <li>
-          <strong>Generative AI & Prompt Engineering</strong> : exploring real
-          business applications
-          </li>
-          <li>
-          <strong>Leadership & Collaboration</strong> through IEEE WIE initiatives
-          </li>
+          <ul className="list-disc list-inside text-gray-700" style={{ textAlign: "justify" }}>
+            <li>
+              <strong>Product & Data Analysis</strong> using SQL, Python, Excel, and Power BI
+            </li>
+            <li>
+              <strong>Business Insights & Reporting</strong> to support decisions and improve outcomes
+            </li>
+            <li>
+              <strong>Dashboarding & Storytelling</strong> with clear, data-driven narratives
+            </li>
+            <li>
+              <strong>Leadership & Collaboration</strong> through IEEE WIE and team-based initiatives
+            </li>
           </ul>
           </div>
 
-
           <div className="mb-4">
           <h2 className="text-xl font-medium mb-2">My approach</h2>
-          <p className="text-gray-700" style={{textAlign: "justify" }}>
-          I believe technology should be people-centered. I focus on building
-          solutions that are insightful, easy to understand, and useful for
-          decision-making. Leading IEEE WIE, organizing events, and collaborating
-          with diverse teams has sharpened my communication, project
-          management, and problem-solving skills.
+          <p className="text-gray-700" style={{ textAlign: "justify" }}>
+            I believe strong solutions come from combining data, curiosity, and clear communication.
+            I focus on understanding the problem first, then using analytics and collaboration to create
+            practical, impact-driven outcomes. My experience in leadership and projects has strengthened
+            my ability to work across teams and deliver with clarity.
           </p>
           </div>
-
 
           <div>
           <h2 className="text-xl font-medium mb-2">Open to</h2>
-          <p className="text-gray-700" style={{textAlign: "justify" }}>
-          Internships or projects in <strong>Business Analysis</strong> /{' '}
-          <strong>FinTech Domain</strong>, semi-technical roles bridging
-          technology and business, and collaborations in <strong>AI</strong>,
-          analytics, and innovation-driven projects.
+          <p className="text-gray-700" style={{ textAlign: "justify" }}>
+            Opportunities in <strong>Product Analytics</strong>, <strong>Business Analytics</strong>,
+            <strong> FinTech</strong>, and data-driven roles where I can contribute, learn fast,
+            and create measurable impact.
           </p>
           </div>
 
-
-          <footer className="mt-6 text-sm text-gray-600" style={{textAlign: "justify" }}>
+          <footer className="mt-6 text-sm text-gray-600" style={{ textAlign: "justify" }}>
           <p>
-          Let’s connect if you’re looking for an enthusiastic learner who combines my
-          <strong> skills</strong> with <strong>analytical thinking</strong> and
-          an eagerness to contribute to data-driven decision making.
+            Let’s connect if you’re looking for someone who combines analytical thinking,
+            business awareness, and a strong willingness to learn and contribute.
           </p>
           </footer>
 

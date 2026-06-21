@@ -161,6 +161,42 @@ export default function Home() {
         </div>
       </motion.div>
 
+      <motion.section
+        className="recruiter-cta"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="recruiter-cta-card">
+          <p className="recruiter-cta-label">For Recruiters</p>
+          <h3>Looking for someone who can turn data into decisions?</h3>
+          <p>
+            I’m interested in analytics, product, finance and problem-solving roles where I can
+            contribute, learn fast, and create measurable impact.
+          </p>
+          <div className="recruiter-cta-actions">
+            <a href="/Resume.pdf" download className="cta-btn cta-btn-primary">
+              Download Resume
+            </a>
+            <a href="/resume" className="cta-btn cta-btn-secondary">
+              View Resume
+            </a>
+            <a href="/contact" className="cta-btn cta-btn-secondary">
+              Contact Me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/karunyagupta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-btn cta-btn-secondary"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </motion.section>
+
     </section>
   )
 }

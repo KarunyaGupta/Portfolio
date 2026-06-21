@@ -77,7 +77,7 @@ export default function Resume() {
               👨‍💻 Karunya Gupta
             </h3>
             <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "justify" }}>
-              Final year Computer Science and Engineering Student, 
+              Final year Computer Science and Engineering Student -
               <br />Chitkara University
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
@@ -135,11 +135,52 @@ export default function Resume() {
           </motion.div>
         </motion.div>
 
-        {/* Education Section with Border Box */}
+        {/* Brief Experience Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
+        >
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>
+            💼 Experience
+          </h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "left" }}>
+            <li>
+              <strong>Product Analyst @ Snapdeal</strong>
+              <br />
+              <span style={{ color: "#aaa" }}>
+                Working on data-driven insights, reporting, automation and business problem-solving to support post-product decisions.
+              </span>
+            </li>
+            <li style={{ marginTop: 10 }}>
+              <strong>Chairperson, WIE IEEE-CIET SB</strong>
+              <br />
+              <span style={{ color: "#aaa" }}>
+                Led initiatives, coordinated events, and built a collaborative environment for student growth.
+              </span>
+            </li>
+            <li style={{ marginTop: 10 }}>
+              <strong>Analytics & Research Projects</strong>
+              <br />
+              <span style={{ color: "#aaa" }}>
+                Built dashboards and analytical solutions using Python, SQL, Power BI, and Excel.
+              </span>
+            </li>
+          </ul>
+        </motion.div>
+
+        {/* Education Section with Border Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -176,17 +217,23 @@ export default function Resume() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          style={{ marginTop: 40 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "left" }}>
             <li>1️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
-            <li>2️⃣ <b>Skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
-            <li>3️⃣ <b>Employee Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li>
-            <li>4️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
-            <li>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
-            <li>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
-            <li>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
+            <li style={{ marginTop: 8 }}>2️⃣ <b>Skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
+            <li style={{ marginTop: 8 }}>3️⃣ <b>Employee Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li>
+            <li style={{ marginTop: 8 }}>4️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
+            <li style={{ marginTop: 8 }}>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
+            <li style={{ marginTop: 8 }}>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
+            <li style={{ marginTop: 8 }}>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
           </ul>
         </motion.div>
 
@@ -195,18 +242,24 @@ export default function Resume() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          style={{ marginTop: 40 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>🏅 Achievements</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "justify" }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "left" }}>
             <li>• <b>Winner</b> - DICE Technovision 2.0 Hackathon, Chitkara University</li>
-            <li>• <b>First Place</b> - Model Making, Science Carnival, Chitkara University</li>
-            <li>• <b>Amar Ujala Excellence Award</b> (2023)</li>
-            <li>• <b>Chairperson</b> - IEEE-CIET WIE Student Affinity Group</li>
-            {/* <li>• <b>Successfully organized National level hackathons</b> - HACK INDIA</li> */}
-            <li>• <b>300+ LeetCode Questions</b> solved</li>
-            <li>• <b>Meta Certified Data Analyst</b> (2025)</li>
-            <li>• <b>Power BI Data Analytics Certification with ChatGPT</b></li>
+            <li style={{ marginTop: 8 }}>• <b>First Place</b> - Model Making, Science Carnival, Chitkara University</li>
+            <li style={{ marginTop: 8 }}>• <b>Amar Ujala Excellence Award</b> (2023)</li>
+            <li style={{ marginTop: 8 }}>• <b>Chairperson</b> - IEEE-CIET WIE Student Affinity Group</li>
+            {/* <li style={{ marginTop: 8 }}>• <b>Successfully organized National level hackathons</b> - HACK INDIA</li> */}
+            <li style={{ marginTop: 8 }}>• <b>300+ LeetCode Questions</b> solved</li>
+            <li style={{ marginTop: 8 }}>• <b>Meta Certified Data Analyst</b> (2025)</li>
+            <li style={{ marginTop: 8 }}>• <b>Power BI Data Analytics Certification with ChatGPT</b></li>
           </ul>
         </motion.div>
 
@@ -221,6 +274,7 @@ export default function Resume() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {[
               "Python",
+              "DataBricks",
               "Java",
               "TensorFlow",
               "Numpy",
@@ -295,17 +349,38 @@ export default function Resume() {
         {/* PDF Download & View Buttons - Responsive */}
         <style>
           {`
+            .resume-cta-btn {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              padding: 0.78rem 1rem;
+              border-radius: 999px;
+              font-size: 0.95rem;
+              font-weight: 600;
+              text-decoration: none;
+              transition: transform 0.2s ease, background 0.2s ease;
+            }
+
+            .resume-cta-btn-primary {
+              background: linear-gradient(90deg, var(--accent), #00b4ff);
+              color: #fff;
+            }
+
+            .resume-cta-btn-secondary {
+              background: rgba(255, 255, 255, 0.06);
+              color: #eef7ff;
+              border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
             @media (max-width: 600px) {
               .resume-btns {
                 flex-direction: column !important;
-                gap: 10px !important;
                 align-items: stretch !important;
               }
-              .resume-btns a {
+              .resume-cta-btn {
                 width: 100% !important;
-                justify-content: center !important;
-                font-size: 1rem !important;
-                padding: 12px 0 !important;
+                font-size: 0.95rem;
               }
             }
           `}
@@ -318,81 +393,38 @@ export default function Resume() {
           style={{
             display: "flex",
             justifyContent: "center",
+            flexWrap: "wrap",
             marginTop: 32,
-            gap: 16,
+            gap: 12,
           }}
         >
           <motion.a
             href="/What_makes_me_unique.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn code-btn"
-            whileHover={{ scale: 1.08 }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '14px 32px',
-              borderRadius: 12,
-              fontSize: '1.15rem',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              background: '#181818',
-              color: '#06b6d4',
-              border: '2px solid #06b6d4',
-              fontWeight: 700,
-              transition: 'background 0.2s, color 0.2s',
-            }}
+            className="resume-cta-btn resume-cta-btn-secondary"
+            whileHover={{ scale: 1.04 }}
           >
-            <span style={{ fontSize: "1.3em", textAlign: "center" }}>🗣</span> Why Me? SharkTank Style Pitch
+            <span>🗣</span> Why Me? SharkTank Style Pitch
           </motion.a>
-          
+
           <motion.a
             href="/Resume.pdf"
             download="Karunya_Gupta_Resume.pdf"
-            className="btn code-btn"
-            whileHover={{ scale: 1.08 }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '14px 32px',
-              borderRadius: 12,
-              fontSize: '1.15rem',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              background: '#181818',
-              color: '#06b6d4',
-              border: '2px solid #06b6d4',
-              fontWeight: 700,
-              transition: 'background 0.2s, color 0.2s',
-            }}
+            className="resume-cta-btn resume-cta-btn-secondary"
+            whileHover={{ scale: 1.04 }}
           >
-            <span style={{ fontSize: "1.3em", textAlign: "center" }}>⬇️</span> Download Resume (PDF)
+            <span>⬇️</span> Download Resume (PDF)
           </motion.a>
+
           <motion.a
             href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn code-btn"
-            whileHover={{ scale: 1.08 }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '14px 32px',
-              borderRadius: 12,
-              fontSize: '1.15rem',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              background: '#181818',
-              color: '#06b6d4',
-              border: '2px solid #06b6d4',
-              fontWeight: 700,
-              transition: 'background 0.2s, color 0.2s',
-            }}
+            className="resume-cta-btn resume-cta-btn-secondary"
+            whileHover={{ scale: 1.04 }}
           >
-            <span style={{ fontSize: "1.3em", textAlign: "center" }}>👁️</span> View Resume
+            <span>👁️</span> View Resume
           </motion.a>
         </motion.div>
       </motion.div>

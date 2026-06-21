@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ThumbsUp, ThumbsDown } from "lucide-react";
 import "../CSS/blog1.css";
 
 export default function Blog() {
@@ -8,7 +7,9 @@ export default function Blog() {
     {
       id: "campus-placement",
       title: "Campus Placement: From Rejection to Selection",
-      text: `Campus placements were one of the most challenging and rewarding phases of my college life. Looking back, the journey was not just about securing a job offer—it was about discovering my interests, overcoming failures, and staying committed to my goals.
+      date: "June 2026",
+      category: "Career Journey",
+      text: `Campus placements were one of the most challenging and rewarding phases of my college life. Looking back, the journey was not just about securing a job offer- it was about discovering my interests, overcoming failures, and staying committed to my goals.
 
 ## Finding My Career Path
 During my college years, I spent a lot of time exploring different domains to understand what suited me best. Through various projects, case studies, and learning experiences, I developed a strong interest in analytics-related roles. I enjoyed working with data, identifying patterns, solving business problems, and making decisions based on insights.
@@ -71,12 +72,14 @@ Today, I see my first rejection as one of the most important moments in my place
 
 My placement journey was not a straight path to success. It was a journey filled with uncertainty, learning, self-improvement, and persistence.
 
-From rejection to selection, the experience shaped me into a stronger and more confident professional—and it remains one of the most memorable chapters of my college life.
+From rejection to selection, the experience shaped me into a stronger and more confident professional- and it remains one of the most memorable chapters of my college life.
 `,
     },
     {
       id: 0,
       title: "Four Years of Engineering: A Journey Beyond Books",
+      date: "May 2026",
+      category: "Student Life",
       text: `The first day of engineering didn’t feel special. New faces, heavy bags, awkward smiles, and a silent question in everyone’s mind - *What have I signed up for?* We came with dreams, confusion, and a lot of expectations. Little did we know, these four years were going to shape us in ways no syllabus ever could.
 
     **First Year: Lost but Hopeful**
@@ -102,6 +105,8 @@ From rejection to selection, the experience shaped me into a stronger and more c
     {
       id: 1,
       title: "Behind the Scenes: My Life as a WIE Chairperson at IEEE-CIET SB",
+      date: "April 2026",
+      category: "Leadership",
       text: `Being a WIE Chairperson is more than a role - it’s a responsibility driven by purpose. At IEEE-CIET Student Branch, my journey as WIE Chairperson has been about creating opportunities, encouraging participation, and building a supportive environment for growth.
 
 Behind every event and initiative lies teamwork, coordination, and thoughtful execution. Acting as a bridge between ideas and implementation, juniors and opportunities, I learned that leadership is rooted in listening, collaboration, and consistency.
@@ -114,6 +119,8 @@ Leading WIE reshaped my perspective on leadership - it’s not about authority, 
     {
       id: 2,
       title: "Why I Chose Analyst as My Career Path",
+      date: "March 2026",
+      category: "Career Insights",
       text: `Choosing the analyst path was not a sudden decision - it was a realization shaped by my curiosity and interest in understanding how things work. I’ve always enjoyed analyzing patterns, asking the right questions, and turning information into meaningful insights. The analyst role allows me to combine logic, data, and communication to support informed decision-making.
 
 What attracts me most is the impact an analyst creates - transforming raw data into clarity and direction. This role also offers continuous learning, adaptability across industries, and long-term growth opportunities.
@@ -124,6 +131,8 @@ For me, being an analyst means more than working with data; it means creating va
     {
       id: 3,
       title: "Things I Wish I Knew Before Starting Engineering",
+      date: "February 2026",
+      category: "Growth",
       text: `Starting engineering, I believed success was only about grades and coding. Over time, I realized it’s much more than that. Engineering is about problem-solving, consistency, and learning how to adapt. Feeling confused in the beginning is normal, and not knowing everything doesn’t mean you’re behind.
 
 I learned that skills and projects often matter more than perfect grades, and comparison only slows personal growth. Self-learning is essential, and real progress comes from building, failing, and improving. Most importantly, engineering is a long journey, not a race.
@@ -135,6 +144,8 @@ If I had known one thing earlier, it would be this: growth takes time. Stay curi
     {
       id: 4,
       title: "Understanding XIRR, Mutual Funds & Investments (Student View)",
+      date: "January 2026",
+      category: "Finance",
       text: `As a student, investing can feel complex and intimidating, especially with terms like XIRR and mutual funds. XIRR (Extended Internal Rate of Return) simply measures the actual annual return on your investments, considering multiple investments made at different times. It gives a clearer picture than simple returns.
 
 Mutual funds make investing accessible by allowing you to invest small amounts while professionals manage diversification across assets and sectors. For students, they offer a practical way to start early, learn market behavior, and build financial discipline.
@@ -144,38 +155,7 @@ Understanding these basics helped me see investing not as gambling, but as long-
     },
   ];
 
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const savedVotes = JSON.parse(localStorage.getItem("kd_blog_votes") || "{}");
-    const votedByUser = JSON.parse(localStorage.getItem("kd_blog_voted") || "{}");
-    const withVotes = defaultPosts.map((p) => ({
-      ...p,
-      agree: savedVotes[p.id]?.agree || 0,
-      disagree: savedVotes[p.id]?.disagree || 0,
-      userVote: votedByUser[p.id] || null,
-    }));
-    setPosts(withVotes);
-  }, []);
-
-  function vote(id, type) {
-    const votedByUser = JSON.parse(localStorage.getItem("kd_blog_voted") || "{}");
-    if (votedByUser[id]) return;
-
-    const next = posts.map((p) =>
-      p.id === id ? { ...p, [type]: p[type] + 1, userVote: type } : p
-    );
-    setPosts(next);
-
-    const votes = Object.fromEntries(
-      next.map((p) => [p.id, { agree: p.agree, disagree: p.disagree }])
-    );
-    localStorage.setItem("kd_blog_votes", JSON.stringify(votes));
-    localStorage.setItem(
-      "kd_blog_voted",
-      JSON.stringify({ ...votedByUser, [id]: type })
-    );
-  }
+  const [posts] = useState(defaultPosts);
 
   // Track which posts are expanded
   const [expanded, setExpanded] = useState({});
@@ -242,7 +222,7 @@ Understanding these basics helped me see investing not as gambling, but as long-
             return lines.map((line, i) => {
               const trimmed = line.trim();
               if (trimmed === "") {
-                return <hr className="blog-hr" key={i} />;
+                return null;
               }
 
               if (/^#{1,3}\s+/.test(trimmed)) {
@@ -257,6 +237,15 @@ Understanding these basics helped me see investing not as gambling, but as long-
                 return (
                   <div key={i} className={className}>
                     {renderMarkdown(content)}
+                  </div>
+                );
+              }
+
+              if (/^[-*]\s+/.test(trimmed)) {
+                return (
+                  <div key={i} className="blog-bullet">
+                    <span className="blog-bullet-dot">•</span>
+                    <span>{renderMarkdown(trimmed.replace(/^[-*]\s+/, ""))}</span>
                   </div>
                 );
               }
@@ -298,6 +287,10 @@ Understanding these basics helped me see investing not as gambling, but as long-
                 boxShadow: "0 0 20px rgba(255,255,255,0.1)",
               }}
             >
+              <div className="post-meta">
+                <span>{p.date}</span>
+                <span className="post-category">{p.category}</span>
+              </div>
               <h3 className="post-title">{p.title}</h3>
               <div className="post-text" style={{}}>
                 {renderBlogText(displayText)}
@@ -319,47 +312,6 @@ Understanding these basics helped me see investing not as gambling, but as long-
                     {isExpanded ? "Show less" : "Read more"}
                   </button>
                 )}
-              </div>
-              <div className="vote-container">
-                <motion.button
-                  onClick={() => vote(p.id, "agree")}
-                  disabled={!!p.userVote}
-                  whileTap={{ scale: 0.85 }}
-                  whileHover={{ scale: 1.15 }}
-                  className={`vote-btn-circle agree ${
-                    p.userVote === "agree" ? "active" : ""
-                  }`}
-                >
-                  <ThumbsUp size={20} />
-                  <motion.span
-                    key={p.agree}
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="vote-count"
-                  >
-                    {p.agree}
-                  </motion.span>
-                </motion.button>
-
-                <motion.button
-                  onClick={() => vote(p.id, "disagree")}
-                  disabled={!!p.userVote}
-                  whileTap={{ scale: 0.85 }}
-                  whileHover={{ scale: 1.15 }}
-                  className={`vote-btn-circle disagree ${
-                    p.userVote === "disagree" ? "active" : ""
-                  }`}
-                >
-                  <ThumbsDown size={20} />
-                  <motion.span
-                    key={p.disagree}
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="vote-count"
-                  >
-                    {p.disagree}
-                  </motion.span>
-                </motion.button>
               </div>
             </motion.div>
           );
