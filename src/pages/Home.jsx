@@ -1,26 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import "../CSS/Home.css"
-import '../index.css' 
+import '../CSS/Home.css'
 
-
-// 🖼️ Import Assets
 import photo from '../../public/photo.webp'
 import githubLogo from '../../public/github.png'
 import linkedinLogo from '../../public/linkedin.png'
 import gmailLogo from '../../public/gmail.png'
 import whatsappLogo from '../../public/whatsapp.png'
 import instagramLogo from '../../public/insta.png'
-import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
   const professions = [
-    'Product Analyst @Snapdeal',
-    'Chairperson, WIE IEEE-CIET SB',
-    'Pre-Final Year Engineering Student',
-    'Specializing in FinTech',
-    'Business & Data Analytics',
-    'Meta Certified Analyst',
+    'Product Analyst',
+    'Data & Business Analytics',
+    'FinTech Enthusiast',
+    'Meta Certified Analyst'
   ]
 
   const quickLinks = [
@@ -28,116 +22,97 @@ export default function Home() {
     { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/karunyagupta/' },
     { img: gmailLogo, title: 'Email', link: 'mailto:mails.karunyagupta@gmail.com' },
     { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+919805946982' },
-    { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' },
-    // { img: facebookLogo, title: 'Facebook', link: 'https://www.facebook.com/kunj.desai.222608' },
+    { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' }
+  ]
+
+  const highlights = [
+    { label: 'Location', value: 'Mandi, Himachal Pradesh' },
+    { label: 'Expertise', value: 'Python · Power BI · Analytics' },
+    // { label: 'Contact', value: 'mails.karunyagupta@gmail.com' }
   ]
 
   return (
     <section className="home-section">
-      {/* Typing Effect Styles */}
-      <style>
-        {`
-          @keyframes typing { from { width: 0; } to { width: 100%; } }
-          @keyframes blink { 50% { border-color: transparent; } }
-          .typing-effect {
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid var(--accent);
-            width: 100%;
-            animation: typing 2.5s steps(30, end) 1, blink .7s infinite;
-          }
-          @media (max-width: 600px) {
-            .typing-effect {
-              animation: none !important;
-              border-right: none !important;
-              white-space: normal !important;
-              overflow: visible !important;
-            }
-          }
-        `}
-      </style>
-
-      {/* Top Section: Photo + Info */}
       <div className="home-top">
-        {/* Left: Glowing Photo */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="photo-container"
+          transition={{ duration: 0.8 }}
+          className="photo-card"
         >
           <motion.div
             animate={{ rotate: [0, 360] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-            className="photo-ring"
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="photo-glow"
           />
           <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="photo-frame"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            className="photo-shell"
           >
             <motion.img
               src={photo}
               alt="Karunya Gupta"
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.9 }}
               className="profile-photo"
             />
           </motion.div>
         </motion.div>
 
-        {/* Right: Info Section */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
           className="home-info"
         >
+          <span className="eyebrow">Analytics · Product · FinTech</span>
           <h1 className="home-title">
             Hi, I’m{' '}
-            <motion.span
-              animate={{ backgroundPositionX: ['0%', '200%'] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-              className="home-name"
-            >
-              Karunya Gupta
-            </motion.span>
+            <span className="home-name">Karunya Gupta</span>
           </h1>
-
-          {/* Typing effect only for big screens, plain text for mobile */}
-          <p className="typing-effect">
-            Business & Data Analyst&nbsp;|&nbsp;FinTech Enthusiast
+          <p className="typing-effect">Business & Data Analyst · FinTech Enthusiast</p>
+          <p className="home-summary">
+            I turn data into practical insights, connect strategy with execution, and enjoy building
+            solutions that create measurable impact.
           </p>
 
-          {/* Profession Tags */}
-          <motion.div className="profession-tags">
+          <div className="profession-tags">
             {professions.map((role, i) => (
-              <motion.div key={i} whileHover={{ scale: 1.05, background: 'linear-gradient(90deg,var(--accent),var(--accent-2))' }} transition={{ type: 'spring', stiffness: 200 }} className="profession-tag">
+              <motion.span
+                key={i}
+                whileHover={{ y: -2 }}
+                className="profession-tag"
+              >
                 {role}
-              </motion.div>
+              </motion.span>
             ))}
-          </motion.div>
+          </div>
 
-          {/* Info Cards */}
-          <motion.div className="info-cards">
-            {[
-              { label: '📍 Location', value: 'Mandi, Himachal Pradesh, India' },
-              { label: '💼 Expertise', value: 'Python | PowerBI | Analytics | DataBricks'  },
-              { label: '📧 Contact', value: 'mails.karunyagupta@gmail.com' },
-            ].map((info, i) => (
-              <motion.div key={i} whileHover={{ y: -4, scale: 1.05 }} transition={{ type: 'spring', stiffness: 250 }} className="info-card">
+          <div className="info-cards">
+            {highlights.map((info, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -4 }}
+                transition={{ type: 'spring', stiffness: 220 }}
+                className="info-card"
+              >
                 <strong>{info.label}</strong>
                 <p>{info.value}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Bottom Quick Links */}
-      <motion.div className="quick-links">
+      <motion.div
+        className="quick-links"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="quick-links-title">Connect with me</h2>
         <div className="quick-links-list">
           {quickLinks.map((item, i) => (
@@ -147,15 +122,11 @@ export default function Home() {
               title={item.title}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.15, rotate: 5 }}
+              whileHover={{ scale: 1.08 }}
               transition={{ type: 'spring', stiffness: 250 }}
+              className="quick-link-item"
             >
-              <motion.img
-                src={item.img}
-                alt={item.title}
-                whileHover={{ filter: 'drop-shadow(0 0 15px var(--accent)) brightness(1.2)' }}
-                className="quick-link-img"
-              />
+              <img src={item.img} alt={item.title} className="quick-link-img" />
             </motion.a>
           ))}
         </div>
@@ -163,7 +134,7 @@ export default function Home() {
 
       <motion.section
         className="recruiter-cta"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
@@ -172,8 +143,8 @@ export default function Home() {
           <p className="recruiter-cta-label">For Recruiters</p>
           <h3>Looking for someone who can turn data into decisions?</h3>
           <p>
-            I’m interested in analytics, product, finance and problem-solving roles where I can
-            contribute, learn fast, and create measurable impact.
+            I’m interested in analytics, product, finance, and problem-solving roles where I can
+            contribute, learn quickly, and create measurable impact.
           </p>
           <div className="recruiter-cta-actions">
             <a href="/Resume.pdf" download className="cta-btn cta-btn-primary">
@@ -196,7 +167,6 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
-
     </section>
   )
 }
