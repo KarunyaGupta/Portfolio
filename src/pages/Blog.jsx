@@ -6,6 +6,75 @@ import "../CSS/blog1.css";
 export default function Blog() {
   const defaultPosts = [
     {
+      id: "campus-placement",
+      title: "Campus Placement: From Rejection to Selection",
+      text: `Campus placements were one of the most challenging and rewarding phases of my college life. Looking back, the journey was not just about securing a job offer—it was about discovering my interests, overcoming failures, and staying committed to my goals.
+
+## Finding My Career Path
+During my college years, I spent a lot of time exploring different domains to understand what suited me best. Through various projects, case studies, and learning experiences, I developed a strong interest in analytics-related roles. I enjoyed working with data, identifying patterns, solving business problems, and making decisions based on insights.
+
+Because of this, I decided to build my career in analytics-focused roles such as Business Analytics, Product Analytics, Data Analytics, and Financial Analytics.
+
+Once I made this decision, I stopped applying to unrelated job roles and focused entirely on analytics opportunities. There were several technical roles offering attractive salary packages, but I chose not to apply because I wanted to stay aligned with my long-term career vision.
+
+## The First Opportunity and First Rejection
+The first company I applied to was a gaming company based in Bangalore for the role of Business Analyst. I was highly motivated and convinced that this was the company I wanted to join.
+
+I dedicated an entire week to preparing for the recruitment process. The first stage was an online assessment, and I managed to clear it. Out of approximately 2,400 applicants, only 20 students advanced to the next stage. Reaching that level felt like a major achievement.
+
+The next step was the interview.
+
+Unfortunately, it was the first interview of my life, and I was extremely nervous. I didn't know what to expect, and despite knowing many of the answers, I struggled to communicate my thoughts effectively. I wasn't able to present myself the way I had hoped.
+
+As a result, I was not selected for the next round.
+
+That rejection hit me hard. I felt as though all my preparation and effort had gone to waste. For a moment, I questioned myself and my abilities. Sitting alone after receiving the result, I couldn't hold back my emotions.
+
+## Turning Failure into Motivation
+After a few difficult days, I decided that this rejection would not define my future.
+
+Instead of giving up, I used it as motivation to improve.
+
+For nearly a month, I continued applying to companies but did not receive many shortlists. Rather than becoming discouraged, I kept reminding myself that something bigger was waiting ahead.
+
+I made a promise to myself: I would focus completely on improving my skills.
+
+I even told my friends that I would meet them properly only after getting placed. From morning until evening, I immersed myself in learning. I strengthened my understanding of analytics concepts, explored various analytical tools, practiced problem-solving, improved my communication skills, and spent hours brainstorming business cases.
+
+Every rejection became a lesson.
+
+Every day became an opportunity to improve.
+
+## The Breakthrough
+Eventually, I received an opportunity from an e-commerce company for an analytics-focused role.
+
+The competition was intense. Nearly 900 students applied, and only 11 were shortlisted for the selection process. Being among those 11 students felt like a significant achievement and validated the hard work I had put in over the previous months.
+
+This time, I approached the process differently.
+
+I was more confident, more prepared, and more experienced. I had learned from my previous mistakes and knew how to present my skills effectively.
+
+And this time, I succeeded.
+
+I received the offer and secured a package that was even better than the one offered by the gaming company I had initially dreamed of joining.
+
+## Lessons Learned
+This journey taught me some valuable lessons:
+
+- Rejection is not the end; it is often the beginning of growth.
+- Having clarity about your career goals helps you make better decisions.
+- Consistency and focused effort eventually produce results.
+- Every interview, whether successful or not, teaches something valuable.
+- The right opportunity often arrives after multiple setbacks.
+
+Today, I see my first rejection as one of the most important moments in my placement journey. If I had not experienced that failure, I might not have worked as hard as I did afterward.
+
+My placement journey was not a straight path to success. It was a journey filled with uncertainty, learning, self-improvement, and persistence.
+
+From rejection to selection, the experience shaped me into a stronger and more confident professional—and it remains one of the most memorable chapters of my college life.
+`,
+    },
+    {
       id: 0,
       title: "Four Years of Engineering: A Journey Beyond Books",
       text: `The first day of engineering didn’t feel special. New faces, heavy bags, awkward smiles, and a silent question in everyone’s mind - *What have I signed up for?* We came with dreams, confusion, and a lot of expectations. Little did we know, these four years were going to shape us in ways no syllabus ever could.
@@ -175,6 +244,23 @@ Understanding these basics helped me see investing not as gambling, but as long-
               if (trimmed === "") {
                 return <hr className="blog-hr" key={i} />;
               }
+
+              if (/^#{1,3}\s+/.test(trimmed)) {
+                const level = trimmed.match(/^#+/)[0].length;
+                const content = trimmed.replace(/^#{1,3}\s+/, "");
+                const className =
+                  level === 1
+                    ? "blog-heading-1"
+                    : level === 2
+                    ? "blog-heading-2"
+                    : "blog-heading-3";
+                return (
+                  <div key={i} className={className}>
+                    {renderMarkdown(content)}
+                  </div>
+                );
+              }
+
               // Numbered title or section (e.g., "1. Title" or "Conclusion:")
               if (/^\d+\.\s/.test(trimmed) || trimmed.endsWith(":")) {
                 return (
@@ -193,7 +279,7 @@ Understanding these basics helped me see investing not as gambling, but as long-
               }
               // Normal text
               return (
-                <div key={i} className="blog-white" style={{ margin: "0 0 4px 0" }}>
+                <div key={i} className="blog-white blog-paragraph">
                   {renderMarkdown(trimmed)}
                 </div>
               );

@@ -10,6 +10,8 @@
 	font-size: 2rem;
 	margin-bottom: 0.2rem; /* less top margin */
 	color: #fff;
+	text-align: center;
+	width: 100%;
 }
 
 .blog-sub {
@@ -36,17 +38,46 @@
 }
 
 .post-title {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
+	font-weight: 700;
 	color: #fff;
 	margin-bottom: 0.8rem;
+	line-height: 1.4;
+	text-align: center;
 }
 
 .post-text {
-	color: #ccc;
-	font-size: 0.95rem;
-	line-height: 1.6;
+	color: #d8dde8;
+	font-size: 0.98rem;
+	line-height: 1.75;
 	margin-bottom: 1.5rem;
 }
+
+.blog-paragraph {
+	margin: 0 0 0.7rem 0;
+}
+
+.blog-heading-1,
+.blog-heading-2,
+.blog-heading-3 {
+	font-weight: 700;
+	color: #f7f9fc;
+	margin: 0.9rem 0 0.45rem;
+	line-height: 1.4;
+}
+
+.blog-heading-1 {
+	font-size: 1.15rem;
+}
+
+.blog-heading-2 {
+	font-size: 1.02rem;
+}
+
+.blog-heading-3 {
+	font-size: 0.98rem;
+}
+
 
 /* vote buttons */
 .vote-container {
@@ -100,26 +131,24 @@
 
 .blog-hr {
 	border: none;
-	border-top: 2px solid #00b4ff;
-	margin: 18px 0;
-	opacity: 0.5;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 14px 0;
+	height: 0;
+	background: transparent;
 }
 
 .blog-section-title {
-	font-weight: bold;
-	font-size: 1.25em;
-	margin: 10px 0 4px 0;
-	line-height: 1.3;
-	color: #222;
+	font-weight: 700;
+	font-size: 1.08rem;
+	margin: 0.9rem 0 0.35rem 0;
+	line-height: 1.45;
+	color: #f4f7fb;
 }
 
 .blog-section-subtitle {
-	font-weight: bold;
-	margin: 6px 0 4px 0;
-	color: #222;
+	font-weight: 700;
+	font-size: 1rem;
+	margin: 0.7rem 0 0.3rem 0;
+	color: #eef4ff;
 }
 
 .blog-white {
