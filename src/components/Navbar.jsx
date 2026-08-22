@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Snackbar from "./Snackbar";
 import { NavLink } from "react-router-dom"; // add useLocation
 import { motion, AnimatePresence } from "framer-motion";
+import photo from '../../public/photo.webp'
 
 const links = [
   { label: "Home", to: "/", snackbar: "Welcome Home!" },
@@ -119,6 +120,7 @@ export default function Navbar() {
               flexShrink: 0,
             }}
           >
+            {/* <img src="photo" alt="profile" /> */}
             KG
           </motion.div>
           <div

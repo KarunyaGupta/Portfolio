@@ -255,7 +255,7 @@ export default function Certificates() {
                     borderRadius: 10,
                     objectFit: "cover",
                     marginBottom: 12,
-                    filter: "brightness(0.7)",
+                    // filter: "brightness(0.7)",
                   }}
                 />
                 <strong style={{ fontSize: 16 }}>{c.title}</strong>
@@ -270,6 +270,7 @@ export default function Certificates() {
                         style={{
                           padding: '8px 24px',
                           borderRadius: 6,
+                          
                           background: '#181818',
                           color: '#06b6d4',
                           border: '1px solid #06b6d4',
