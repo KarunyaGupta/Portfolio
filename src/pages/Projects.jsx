@@ -4,6 +4,15 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
 	{
+		title: "📣 Snapdeal's Influencer Hub - Influencer Management Platform",
+		desc: "A centralized influencer management platform that digitizes Snapdeal's end-to-end influencer workflow, replacing fragmented email-based communication with a structured system for influencer onboarding, campaign assignment, transaction tracking, payments, and stakeholder remarks.",
+		 ss: "/projects/snapdeal.png",
+		 tech: ["Product Management", "Workflow Automation", "Requirements Gathering", "Cross-functional Collaboration"],
+		 live: '#',
+		 code: '#',
+		 category: 'Product',
+	},
+	{
 		title: '🤖 Code Review AI - Intelligent Code Analysis Tool',
 		desc: 'An AI-powered platform that reviews code in real-time and provides instant suggestions for improvement. It helps developers enhance performance, security, and code quality with smart, automated insights.',
 		ss: '/projects/codereview.webp',
@@ -166,6 +175,7 @@ const CATEGORIES = [
   { key: 'Dashboards', label: 'Dashboards' },
   { key: 'Development', label: 'Development' },
   { key: 'FinTech', label: 'FinTech' },
+  {	key: 'Product', label: 'Product'},
   { key: 'Others', label: 'Others' },
 ];
 
@@ -178,6 +188,7 @@ export default function Projects() {
 	// Use CATEGORIES for dropdown
 	const CATEGORY_OPTIONS = [
 		{ key: 'All', label: 'All' },
+		{ key: 'Product', label: 'Product Management'},
 		{ key: 'Dashboards', label: 'Analytics Dashboards' },
 		{ key: 'Development', label: 'Web Development (MERN)' },
 		{ key: 'FinTech', label: 'Financial Technology (FinTech)' },

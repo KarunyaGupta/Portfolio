@@ -75,7 +75,7 @@ const AboutMe = () => {
           <h2 className="text-xl font-medium mb-2">What I do</h2>
           <ul className="list-disc list-inside text-gray-700" style={{ textAlign: "justify" }}>
             <li>
-              <strong>Product & Data Analysis</strong> using SQL, Python, Excel, and Power BI
+              <strong>Product & Data Analysis</strong> using SQL, Python, Excel, and Databricks
             </li>
             <li>
               <strong>Business Insights & Reporting</strong> to support decisions and improve outcomes
@@ -102,7 +102,7 @@ const AboutMe = () => {
           <div>
           <h2 className="text-xl font-medium mb-2">Open to</h2>
           <p className="text-gray-700" style={{ textAlign: "justify" }}>
-            Opportunities in <strong>Product Analytics</strong>, <strong>Business Analytics</strong>,
+            Opportunities in <strong>Analytics Domain</strong>,
             <strong> FinTech</strong>, and data-driven roles where I can contribute, learn fast,
             and create measurable impact.
           </p>

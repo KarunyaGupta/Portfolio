@@ -227,13 +227,14 @@ export default function Resume() {
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, textAlign: "left" }}>
+            
             <li>1️⃣ <b>Codereview.ai:</b> An intelligent code analysis tool that provides instant feedback on your code using AI-powered suggestions.</li>
             <li style={{ marginTop: 8 }}>2️⃣ <b>Skymatrix:</b> A scalable SaaS platform for advanced data visualization and analytics, enabling real-time business insights.</li>
-            <li style={{ marginTop: 8 }}>3️⃣ <b>Employee Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li>
-            <li style={{ marginTop: 8 }}>4️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
-            <li style={{ marginTop: 8 }}>5️⃣ E-commerce Sales Performance & Profitability Analysis <b>(Amazon Store Data)</b></li>
-            <li style={{ marginTop: 8 }}>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li>
-            <li style={{ marginTop: 8 }}>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li>
+            {/* <li style={{ marginTop: 8 }}>3️⃣ <b>Employee Attrition:</b> A predictive analytics project focused on employee attrition, helping organizations retain top talent.</li> */}
+            <li style={{ marginTop: 8 }}>3️⃣ <b>Financial Data Analysis:</b> Google Stock Performance and Market Volatility</li>
+            <li style={{ marginTop: 8 }}><b>4️⃣Snapdeal's Influencer Hub </b>A centralized influencer management platform that digitizes Snapdeal's end-to-end influencer workflow, replacing fragmented email-based communication with a structured system for influencer onboarding, campaign assignment, transaction tracking, payments, and stakeholder remarks.</li>
+            {/* <li style={{ marginTop: 8 }}>6️⃣ <b>Transportation & Operations Data Analysis:</b> Uber Ride Performance</li> */}
+            {/* <li style={{ marginTop: 8 }}>7️⃣ <b>Pharma Insights:</b> A Complete Sales Analysis Dashboard</li> */}
           </ul>
         </motion.div>
 
