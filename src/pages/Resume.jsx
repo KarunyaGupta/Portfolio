@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "../CSS/Resume.css";
+import SectionHeading from "../components/SectionHeading";
 
 export default function Resume() {
   return (
     <section
-      className="container"
+      className="container ds-page"
       style={{
-        padding: "60px 0",
+        padding: "clamp(1.5rem, 3.5vw, 2.5rem) var(--section-pad-x) var(--section-pad-y)",
         marginTop: 0,
       }}
     >
@@ -24,42 +26,31 @@ export default function Resume() {
         `}
       </style>
       <motion.div
-        className="card"
+        className="card ds-container ds-container--narrow"
         style={{
-          background: "#0b0b0b",
-          borderRadius: 16,
-          padding: "40px 30px",
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
+          borderRadius: "var(--radius)",
+          padding: "clamp(1.4rem, 4vw, 2.5rem)",
           color: "#e5e5e5",
-          boxShadow: "0 0 25px rgba(0, 153, 255, 0.1)",
+          boxShadow: "var(--shadow-sm)",
           marginTop: 0,
         }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.h2
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
-        >
-          📄 Resume
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          style={{ color: "#aaa", marginBottom: 25, textAlign: "center" }}
-        >
-          A quick glance at my journey, skills, and achievements.
-        </motion.p>
+        <SectionHeading
+          eyebrow="Overview"
+          title="📄 Resume"
+          subtitle="A quick glance at my journey, skills, and achievements."
+        />
 
         {/* Profile Header - Row with Columns */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.05, ease: 'easeOut' }}
           style={{
             display: "flex",
             flexDirection: "row",
@@ -139,7 +130,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.1, ease: 'easeOut' }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -180,7 +171,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ duration: 0.3, delay: 0.14, ease: 'easeOut' }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -195,12 +186,12 @@ export default function Resume() {
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>
               <strong>B.E. Computer Science and Engineering</strong> - Chitkara University, 2023–Present <br />
-              <span style={{ color: "#00ffd0", fontSize: "0.89em"}}>Specialization: Financial Technology (FinTech)</span><br />
+              <span style={{ color: "var(--accent-2)", fontSize: "0.89em"}}>Specialization: Financial Technology (FinTech)</span><br />
               <span style={{ color: "#aaa" }}>GPA: 9.2</span>
             </li>
             <li style={{ marginTop: 8 }}>
               <strong>12th Board - Lord's Convent School</strong> (Himachal Pradesh Board, 2023) <br />
-              <span style={{ color: "#00ffd0", fontSize: "0.89em", marginTop: 1}}>Science Stream (PCM + Computer Science)</span><br />
+              <span style={{ color: "var(--accent-2)", fontSize: "0.89em", marginTop: 1}}>Science Stream (PCM + Computer Science)</span><br />
 
               <span style={{ color: "#aaa" }}>Percentage: 89.8%</span>
             </li>
@@ -216,7 +207,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.18, ease: 'easeOut' }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -242,7 +233,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
+          transition={{ duration: 0.3, delay: 0.22, ease: 'easeOut' }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -268,7 +259,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
+          transition={{ duration: 0.3, delay: 0.26, ease: 'easeOut' }}
           style={{ marginTop: 40 }}
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>⚙️ Skills</h4>
@@ -316,7 +307,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4 }}
+          transition={{ duration: 0.3, delay: 0.34, ease: 'easeOut' }}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -390,7 +381,7 @@ export default function Resume() {
           className="resume-btns"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
+          transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
           style={{
             display: "flex",
             justifyContent: "center",

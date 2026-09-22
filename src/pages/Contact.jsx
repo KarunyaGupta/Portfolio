@@ -12,7 +12,8 @@ import instagramLogo from "../../public/insta.png";
 import facebookLogo from "../../public/facebook.png";
 
 import "../CSS/Contact.css"
-import '../index.css' 
+import '../index.css'
+import SectionHeading from "../components/SectionHeading";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -179,24 +180,12 @@ export default function Contact() {
 
   return (
     // apply container inline style to ensure spacing is responsive
-    <section style={resp.container} className="contact-section">
-      <motion.h1
-        initial={{ opacity: 0, y: -15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="contact-title"
-      >
-        Let’s Connect & Collaborate 🤝
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="contact-subtitle"
-      >
-        Whether it’s a new project, a collaboration, or just to say hi - I’d love to hear from you!
-      </motion.p>
+    <section style={resp.container} className="contact-section ds-page">
+      <SectionHeading
+        eyebrow="Contact"
+        title="Let's Connect & Collaborate 🤝"
+        subtitle="Whether it's a new project, a collaboration, or just to say hi — I'd love to hear from you!"
+      />
 
       {/* Quick Links */}
       <motion.div className="contact-links" style={resp.linksWrap}>
@@ -260,9 +249,9 @@ export default function Contact() {
             className={`contact-status${status.type === 'error' ? ' error' : status.type === 'success' ? ' success' : ''}`}
             style={{
               border: '1.5px solid',
-              borderColor: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? '#06b6d4' : '#888',
-              color: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? '#06b6d4' : '#fff',
-              background: 'rgba(6,182,212,0.08)',
+              borderColor: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? 'var(--accent-2)' : '#888',
+              color: status.type === 'error' ? '#ff4c4c' : status.type === 'success' ? 'var(--accent-2)' : '#fff',
+              background: 'rgba(0,180,255,0.08)',
               borderRadius: 6,
               padding: '8px 18px',
               fontWeight: 500,

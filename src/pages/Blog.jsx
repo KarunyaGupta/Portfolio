@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "../CSS/blog1.css";
+import SectionHeading from "../components/SectionHeading";
+import Btn from "../components/Btn";
 
 export default function Blog() {
   const defaultPosts = [
@@ -171,18 +173,11 @@ Understanding these basics helped me see investing not as gambling, but as long-
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.h2
-        className="blog-title"
-        initial={{ y: -15, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
-      >
-        📝 My Blog
-      </motion.h2>
-      <p className="blog-sub">
-        Personal thoughts, experiences, and reflections - feel free to react!
-      </p>
+      <SectionHeading
+        eyebrow="Writing"
+        title="📝 My Blog"
+        subtitle="Personal thoughts, experiences, and reflections from my journey."
+      />
 
       <div className="blog-grid">
         {posts.map((p, idx) => {
@@ -316,6 +311,10 @@ Understanding these basics helped me see investing not as gambling, but as long-
             </motion.div>
           );
         })}
+      </div>
+      <div className="section-cta">
+        <Btn to="/about" variant="secondary">More about me &rarr;</Btn>
+        <Btn to="/contact" variant="ghost">Get in touch &rarr;</Btn>
       </div>
     </motion.section>
   );

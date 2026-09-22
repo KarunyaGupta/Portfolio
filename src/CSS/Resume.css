@@ -1,18 +1,19 @@
 .resume-container {
-  padding: 60px 0;
+  padding: var(--section-pad-y) 0;
 }
 
 .resume-card {
-  background: #0b0b0b;
-  border-radius: 16px;
-  padding: 40px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 4vw, 2.5rem);
   color: #e5e5e5;
-  box-shadow: 0 0 25px rgba(0, 153, 255, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .resume-title {
   font-size: 28px;
-  color: #00b4ff;
+  color: var(--accent-2);
   margin-bottom: 12px;
 }
 

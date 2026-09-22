@@ -3,6 +3,7 @@ import Snackbar from "../components/Snackbar";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "../CSS/Gallery.css";
+import SectionHeading from "../components/SectionHeading";
 
 const IMAGES = {
   personal: [
@@ -134,12 +135,13 @@ export default function Gallery() {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      style={{ marginLeft: "10px", marginRight: "10px" }}
     >
       {/* 🌟 Title */}
-      <motion.h2 className="gallery-title" variants={childVariants} style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}>
-        Gallery
-      </motion.h2>
+      <SectionHeading
+        eyebrow="Beyond the Résumé"
+        title="Gallery"
+        subtitle="Moments from events, achievements, and the journey so far."
+      />
 
       {/* 🧭 Tabs */}
       <motion.div className="tab-buttons" variants={childVariants}>

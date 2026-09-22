@@ -1,0 +1,109 @@
+.site-footer {
+  width: 100%;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(10, 13, 22, 0.6), rgba(5, 5, 9, 0.95));
+}
+
+.site-footer__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) var(--section-pad-x) 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr auto;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.site-footer__logo {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.3);
+  flex-shrink: 0;
+}
+
+.site-footer__name {
+  margin: 0;
+  font-weight: 700;
+  color: #f7f9fc;
+  font-size: 1rem;
+}
+
+.site-footer__role {
+  margin: 0.15rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+}
+
+.site-footer__link {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--t) var(--ease);
+}
+.site-footer__link:hover { color: var(--accent-2); }
+
+.site-footer__socials {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.site-footer__social {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  transition: transform var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+.site-footer__social:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+.site-footer__social img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  /* All social PNGs are white glyphs on a black badge. 'screen' drops the
+     black background so only the white glyph shows — uniform size + color. */
+  mix-blend-mode: screen;
+}
+
+.site-footer__bar {
+  text-align: center;
+  padding: 1.1rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (max-width: 860px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 1.6rem;
+  }
+  .site-footer__brand { justify-content: center; }
+  .site-footer__nav { justify-content: center; }
+}

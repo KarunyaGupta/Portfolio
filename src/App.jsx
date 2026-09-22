@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Gallery from './pages/Gallery'
@@ -15,8 +16,13 @@ import Experience from './pages/Experience';
 
 function ScrollToTop() {
   const location = useLocation();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
+  React.useLayoutEffect(() => {
+    // Jump instantly to the top on every route change.
+    // Use 'instant' so the global smooth-scroll behavior doesn't animate
+    // (which could leave the new page scrolled partway down).
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [location.pathname]);
   return null;
 }
@@ -42,10 +48,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <footer className="footer">
-        © {new Date().getFullYear()} Karunya Gupta | All Rights Reserved.
-        {/* Designed by [Your Name] | AI-Assisted via GitHub Copilot | 2026 */}
-      </footer>
+      <Footer />
     </div>
   )
 }

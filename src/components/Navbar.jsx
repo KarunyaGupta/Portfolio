@@ -21,6 +21,7 @@ const links = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [logoImgOk, setLogoImgOk] = useState(true);
   const navRef = useRef(null);
   const linksRef = useRef(null);
   // Snackbar state
@@ -113,15 +114,41 @@ export default function Navbar() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
-            style={{
-              fontWeight: "bold",
-              fontSize: "clamp(1rem, 3.5vw, 1.4rem)",
-              color: "var(--accent)",
-              flexShrink: 0,
-            }}
+            style={{ flexShrink: 0, lineHeight: 0 }}
           >
-            {/* <img src="photo" alt="profile" /> */}
-            KG
+            {logoImgOk ? (
+              <img
+                src={photo}
+                alt="Karunya Gupta"
+                onError={() => setLogoImgOk(false)}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "2px solid rgba(124,58,237,0.6)",
+                  boxShadow: "0 8px 20px rgba(124,58,237,0.3)",
+                  display: "block",
+                }}
+              />
+            ) : (
+              <span
+                style={{
+                  display: "grid",
+                  placeItems: "center",
+                  width: 40,
+                  height: 40,
+                  borderRadius: 12,
+                  fontWeight: 800,
+                  fontSize: "1rem",
+                  color: "#fff",
+                  background: "linear-gradient(135deg, var(--accent), var(--accent-2))",
+                  boxShadow: "0 10px 26px rgba(124,58,237,0.3)",
+                }}
+              >
+                KG
+              </span>
+            )}
           </motion.div>
           <div
             style={{
@@ -149,7 +176,7 @@ export default function Navbar() {
                 opacity: 0.95,
               }}
             >
-              Business Analyst | FinTech Enthusiast
+              Problem Solver
             </div>
           </div>
         </div>
@@ -234,17 +261,26 @@ export default function Navbar() {
               aria-expanded={isOpen}
               aria-controls="mobile-menu-overlay"
               style={{
-                background: "none",
-                border: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
                 color: "#fff",
-                fontSize: "1.8rem",
+                fontSize: "1.15rem",
+                fontWeight: 600,
+                borderRadius: 999,
                 cursor: "pointer",
                 zIndex: 10000,
-                padding: "6px 8px",
+                padding: "7px 14px",
+                fontFamily: "inherit",
               }}
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? "✕" : "☰"}
+              <span style={{ fontSize: "1.3rem", lineHeight: 1 }}>{isOpen ? "✕" : "☰"}</span>
+              <span style={{ fontSize: "0.85rem", letterSpacing: "0.04em" }}>
+                {isOpen ? "Close" : "Menu"}
+              </span>
             </button>
           </div>
         )}
@@ -293,31 +329,48 @@ export default function Navbar() {
               ✕
             </button>
 
+            <p
+              style={{
+                margin: "0 0 0.4rem",
+                textAlign: "center",
+                fontSize: "0.72rem",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--text-muted, #9aa4c0)",
+              }}
+            >
+              Navigate
+            </p>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: 0,
-                marginTop: "0.8rem",
+                marginTop: "0.4rem",
               }}
             >
               {links.map((l) => (
                 <NavLink
                   key={l.to}
                   to={l.to}
+                  end={l.to === "/"}
                   onClick={() => {
                     setIsOpen(false);
                     handleSectionClick(l.snackbar);
                   }}
-                  style={{
-                    color: "#fff",
+                  style={({ isActive }) => ({
+                    color: isActive ? "#fff" : "rgba(255,255,255,0.85)",
                     textDecoration: "none",
-                    padding: "1.1rem 1rem",
+                    padding: "1.05rem 1rem",
                     width: "100%",
                     textAlign: "center",
                     fontSize: "clamp(16px, 3.5vw, 18px)",
-                    borderBottom: "1px solid rgba(255,255,255,0.04)",
-                  }}
+                    fontWeight: isActive ? 700 : 500,
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    background: isActive
+                      ? "linear-gradient(90deg, rgba(124,58,237,0.18), rgba(0,180,255,0.12))"
+                      : "transparent",
+                  })}
                 >
                   {l.label}
                 </NavLink>

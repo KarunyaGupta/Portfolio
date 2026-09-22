@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import '../CSS/Resume.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../CSS/ExperienceTimeline.css';
-import { CgEnter } from 'react-icons/cg';
+import SectionHeading from '../components/SectionHeading';
+import Btn from '../components/Btn';
 
 
 
@@ -174,24 +175,20 @@ const TIMELINE = [
 export default function Experience() {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <div className="resume-container" style={{ minHeight: '100vh', width: '100%', background: '#0b0b0b', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 0 32px 0' }}>
+    <div className="resume-container ds-page" style={{ minHeight: '100vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 'clamp(1.5rem, 3.5vw, 2.5rem) var(--section-pad-x) var(--section-pad-y)' }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
         className="resume-card"
         style={{
           width: '100%',
           maxWidth: '900px',
-          margin: '5px auto 10px auto',
+          margin: '0 auto',
           textAlign: 'left',
           lineHeight: 1.7,
-          background: '#0b0b0b',
-          borderRadius: '16px',
           color: '#e5e5e5',
-          boxShadow: '0 0 25px rgba(0, 153, 255, 0.1)',
           boxSizing: 'border-box',
-          padding: '28px 48px',
         }}
       >
         <style>{`
@@ -216,24 +213,11 @@ export default function Experience() {
             }
           }
         `}</style>
-        <motion.h2
-          className="resume-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{textAlign:'center'}}
-        >
-          Experience
-        </motion.h2>
-        <motion.p
-          className="resume-subtitle"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          style={{textAlign:'center'}}
-        >
-          My journey across organizations and roles.
-        </motion.p>
+        <SectionHeading
+          eyebrow="Career"
+          title="Experience"
+          subtitle="My journey across organizations, roles, and leadership positions."
+        />
         {/* Responsive style for mobile (copied from Certificates) */}
         <style>
           {`
@@ -250,18 +234,12 @@ export default function Experience() {
         {TIMELINE.map((org, i) => (
           <React.Fragment key={org.org}>
             <div
-              className="experience-mobile-org-block"
+              className="experience-mobile-org-block ds-card"
               style={{
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '2.5rem',
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '16px',
-                boxShadow: '0 0 25px rgba(0, 153, 255, 0.1)',
                 marginBottom: '1.5rem',
-                padding: '20px 24px',
-                transition: 'box-shadow 0.2s',
                 width: '100%',
                 maxWidth: '880px',
                 margin: '5px auto',
@@ -290,7 +268,7 @@ export default function Experience() {
                   )}
                 </div>
               </div>
-              <div className="timeline" style={{ marginLeft: 0, paddingLeft: 24, flex: 1 }}>
+              <div className="timeline" style={{ flex: 1, minWidth: 0 }}>
                         {/* Enhanced mobile-specific style for org/timeline block and text */}
                         <style>
                           {`
@@ -298,10 +276,8 @@ export default function Experience() {
                               .experience-mobile-org-block {
                                 flex-direction: column !important;
                                 gap: 0.5rem !important;
-                                padding: 0.7rem 0.3rem !important;
-                                background: #181818 !important;
-                                border: 1px solid #222 !important;
-                                border-radius: 7px !important;
+                                padding: 1rem 0.9rem !important;
+                                border-radius: 14px !important;
                                 margin-bottom: 1rem !important;
                               }
                               .timeline-org {
@@ -333,19 +309,30 @@ export default function Experience() {
                                 font-size: 0.85rem !important;
                               }
                             }
+                            @media (max-width: 700px) {
+                              .experience-mobile-org-block .timeline-org {
+                                width: 100% !important;
+                                padding-bottom: 0.75rem !important;
+                                margin-bottom: 0.25rem !important;
+                                border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+                              }
+                              .experience-mobile-org-block .timeline {
+                                width: 100% !important;
+                              }
+                            }
                             @media (max-width: 400px) {
                               .experience-mobile-org-block {
-                                border-radius: 5px !important;
-                                padding: 0.4rem 0.1rem !important;
+                                border-radius: 12px !important;
+                                padding: 0.9rem 0.8rem !important;
                               }
                               .timeline-org-title {
-                                font-size: 0.91rem !important;
+                                font-size: 0.95rem !important;
                               }
                               .timeline-org-meta {
                                 font-size: 0.78rem !important;
                               }
                               .timeline-role-title {
-                                font-size: 0.85rem !important;
+                                font-size: 0.9rem !important;
                               }
                             }
                           `}
@@ -407,6 +394,10 @@ export default function Experience() {
             )}
           </React.Fragment>
         ))}
+        <div className="section-cta">
+          <Btn to="/projects" variant="primary">See my projects &rarr;</Btn>
+          <Btn to="/resume" variant="secondary">View resume &rarr;</Btn>
+        </div>
       </motion.div>
       {/* Modal Preview for Experience Images */}
       <AnimatePresence>

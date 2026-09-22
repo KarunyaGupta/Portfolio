@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "../CSS/Skills1.css";
+import SectionHeading from "../components/SectionHeading";
 
 const SKILLS = [
 	{
@@ -153,51 +154,15 @@ export default function Skills() {
 
 	return (
 		<section
-			className="skills-container"
+			className="skills-container ds-page"
 			id="skills"
-			style={{ marginLeft: "8px", marginRight: "8px" }}
 		>
 			{/* Header */}
-			<motion.div
-				className="skills-header"
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1 }}
-			>
-				<h2
-					style={{
-						fontSize: '1.5rem',
-						fontWeight: 600,
-						color: '#06b6d4',
-						marginBottom: '0.3rem',
-						textAlign: 'center',
-						marginTop: 40, // <-- add this line for top margin
-						marginBottom: 12
-					}}
-				>
-					My Skills
-				</h2>
-				<div
-					// style={{
-					// 	width: 112,
-					// 	height: 2,
-					// 	background: "#00b4ff",
-					// 	margin: "0 auto 24px auto",
-					// 	borderRadius: 2,
-					// }}
-				></div>
-				<p
-					style={{
-						fontSize: '0.88rem',
-						marginBottom: '1.5rem',
-						color: '#9aa0a6',
-						textAlign: 'center', // center subtitle
-					}}
-				>
-					✨ Technical expertise blended with creativity - explore my core
-					competencies below.
-				</p>
-			</motion.div>
+			<SectionHeading
+				eyebrow="Tech Stack"
+				title="My Skills"
+				subtitle="Technical expertise blended with creativity — explore my core competencies below."
+			/>
 
 			{/* Floating Orbs with page-load + hover highlight animation */}
 			{showOrbs && (
@@ -209,12 +174,15 @@ export default function Skills() {
 					transition={{ duration: 1.2, ease: "easeOut" }}
 					style={{
 						width: "100%",
+						maxWidth: "var(--maxw)",
+						margin: "0 auto",
 						height: window.innerWidth <= 400 ? "120px" : "550px",
-						borderRadius: "25px",
+						borderRadius: "22px",
 						background:
-							"radial-gradient(circle at 50% 50%, #0a0a0a, #101010)",
+							"radial-gradient(circle at 50% 50%, rgba(124,58,237,0.06), rgba(10,13,22,0.9))",
+						border: "1px solid rgba(255,255,255,0.08)",
 						overflow: "hidden",
-						boxShadow: "inset 0 0 60px rgba(0,255,255,0.07)",
+						boxShadow: "inset 0 0 60px rgba(124,58,237,0.08)",
 						position: "relative",
 					}}
 				>
@@ -231,8 +199,8 @@ export default function Skills() {
 							}}
 							whileHover={{
 								scale: 1.3,
-								boxShadow: "0 0 35px 10px rgba(0,255,255,0.6)",
-								background: "rgba(0,255,255,0.12)",
+								boxShadow: "0 0 35px 10px rgba(0,180,255,0.5)",
+								background: "rgba(124,58,237,0.16)",
 							}}
 							style={{
 								width: window.innerWidth <= 400 ? "32px" : "110px",
@@ -243,8 +211,8 @@ export default function Skills() {
 								flexDirection: "column",
 								justifyContent: "center",
 								alignItems: "center",
-								background: "rgba(0,255,255,0.06)",
-								border: "1px solid rgba(0,255,255,0.25)",
+								background: "rgba(124,58,237,0.08)",
+								border: "1px solid rgba(124,58,237,0.28)",
 								backdropFilter: "blur(8px)",
 								cursor: "pointer",
 								textAlign: "center",
@@ -260,19 +228,19 @@ export default function Skills() {
 									height: window.innerWidth <= 400 ? "12px" : "50px",
 									objectFit: "contain",
 									filter:
-										"drop-shadow(0 0 8px rgba(0,255,255,0.4)) brightness(1.2)",
+										"drop-shadow(0 0 8px rgba(0,180,255,0.45)) brightness(1.2)",
 									marginBottom: "5px",
 								}}
 								whileHover={{
 									filter:
-										"drop-shadow(0 0 12px rgba(0,255,255,0.9)) brightness(1.6)",
+										"drop-shadow(0 0 12px rgba(0,180,255,0.9)) brightness(1.6)",
 									rotate: [0, 6, -6, 0],
 									transition: { duration: 0.5 },
 								}}
 							/>
 							<span
 								style={{
-									color: "rgba(180,255,255,0.9)",
+									color: "#d7e2ff",
 									fontSize: window.innerWidth <= 400 ? "7px" : "13px",
 									fontWeight: 500,
 									letterSpacing: "0.3px",
@@ -306,7 +274,7 @@ export default function Skills() {
 									{col.items.map((item, i) => (
 										<motion.li
 											key={i}
-											whileHover={{ x: 6, color: "#00ffc8" }}
+											whileHover={{ x: 6, color: "#00b4ff" }}
 										>
 											{item}
 										</motion.li>

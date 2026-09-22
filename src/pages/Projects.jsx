@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
+import '../CSS/projects.css'
+import SectionHeading from '../components/SectionHeading'
 
 const PROJECTS = [
 	{
@@ -212,27 +214,26 @@ export default function Projects() {
 
 	return (
 		<motion.section
-			className="gallery-container"
+			className="gallery-container ds-page"
 			initial="hidden"
 			animate="visible"
 			exit="hidden"
 			id="projects"
 			style={{ width: '100%' }}
 		>
-			<div className="card" style={{ background: '#1A1A1A', borderRadius: 16, padding: 24, boxShadow: '0 0 20px rgba(0,255,255,0.04)', width: '100%', maxWidth: 1100, margin: '0 auto' }}>
-				<motion.h2 className="projects-title" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} style={{ fontSize: '1.5rem', fontWeight: 600, color: '#06b6d4', marginBottom: '0.3rem', textAlign: 'center' }}>
-					🚀 Projects
-				</motion.h2>
-				<p className="projects-subtitle" style={{ fontSize: '0.88rem', marginBottom: '1.1rem', color: '#9aa0a6', textAlign: 'center' }}>
-					A collection of my major works-blending research, AI innovation, and real-world business impact.
-				</p>
+			<div className="ds-container" style={{ padding: '0 0 var(--section-pad-y)' }}>
+				<SectionHeading
+					eyebrow="Featured Work"
+					title="🚀 Projects"
+					subtitle="A collection of my major works — blending research, AI innovation, and real-world business impact."
+				/>
 
 
 							{/* Skill & Category Filter Row (desktop/tablet only) */}
 							  <div className="filter-row" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, flexWrap: 'wrap', gap: 32 }}>
 								{/* Category Dropdown */}
 								<div className="category-dropdown-responsive" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-									<label htmlFor="category-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center', marginBottom: 0 }}>
+									<label htmlFor="category-search" style={{ color: 'var(--accent-2)', fontWeight: 500, fontSize: '1rem', marginRight: 12, alignSelf: 'center', textAlign: 'center', marginBottom: 0 }}>
 										Category:
 									</label>
 									<select
@@ -241,14 +242,14 @@ export default function Projects() {
 										onChange={e => { setCategory(e.target.value); setShowAll(false); }}
 										style={{
 											padding: '8px 24px',
-											borderRadius: 6,
-											background: '#181818',
-											color: '#06b6d4',
-											border: '1px solid #06b6d4',
+											borderRadius: 10,
+											background: 'var(--surface-solid)',
+											color: 'var(--accent-2)',
+											border: '1px solid rgba(0,180,255,0.4)',
 											fontWeight: 500,
 											fontSize: '1rem',
 											cursor: 'pointer',
-											boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
+											boxShadow: '0 2px 8px rgba(124,58,237,0.12)',
 											transition: 'background 0.2s, color 0.2s',
 											outline: 'none',
 											minWidth: 180,
@@ -263,7 +264,7 @@ export default function Projects() {
 								</div>
 								{/* Skill Search (hidden on mobile, right side) */}
 								<div className="skill-search-container" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-									<label htmlFor="skill-search" style={{ color: '#06b6d4', fontWeight: 500, fontSize: '1rem', marginRight: 8, alignSelf: 'center', marginBottom: 0 }}>
+									<label htmlFor="skill-search" style={{ color: 'var(--accent-2)', fontWeight: 500, fontSize: '1rem', marginRight: 8, alignSelf: 'center', marginBottom: 0 }}>
 										Filter by Skills:
 									</label>
 									<input
@@ -274,10 +275,10 @@ export default function Projects() {
 										placeholder="e.g. SQL, PowerBI, React"
 										style={{
 											padding: '8px 16px',
-											borderRadius: 6,
-											background: '#181818',
-											color: '#06b6d4',
-											border: '1px solid #06b6d4',
+											borderRadius: 10,
+											background: 'var(--surface-solid)',
+											color: 'var(--accent-2)',
+											border: '1px solid rgba(0,180,255,0.4)',
 											fontWeight: 500,
 											fontSize: '1rem',
 											minWidth: 120,
@@ -357,19 +358,15 @@ export default function Projects() {
 								{displayedProjects.map((p, idx) => (
 						<motion.div
 							key={idx}
-							className="project-card"
+							className="project-card ds-card ds-card--hover"
 							initial={{ opacity: 0, y: 20, scale: 0.95 }}
 							whileInView={{ opacity: 1, y: 0, scale: 1 }}
 							transition={{ duration: 0.4, delay: idx * 0.07 }}
 							whileHover={{ scale: 1.03 }}
 							viewport={{ once: true }}
 							style={{
-								background: '#181818',
-								border: '1px solid rgba(6,182,212,0.18)',
-								borderRadius: 16,
 								padding: 14,
 								fontSize: '0.88rem',
-								boxShadow: '0 0 12px rgba(6,182,212,0.07)',
 								width: '100%',
 								maxWidth: 370,
 								margin: '0 auto',
@@ -396,9 +393,9 @@ export default function Projects() {
 							<div className="project-content" style={{ marginTop: 10 }}>
 								<h3 className="project-title" style={{
 									fontSize: '1rem',
-									color: '#0ea5e9',
+									color: '#f2f6ff',
 									marginBottom: 4,
-									fontWeight: 500,
+									fontWeight: 700,
 									textAlign: 'left'
 								}}>
 									{p.title}
@@ -475,12 +472,12 @@ export default function Projects() {
 											key={t}
 											className="tech-badge"
 											style={{
-												background: 'rgba(6,182,212,0.08)',
-												border: '1px solid #06b6d4',
+												background: 'rgba(0,180,255,0.1)',
+												border: '1px solid rgba(0,180,255,0.3)',
 												padding: '2px 8px',
-												borderRadius: 6,
+												borderRadius: 999,
 												fontSize: '0.73rem',
-												color: '#06b6d4',
+												color: '#9fdcff',
 												fontWeight: 500,
 											}}
 										>
@@ -544,9 +541,9 @@ export default function Projects() {
 													   fontSize: '0.78rem',
 													   textDecoration: 'none',
 													   cursor: 'pointer',
-													   background: '#181818',
-													   color: '#06b6d4',
-													   border: '1px solid #06b6d4',
+													   background: 'rgba(255,255,255,0.05)',
+													   color: 'var(--accent-2)',
+													   border: '1px solid rgba(0,180,255,0.4)',
 													   fontWeight: 500,
 													   transition: 'background 0.2s, color 0.2s',
 												   }}
@@ -572,9 +569,9 @@ export default function Projects() {
 																								 fontSize: '0.78rem',
 																								 textDecoration: 'none',
 																								 cursor: 'pointer',
-																								 background: '#181818',
-																								 color: '#06b6d4',
-																								 border: '1px solid #06b6d4',
+																								 background: 'rgba(255,255,255,0.05)',
+																								 color: 'var(--accent-2)',
+																								 border: '1px solid rgba(0,180,255,0.4)',
 																								 fontWeight: 500,
 																								 transition: 'background 0.2s, color 0.2s',
 																							 }}
@@ -596,7 +593,7 @@ export default function Projects() {
 																								 fontSize: '0.78rem',
 																								 textDecoration: 'none',
 																								 cursor: 'pointer',
-																								 background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+																								 background: 'linear-gradient(90deg, var(--accent), var(--accent-2))',
 																								 color: '#fff',
 																								 border: 'none',
 																								 fontWeight: 500,
@@ -622,7 +619,7 @@ export default function Projects() {
 																									 fontSize: '0.78rem',
 																									 textDecoration: 'none',
 																									 cursor: 'pointer',
-																									 background: 'linear-gradient(90deg, #06b6d4, #0891b2)',
+																									 background: 'linear-gradient(90deg, var(--accent), var(--accent-2))',
 																									 color: '#fff',
 																									 border: 'none',
 																									 fontWeight: 500,
@@ -644,26 +641,7 @@ export default function Projects() {
 					   <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
 						   <button
 							   onClick={() => setShowAll(true)}
-							   style={{
-								   padding: '8px 24px',
-								   borderRadius: 6,
-								   background: '#181818',
-								   color: '#06b6d4',
-								   border: '1px solid #06b6d4',
-								   fontWeight: 500,
-								   fontSize: '1rem',
-								   cursor: 'pointer',
-								   boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-								   transition: 'background 0.2s, color 0.2s',
-							   }}
-							   onMouseOver={e => {
-								   e.currentTarget.style.background = '#222';
-								   e.currentTarget.style.color = '#fff';
-							   }}
-							   onMouseOut={e => {
-								   e.currentTarget.style.background = '#181818';
-								   e.currentTarget.style.color = '#06b6d4';
-							   }}
+							   className="ds-btn ds-btn--secondary"
 						   >
 							   See More
 						   </button>

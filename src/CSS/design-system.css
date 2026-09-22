@@ -1,0 +1,305 @@
+/* ============================================================
+   Shared Design System
+   Single source of truth for the whole portfolio.
+   Imported in main.jsx AFTER index.css so these tokens win.
+   Reference: the homepage (Home.css) visual language.
+   ============================================================ */
+
+:root {
+  /* Core palette (locked — overrides the conflicting definitions
+     that previously lived in index.css and Contact.css) */
+  --bg: #050509;
+  --bg-2: #0a0d16;
+
+  --accent: #7c3aed;      /* primary brand (violet) */
+  --accent-2: #00b4ff;    /* secondary brand (electric blue) */
+  --accent-3: #8b5cf6;    /* mid violet used in gradients */
+  --accent-glow: rgba(124, 58, 237, 0.35);
+
+  /* Text */
+  --text: #eef4ff;
+  --text-soft: rgba(232, 238, 255, 0.78);
+  --text-muted: #9aa4c0;
+
+  /* Surfaces */
+  --surface: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  --surface-solid: #0f1320;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.06);
+
+  /* Shape + depth */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+  --shadow-glow: 0 18px 50px var(--accent-glow);
+
+  /* Layout */
+  --maxw: 1120px;
+  --section-pad-y: clamp(3.5rem, 7vw, 6rem);
+  --section-pad-x: clamp(1rem, 4vw, 2rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.18s;
+  --t: 0.3s;
+
+  scroll-behavior: smooth;
+}
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html, :root { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Give sticky-navbar clearance for in-page anchor jumps */
+[id] { scroll-margin-top: 88px; }
+
+/* Prevent horizontal overflow site-wide */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ------------------------------------------------------------
+   Section wrapper — consistent vertical rhythm + centered content
+   ------------------------------------------------------------ */
+.ds-section {
+  width: 100%;
+  padding: var(--section-pad-y) var(--section-pad-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Trim the big gap between the navbar and the first heading on inner pages.
+   The first section of a page shouldn't carry the full section padding on top. */
+.ds-page > .ds-section:first-child,
+.ds-page > .ds-container:first-child {
+  padding-top: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+/* Give any page that uses .ds-page a min-height so short pages still fill the
+   viewport, but WITHOUT vertically centering content (content stays at top). */
+.ds-page {
+  padding-bottom: 1rem;
+}
+
+.ds-container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.ds-container--narrow { max-width: 920px; }
+
+/* Alternating background tint to separate stacked sections */
+.ds-section--tint {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), transparent 60%);
+}
+
+/* ------------------------------------------------------------
+   Section headings
+   ------------------------------------------------------------ */
+.ds-heading-wrap {
+  text-align: center;
+  margin-bottom: clamp(1.6rem, 3.5vw, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ds-eyebrow {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #d3ccff;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ds-heading {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #f7f9fc;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ds-subheading {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--text-soft);
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   Cards
+   ------------------------------------------------------------ */
+.ds-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+
+.ds-card--hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ------------------------------------------------------------
+   Buttons / CTAs (pill style from homepage)
+   ------------------------------------------------------------ */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  line-height: 1;
+  transition: transform var(--t-fast) var(--ease), background var(--t) var(--ease),
+              box-shadow var(--t) var(--ease), color var(--t) var(--ease);
+  font-family: inherit;
+}
+
+.ds-btn:hover { transform: translateY(-2px); }
+.ds-btn:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+
+.ds-btn--primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.28);
+}
+.ds-btn--primary:hover { box-shadow: 0 14px 34px rgba(124, 58, 237, 0.4); }
+
+.ds-btn--secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  border-color: var(--border);
+}
+.ds-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.ds-btn--ghost {
+  background: transparent;
+  color: var(--accent-2);
+  border-color: rgba(0, 180, 255, 0.4);
+}
+.ds-btn--ghost:hover {
+  background: rgba(0, 180, 255, 0.08);
+  color: #fff;
+}
+
+.ds-btn--sm { padding: 0.5rem 0.95rem; font-size: 0.85rem; }
+
+/* ------------------------------------------------------------
+   Badges / pills / tabs
+   ------------------------------------------------------------ */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #d7e2ff;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.28);
+}
+
+.ds-tab {
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--t) var(--ease);
+  font-family: inherit;
+}
+.ds-tab:hover { color: #fff; border-color: rgba(124, 58, 237, 0.4); }
+.ds-tab.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ------------------------------------------------------------
+   Divider
+   ------------------------------------------------------------ */
+.ds-divider {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4), transparent);
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+}
+
+/* ------------------------------------------------------------
+   Shared page-level background so every route matches the home
+   ------------------------------------------------------------ */
+.ds-page {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(700px 420px at 12% 8%, rgba(124, 58, 237, 0.08), transparent 55%),
+    radial-gradient(680px 420px at 88% 92%, rgba(0, 180, 255, 0.06), transparent 55%),
+    linear-gradient(180deg, var(--bg-2), var(--bg));
+}
+
+/* ------------------------------------------------------------
+   Global responsive safety net
+   ------------------------------------------------------------ */
+img, svg, video, canvas { max-width: 100%; }
+
+/* Media inside cards should never blow out their container */
+.ds-card img { max-width: 100%; height: auto; }
+
+/* Very small phones (320–360px): tighten section padding */
+@media (max-width: 380px) {
+  :root {
+    --section-pad-x: 0.85rem;
+    --section-pad-y: 2.5rem;
+  }
+  .ds-btn { padding: 0.65rem 1rem; font-size: 0.9rem; }
+  .section-cta { gap: 0.55rem; }
+  .ds-btn--sm { padding: 0.45rem 0.85rem; }
+}
+
+/* Stack CTA rows full-width on phones so buttons don't wrap awkwardly */
+@media (max-width: 480px) {
+  .section-cta { flex-direction: column; align-items: stretch; }
+  .section-cta > * { width: 100%; }
+  .section-cta .ds-btn { width: 100%; }
+}

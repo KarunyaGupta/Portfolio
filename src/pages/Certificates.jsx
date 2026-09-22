@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionHeading from "../components/SectionHeading";
 
 // ✅ Certificates data (added URLs for View button)
 const CERTS = {
@@ -154,10 +155,10 @@ export default function Certificates() {
 
   return (
     <section
-      className="container"
+      className="container ds-page"
       style={{
-        padding: "40px 0",
-        marginTop: 0, // ensure no extra margin
+        padding: "clamp(1.5rem, 3.5vw, 2.5rem) var(--section-pad-x) var(--section-pad-y)",
+        marginTop: 0,
       }}
     >
       {/* Responsive style for mobile */}
@@ -174,42 +175,20 @@ export default function Certificates() {
         `}
       </style>
 
-      <div className="card" style={{ marginTop: 0 }}>
-        <motion.h2
-          style={{ fontSize: 28, color: "#00b4ff", marginBottom: 12, textAlign: "center" }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Certificates 🏅
-        </motion.h2>
-        <motion.p
-          className="lead"
-          style={{ color: "#aaa", textAlign: "center" }}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          Explore my certifications - technical & others.
-        </motion.p>
+      <div className="ds-container" style={{ marginTop: 0 }}>
+        <SectionHeading
+          eyebrow="Credentials"
+          title="Certificates 🏅"
+          subtitle="Explore my certifications — technical & others."
+        />
 
         {/* Tabs */}
-        <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 8 }}>
           {["tech", "other"].map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={tab === t ? "tab active" : "tab"}
-              style={{
-                padding: "8px 18px",
-                borderRadius: 8,
-                border: "none",
-                cursor: "pointer",
-                background: tab === t ? "#007bff" : "#333",
-                color: "#fff",
-                fontWeight: 500,
-                transition: "0.3s",
-              }}
+              className={`ds-tab${tab === t ? " active" : ""}`}
             >
               {t === "tech" ? "Tech" : "Others"}
             </button>
@@ -230,18 +209,12 @@ export default function Certificates() {
             {displayedCerts.map((c, idx) => (
               <motion.div
                 key={c.title}
-                className="cert card"
+                className="cert ds-card ds-card--hover"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                whileHover={{
-                  scale: 1.03,
-                  boxShadow: "0 0 15px rgba(0, 123, 255, 0.4)",
-                }}
                 style={{
-                  background: "#1a1a1a",
-                  borderRadius: 12,
                   padding: 16,
                   color: "#fff",
                 }}
@@ -265,29 +238,8 @@ export default function Certificates() {
 
                 <div style={{ marginTop: 12 }}>
                       <button
-                        className="btn"
+                        className="ds-btn ds-btn--secondary ds-btn--sm"
                         onClick={() => setSelectedCert(c)}
-                        style={{
-                          padding: '8px 24px',
-                          borderRadius: 6,
-                          
-                          background: '#181818',
-                          color: '#06b6d4',
-                          border: '1px solid #06b6d4',
-                          fontWeight: 500,
-                          fontSize: '0.82rem',
-                          cursor: 'pointer',
-                          boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-                          transition: 'background 0.2s, color 0.2s',
-                        }}
-                        onMouseOver={e => {
-                          e.currentTarget.style.background = '#222';
-                          e.currentTarget.style.color = '#fff';
-                        }}
-                        onMouseOut={e => {
-                          e.currentTarget.style.background = '#181818';
-                          e.currentTarget.style.color = '#06b6d4';
-                        }}
                       >
                         View Certificate
                       </button>
@@ -301,28 +253,8 @@ export default function Certificates() {
         {sortedCerts[tab].length > 8 && !showAll && (
           <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }}>
                 <button
-                  className="btn"
+                  className="ds-btn ds-btn--secondary"
                   onClick={() => setShowAll(true)}
-                  style={{
-                    padding: '8px 24px',
-                    borderRadius: 6,
-                    background: '#181818',
-                    color: '#06b6d4',
-                    border: '1px solid #06b6d4',
-                    fontWeight: 500,
-                    fontSize: '1rem',
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 8px rgba(6,182,212,0.12)',
-                    transition: 'background 0.2s, color 0.2s',
-                  }}
-                  onMouseOver={e => {
-                    e.currentTarget.style.background = '#222';
-                    e.currentTarget.style.color = '#fff';
-                  }}
-                  onMouseOut={e => {
-                    e.currentTarget.style.background = '#181818';
-                    e.currentTarget.style.color = '#06b6d4';
-                  }}
                 >
                   See More
                 </button>

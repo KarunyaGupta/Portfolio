@@ -2,11 +2,10 @@
   --bg:#050509;
   --card:#0f1114;
   --muted:#9aa0a6;
-  --accent:#7c3aed;
-  --accent-2:#070c38;
   --glass: rgba(255,255,255,0.03);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  /* font-family: 'Times New Roman', Times, serif; */
+  /* --accent / --accent-2 are defined in design-system.css (imported after
+     this file) so the whole site shares the homepage's violet/blue palette. */
 }
 *{box-sizing:border-box}
 html,body,#root{height:100%}
@@ -220,11 +219,9 @@ form h3 {
   transform: translateY(-2px);
 }
 
-/* Accent variables */
-:root {
-  --accent: #004c99;
-  --accent-2: #0077ff;
-}
+/* Accent variables are now defined once in design-system.css.
+   (Removed the old #004c99 override that conflicted with the
+   homepage's violet/blue palette.) */
 
 .certs-grid {
   display: grid;
