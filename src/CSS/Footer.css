@@ -72,21 +72,21 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: #000;
   border: 1px solid var(--border);
-  transition: transform var(--t) var(--ease), border-color var(--t) var(--ease);
+  color: #fff;
+  transition: transform var(--t) var(--ease), border-color var(--t) var(--ease),
+    background var(--t) var(--ease);
 }
 .site-footer__social:hover {
   transform: translateY(-3px);
   border-color: rgba(124, 58, 237, 0.5);
 }
-.site-footer__social img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  /* All social PNGs are white glyphs on a black badge. 'screen' drops the
-     black background so only the white glyph shows — uniform size + color. */
-  mix-blend-mode: screen;
+.site-footer__social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  color: #fff;
 }
 
 .site-footer__bar {

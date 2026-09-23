@@ -6,12 +6,9 @@ import '../CSS/Home.css'
 import SectionHeading from '../components/SectionHeading'
 import Btn from '../components/Btn'
 
+import { BsGithub, BsLinkedin, BsEnvelopeFill, BsWhatsapp, BsInstagram } from 'react-icons/bs'
+
 import photo from '../../public/photo.webp'
-import githubLogo from '../../public/github.png'
-import linkedinLogo from '../../public/linkedin.png'
-import gmailLogo from '../../public/gmail.png'
-import whatsappLogo from '../../public/whatsapp.png'
-import instagramLogo from '../../public/insta.png'
 
 const professions = [
   'Product Analyst',
@@ -21,11 +18,11 @@ const professions = [
 ]
 
 const quickLinks = [
-  { img: githubLogo, title: 'GitHub', link: 'https://github.com/karunyagupta' },
-  { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/karunyagupta/' },
-  { img: gmailLogo, title: 'Email', link: 'mailto:mails.karunyagupta@gmail.com' },
-  { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+919805946982' },
-  { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' },
+  { Icon: BsGithub, title: 'GitHub', link: 'https://github.com/karunyagupta' },
+  { Icon: BsLinkedin, title: 'LinkedIn', link: 'https://www.linkedin.com/in/karunyagupta/' },
+  { Icon: BsEnvelopeFill, title: 'Email', link: 'mailto:mails.karunyagupta@gmail.com' },
+  { Icon: BsWhatsapp, title: 'WhatsApp', link: 'https://wa.me/+919805946982' },
+  { Icon: BsInstagram, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' },
 ]
 
 const highlights = [
@@ -221,7 +218,7 @@ export default function Home() {
                 transition={{ type: 'spring', stiffness: 250 }}
                 className="quick-link-item"
               >
-                <img src={item.img} alt={item.title} className="quick-link-img" />
+                <item.Icon className="quick-link-img" aria-hidden="true" />
               </motion.a>
             ))}
           </div>

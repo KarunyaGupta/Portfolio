@@ -4,13 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
-import githubLogo from "../../public/github.png";
-import linkedinLogo from "../../public/linkedin.png";
-import gmailLogo from "../../public/gmail.png";
-import whatsappLogo from "../../public/whatsapp.png";
-import instagramLogo from "../../public/insta.png";
-import facebookLogo from "../../public/facebook.png";
-
 import "../CSS/Contact.css"
 import '../index.css'
 import SectionHeading from "../components/SectionHeading";
@@ -82,13 +75,29 @@ export default function Contact() {
       return;
     }
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Fail loudly (instead of silently) when EmailJS is not configured.
+    if (!serviceId || !templateId || !publicKey) {
+      console.error(
+        "EmailJS is not configured. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID and VITE_EMAILJS_PUBLIC_KEY in your .env file."
+      );
+      setStatus({
+        msg: "⚠️ Email service is not configured yet. Please try again later or reach out via the links above.",
+        type: "error",
+      });
+      return;
+    }
+
     setStatus({ msg: "Sending...", type: "info" });
 
     // EmailJS usage: serviceId, templateId, templateParams, publicKey
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           from_name: form.name,
           contact_info: form.contact,
@@ -96,7 +105,7 @@ export default function Contact() {
           message: form.message,
           to_email: "mails.karunyagupta@gmail.com", // this must match your EmailJS template variable
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       )
       .then(
         () => {
@@ -110,15 +119,6 @@ export default function Contact() {
       );
   };
 
-  const quickLinks = [
-    { img: githubLogo, title: "GitHub", link: "https://github.com/karunyagupta" },
-    { img: linkedinLogo, title: "LinkedIn", link: "https://www.linkedin.com/in/karunygupta/" },
-    { img: gmailLogo, title: "Email", link: "mailto:mails.karunyagupta@gmail.com" },
-    { img: whatsappLogo, title: "WhatsApp", link: "https://wa.me/+919805946982" },
-    { img: instagramLogo, title: "Instagram", link: "https://www.instagram.com/ig_karunya_/" },
-    
-  ];
-
   // Responsive inline styles (lightweight, complements your existing CSS)
   const resp = {
     container: {
@@ -128,13 +128,6 @@ export default function Contact() {
       alignItems: "center",
       width: "100%",
       boxSizing: "border-box",
-    },
-    linksWrap: {
-      display: "flex",
-      gap: "12px",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      margin: "1rem 0",
     },
     form: {
       width: "100%",
@@ -171,11 +164,6 @@ export default function Contact() {
       cursor: "pointer",
       alignSelf: "flex-start",
     },
-    socialIcon: {
-      width: "40px",
-      height: "40px",
-      objectFit: "contain",
-    },
   };
 
   return (
@@ -186,37 +174,6 @@ export default function Contact() {
         title="Let's Connect & Collaborate 🤝"
         subtitle="Whether it's a new project, a collaboration, or just to say hi — I'd love to hear from you!"
       />
-
-      {/* Quick Links */}
-      <motion.div className="contact-links" style={resp.linksWrap}>
-        {quickLinks.map((item, i) => (
-          <motion.a
-            key={i}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-link"
-            whileHover={{ scale: 1.15, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 250 }}
-            style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
-          >
-            <motion.img
-              src={item.img}
-              alt={item.title}
-              className="social-icon"
-              style={resp.socialIcon}
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 3 + i * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </motion.a>
-        ))}
-      </motion.div>
-
-      
 
       {/* Contact Form */}
       <motion.form

@@ -1,11 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { BsGithub, BsLinkedin, BsEnvelopeFill, BsInstagram } from 'react-icons/bs'
 import '../CSS/Footer.css'
-
-import githubLogo from '../../public/github.png'
-import linkedinLogo from '../../public/linkedin.png'
-import gmailLogo from '../../public/gmail.png'
-import instagramLogo from '../../public/insta.png'
 
 const NAV = [
   { label: 'Home', to: '/' },
@@ -21,10 +17,10 @@ const NAV = [
 ]
 
 const SOCIALS = [
-  { img: githubLogo, title: 'GitHub', link: 'https://github.com/karunyagupta' },
-  { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/karunyagupta/' },
-  { img: gmailLogo, title: 'Email', link: 'mailto:mails.karunyagupta@gmail.com' },
-  { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' },
+  { Icon: BsGithub, title: 'GitHub', link: 'https://github.com/karunyagupta' },
+  { Icon: BsLinkedin, title: 'LinkedIn', link: 'https://www.linkedin.com/in/karunyagupta/' },
+  { Icon: BsEnvelopeFill, title: 'Email', link: 'mailto:mails.karunyagupta@gmail.com' },
+  { Icon: BsInstagram, title: 'Instagram', link: 'https://www.instagram.com/ig_karunya_/' },
 ]
 
 export default function Footer() {
@@ -58,11 +54,11 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="site-footer__social"
             >
-              <img src={s.img} alt={s.title} />
+              <s.Icon aria-hidden="true" />
             </a>
           ))}
         </div>
-      </div>
+       </div>
 
       <div className="site-footer__bar">
         © {new Date().getFullYear()} Karunya Gupta · All Rights Reserved.

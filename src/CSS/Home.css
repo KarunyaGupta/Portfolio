@@ -204,18 +204,17 @@
   place-items: center;
   border-radius: 50%;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  background: #000;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #fff;
 }
 
 .quick-link-img {
   width: 26px;
   height: 26px;
-  object-fit: contain;
-  /* All social PNGs are white glyphs on a black badge. 'screen' drops the
-     black background so only the white glyph shows — uniform size + color. */
-  mix-blend-mode: screen;
+  fill: currentColor;
+  color: #fff;
 }
 
 .recruiter-cta {
