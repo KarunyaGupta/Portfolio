@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import html2canvas from "html2canvas";
 // import jsPDF from "jspdf";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import "../CSS/Contact.css"
 import '../index.css'
@@ -93,28 +93,37 @@ export default function Contact() {
 
     setStatus({ msg: "Sending...", type: "info" });
 
-    // EmailJS usage: serviceId, templateId, templateParams, publicKey
+    // Common variable name aliases so the message maps to whatever the
+    // EmailJS template expects (name/email/title/etc.).
+    const templateParams = {
+      from_name: form.name,
+      name: form.name,
+      contact_info: form.contact,
+      reply_to: form.contact,
+      email: form.contact,
+      subject: form.subject,
+      title: form.subject,
+      message: form.message,
+      to_email: "mails.karunyagupta@gmail.com",
+    };
+
+    // EmailJS usage: serviceId, templateId, templateParams, { publicKey }
     emailjs
-      .send(
-        serviceId,
-        templateId,
-        {
-          from_name: form.name,
-          contact_info: form.contact,
-          subject: form.subject,
-          message: form.message,
-          to_email: "mails.karunyagupta@gmail.com", // this must match your EmailJS template variable
-        },
-        publicKey
-      )
+      .send(serviceId, templateId, templateParams, { publicKey })
       .then(
         () => {
           setStatus({ msg: "Message sent successfully!", type: "success" });
           setForm({ name: "", contact: "", subject: "", message: "" });
         },
         (error) => {
-          console.error("FAILED...", error);
-          setStatus({ msg: "Server error, Try Again after some time", type: "error" });
+          console.error("EmailJS send failed:", error);
+          const detail =
+            (error && (error.text || error.message)) ||
+            (error && error.status ? `Status ${error.status}` : "");
+          setStatus({
+            msg: detail ? `Failed to send: ${detail}` : "Server error, please try again later.",
+            type: "error",
+          });
         }
       );
   };
