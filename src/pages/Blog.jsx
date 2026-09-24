@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "../CSS/blog1.css";
 import SectionHeading from "../components/SectionHeading";
 import Btn from "../components/Btn";
+import { pageEntrance, reveal } from "../lib/motion";
 
 export default function Blog() {
   const defaultPosts = [
@@ -167,12 +168,7 @@ Understanding these basics helped me see investing not as gambling, but as long-
   }
 
   return (
-    <motion.section
-      className="blog-section"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
+    <motion.section className="blog-section" {...pageEntrance}>
       <SectionHeading
         eyebrow="Writing"
         title="📝 My Blog"
@@ -274,9 +270,8 @@ Understanding these basics helped me see investing not as gambling, but as long-
             <motion.div
               key={p.id}
               className="blog-post"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              {...reveal}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               whileHover={{
                 scale: 1.02,
                 boxShadow: "0 0 20px rgba(255,255,255,0.1)",

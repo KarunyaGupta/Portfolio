@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import "../CSS/Contact.css"
 import '../index.css'
 import SectionHeading from "../components/SectionHeading";
+import { pageEntrance } from "../lib/motion";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -177,7 +178,7 @@ export default function Contact() {
 
   return (
     // apply container inline style to ensure spacing is responsive
-    <section style={resp.container} className="contact-section ds-page">
+    <motion.section style={resp.container} className="contact-section ds-page" {...pageEntrance}>
       <SectionHeading
         eyebrow="Contact"
         title="Let's Connect & Collaborate 🤝"
@@ -187,9 +188,9 @@ export default function Contact() {
       {/* Contact Form */}
       <motion.form
         onSubmit={handleSubmit}
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.9 }}
+        transition={{ delay: 0.15, duration: 0.5 }}
         className="contact-form"
         style={resp.form}
       >
@@ -233,6 +234,6 @@ export default function Contact() {
           </motion.p>
         )}
       </motion.form>
-    </section>
+    </motion.section>
   );
 }

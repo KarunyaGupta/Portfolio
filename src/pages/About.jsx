@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaUniversity, FaSchool, FaGraduationCap } from "react-icons/fa";
 import SectionHeading from "../components/SectionHeading";
+import { reveal, pageEntrance } from "../lib/motion";
 import Btn from "../components/Btn";
 
 const EDUCATION = [
@@ -66,16 +67,9 @@ const RECS = [
   },
 ];
 
-const reveal = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.15 },
-  transition: { duration: 0.5 },
-};
-
 export default function AboutMe() {
   return (
-    <div className="ds-page">
+    <motion.div className="ds-page" {...pageEntrance}>
       <section className="ds-section">
         <div className="ds-container ds-container--narrow">
           <SectionHeading
@@ -85,7 +79,7 @@ export default function AboutMe() {
           />
 
           {/* Intro */}
-          <motion.div className="ds-card" style={{ textAlign: "justify", lineHeight: 1.8 }} {...reveal}>
+          <motion.div className="ds-card" style={{ textAlign: "left", lineHeight: 1.8 }} {...reveal}>
             <p style={{ marginTop: 0, color: "var(--text-soft)" }}>
               Hi, I&rsquo;m <strong style={{ color: "#fff" }}>Karunya Gupta</strong> &mdash; a{" "}
               <strong style={{ color: "#fff" }}>Product Analyst</strong> and final-year{" "}
@@ -183,7 +177,7 @@ export default function AboutMe() {
                     <div style={{ fontSize: "0.82rem", color: "var(--text-muted)" }}>{r.meta}</div>
                   </div>
                 </div>
-                <p style={{ color: "var(--text-soft)", fontSize: "0.98rem", textAlign: "justify", margin: 0, lineHeight: 1.7 }}>
+                <p style={{ color: "var(--text-soft)", fontSize: "0.98rem", textAlign: "left", margin: 0, lineHeight: 1.7 }}>
                   {r.text}
                 </p>
               </motion.div>
@@ -195,6 +189,6 @@ export default function AboutMe() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

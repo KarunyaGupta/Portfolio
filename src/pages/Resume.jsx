@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../CSS/Resume.css";
 import SectionHeading from "../components/SectionHeading";
+import { pageEntrance } from "../lib/motion";
 
 export default function Resume() {
   return (
@@ -36,9 +37,7 @@ export default function Resume() {
           boxShadow: "var(--shadow-sm)",
           marginTop: 0,
         }}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        {...pageEntrance}
       >
         <SectionHeading
           eyebrow="Overview"
@@ -67,7 +66,7 @@ export default function Resume() {
             <h3 style={{ fontSize: 24, color: "#00b4ff", marginBottom: 4 }}>
               👨‍💻 Karunya Gupta
             </h3>
-            <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "justify" }}>
+            <p style={{ marginTop: 10, fontSize: 15, color: "#ccc", textAlign: "left" }}>
               Final year Computer Science and Engineering Student -
               <br />Chitkara University
             </p>
@@ -117,7 +116,7 @@ export default function Resume() {
             }}
           >
             <strong style={{ color: "#00b4ff"}}>Professional Summary:</strong>
-            <p style={{ marginTop: 6, color: "#ccc", textAlign:'justify'  }}>
+            <p style={{ marginTop: 6, color: "#ccc", textAlign:'left'  }}>
               Highly motivated and results-oriented Computer Science and Engineering student with a strong foundation in data
               analysis and business intelligence. Proficient in Python, SQL, and tools like Power BI and Tableau. Proven ability to create
               insightful dashboards, analyze complex datasets, and deliver data-driven solutions to improve business efficiency and

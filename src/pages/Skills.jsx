@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "../CSS/Skills1.css";
 import SectionHeading from "../components/SectionHeading";
+import { pageEntrance } from "../lib/motion";
 
 const SKILLS = [
 	{
@@ -153,9 +154,10 @@ export default function Skills() {
 	}, [showOrbs]);
 
 	return (
-		<section
+		<motion.section
 			className="skills-container ds-page"
 			id="skills"
+			{...pageEntrance}
 		>
 			{/* Header */}
 			<SectionHeading
@@ -285,6 +287,6 @@ export default function Skills() {
 					</div>
 				))}
 			</div>
-		</section>
+		</motion.section>
 	);
 }

@@ -49,24 +49,24 @@ const IMAGES = {
   ],
 };
 
-// ✨ Animation Variants
+// ✨ Animation Variants — aligned with the shared Home motion (opacity + y:24)
 const pageVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.2,
-      duration: 0.6,
+      staggerChildren: 0.1,
+      duration: 0.5,
       ease: "easeOut",
     },
   },
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // reduced from 0.6 to 0.3
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 // ✨ Tab Switching Animations
@@ -191,7 +191,7 @@ export default function Gallery() {
                 <div className="post-title">
                   {isAchievements ? `Achievement #${postIdx + 1}` : `Story #${postIdx + 1}`}
                 </div>
-                <p className="caption" style={{ textAlign: "justify" }}>{post.caption}</p>
+                <p className="caption" style={{ textAlign: "left" }}>{post.caption}</p>
                 <div
                   className={`photo-grid ${
                     post.photos.length > 1 ? "multi" : "single"

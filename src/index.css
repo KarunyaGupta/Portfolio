@@ -9,6 +9,7 @@
 }
 *{box-sizing:border-box}
 html,body,#root{height:100%}
+html,body{max-width:100%;overflow-x:hidden}
 body{
   margin:0;
   background: radial-gradient(800px 500px at 10% 10%, rgba(124,58,237,0.08), transparent 10%),

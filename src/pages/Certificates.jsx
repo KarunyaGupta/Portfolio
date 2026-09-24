@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "../components/SectionHeading";
+import { pageEntrance } from "../lib/motion";
 
 // ✅ Certificates data (added URLs for View button)
 const CERTS = {
@@ -154,8 +155,9 @@ export default function Certificates() {
   const displayedCerts = showAll ? sortedCerts[tab] : sortedCerts[tab].slice(0, 8);
 
   return (
-    <section
+    <motion.section
       className="container ds-page"
+      {...pageEntrance}
       style={{
         padding: "clamp(1.5rem, 3.5vw, 2.5rem) var(--section-pad-x) var(--section-pad-y)",
         marginTop: 0,
@@ -301,6 +303,6 @@ export default function Certificates() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 }

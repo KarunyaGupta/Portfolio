@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
 import '../CSS/projects.css'
 import SectionHeading from '../components/SectionHeading'
+import { pageEntrance, reveal } from '../lib/motion'
 
 const PROJECTS = [
 	{
@@ -215,9 +216,7 @@ export default function Projects() {
 	return (
 		<motion.section
 			className="gallery-container ds-page"
-			initial="hidden"
-			animate="visible"
-			exit="hidden"
+			{...pageEntrance}
 			id="projects"
 			style={{ width: '100%' }}
 		>
@@ -359,13 +358,10 @@ export default function Projects() {
 						<motion.div
 							key={idx}
 							className="project-card ds-card ds-card--hover"
-							initial={{ opacity: 0, y: 20, scale: 0.95 }}
-							whileInView={{ opacity: 1, y: 0, scale: 1 }}
-							transition={{ duration: 0.4, delay: idx * 0.07 }}
+							{...reveal}
+							transition={{ duration: 0.5, delay: idx * 0.08 }}
 							whileHover={{ scale: 1.03 }}
-							viewport={{ once: true }}
 							style={{
-								padding: 14,
 								fontSize: '0.88rem',
 								width: '100%',
 								maxWidth: 370,
@@ -373,24 +369,7 @@ export default function Projects() {
 								alignSelf: 'stretch',
 							}}
 						>
-							<motion.div
-								className="project-ss"
-								whileHover={{ scale: 1.05 }}
-								style={{ borderRadius: 12, overflow: 'hidden' }}
-							>
-								<img
-									src={p.ss}
-									alt={p.title + " screenshot"}
-									style={{
-										width: '100%',
-										height: '200px',
-										objectFit: 'cover',
-										borderRadius: 12,
-									}}
-								/>
-							</motion.div>
-
-							<div className="project-content" style={{ marginTop: 10 }}>
+							<div className="project-content" style={{ marginTop: 0 }}>
 								<h3 className="project-title" style={{
 									fontSize: '1rem',
 									color: '#f2f6ff',
@@ -405,7 +384,7 @@ export default function Projects() {
 									color: '#bbb',
 									marginBottom: 7,
 									lineHeight: 1.5,
-									textAlign: 'justify'
+									textAlign: 'left'
 								}}>
 									{/* Proofread and clarify for impact/results */}
 									{p.title.includes('Code Review AI') && (

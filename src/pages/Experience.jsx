@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import '../CSS/Resume.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { pageEntrance } from '../lib/motion';
 import '../CSS/ExperienceTimeline.css';
 import SectionHeading from '../components/SectionHeading';
 import Btn from '../components/Btn';
@@ -177,9 +178,7 @@ export default function Experience() {
   return (
     <div className="resume-container ds-page" style={{ minHeight: '100vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 'clamp(1.5rem, 3.5vw, 2.5rem) var(--section-pad-x) var(--section-pad-y)' }}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
+        {...pageEntrance}
         className="resume-card"
         style={{
           width: '100%',
@@ -358,13 +357,13 @@ export default function Experience() {
                       </div>
                       {role.desc && (
                         Array.isArray(role.desc) ? (
-                          <ul className="timeline-role-desc" style={{ margin: '0.5rem 0', paddingLeft: '1.1rem', textAlign: 'justify' }}>
+                          <ul className="timeline-role-desc" style={{ margin: '0.5rem 0', paddingLeft: '1.1rem', textAlign: 'left' }}>
                             {role.desc.map((bullet, idx) => (
                               <li key={idx} style={{ marginBottom: '0.35rem' }}>{bullet}</li>
                             ))}
                           </ul>
                         ) : (
-                          <div className="timeline-role-desc" style={{ textAlign: 'justify' }}>{role.desc}</div>
+                          <div className="timeline-role-desc" style={{ textAlign: 'left' }}>{role.desc}</div>
                         )
                       )}
                       {role.skills && (
