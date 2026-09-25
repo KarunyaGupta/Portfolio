@@ -159,7 +159,7 @@ export default function Home() {
             <h1 className="home-title">
               Hi, I&rsquo;m <span className="home-name">Karunya Gupta</span>
             </h1>
-            <p className="typing-effect">Product @Sanpdeal | AceVector</p>
+            <p className="typing-effect">Product Analyst @Snapdeal | AceVector</p>
             <p className="home-summary">
               I turn data into practical insights, connect strategy with execution, and enjoy building
               solutions that create measurable impact.
@@ -192,7 +192,7 @@ export default function Home() {
               <Btn href="/Resume.pdf" download="Karunya_Gupta_Resume.pdf" variant="secondary">
                 Download Resume
               </Btn>
-              <Btn to="/contact" variant="ghost">Get in Touch</Btn>
+              <Btn to="/contact" variant="ghost">Contact Me</Btn>
             </div>
           </motion.div>
         </div>
@@ -293,7 +293,7 @@ export default function Home() {
           <motion.div className="skills-chip-cloud" {...reveal}>
             {topSkills.map((s) => (
               <span className="skills-chip" key={s.name}>
-                <img src={s.logo} alt="" aria-hidden="true" />
+                <img src={s.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" />
                 {s.name}
               </span>
             ))}
@@ -315,7 +315,7 @@ export default function Home() {
           <motion.div className="exp-preview" {...reveal}>
             {expPreview.map((e, i) => (
               <div className="ds-card ds-card--hover exp-row" key={i}>
-                <img className="exp-row__logo" src={e.logo} alt={e.org} />
+                <img className="exp-row__logo" src={e.logo} alt={e.org} loading="lazy" decoding="async" />
                 <div className="exp-row__body">
                   <p className="exp-row__role">{e.role}</p>
                   <p className="exp-row__org">{e.org}</p>

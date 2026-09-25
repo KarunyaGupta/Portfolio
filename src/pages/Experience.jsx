@@ -245,7 +245,7 @@ export default function Experience() {
               }}
             >
               <div className="timeline-org" style={{ minWidth: 170, textAlign: 'left', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
-                <img src={org.orgLogo} alt={org.org} className="timeline-org-logo" style={{ marginBottom: 0, alignSelf: 'center', display: 'block' }} />
+                <img src={org.orgLogo} alt={org.org} className="timeline-org-logo" loading="lazy" decoding="async" style={{ marginBottom: 0, alignSelf: 'center', display: 'block' }} />
                 <div className="timeline-org-info" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div className="timeline-org-title" style={{ marginBottom: 2 }}>{org.org}</div>
                   {org.orgMeta.type && (
@@ -377,6 +377,8 @@ export default function Experience() {
                             src={role.img}
                             alt={role.imgCaption}
                             className="timeline-role-img"
+                            loading="lazy"
+                            decoding="async"
                             style={{ cursor: 'pointer' }}
                             onClick={() => setSelectedImg(role.img)}
                           />

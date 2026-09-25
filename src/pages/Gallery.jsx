@@ -205,7 +205,7 @@ export default function Gallery() {
                       transition={{ type: "spring", stiffness: 250 }}
                       onClick={() => openZoom(post, i)}
                     >
-                      <img src={src} alt="gallery" />
+                      <img src={src} alt="gallery" loading="lazy" decoding="async" />
                     </motion.div>
                   ))}
                 </div>

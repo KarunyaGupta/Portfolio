@@ -36,6 +36,16 @@
 	max-width: var(--maxw);
 	margin: 0 auto;
 	width: 100%;
+	min-width: 0;
+}
+
+/* Grid/flex children default to min-width:auto and won't shrink below their
+   content — force them to shrink so nothing spills past the card edge. */
+.blog-post > * {
+	min-width: 0;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .blog-post {
@@ -44,12 +54,14 @@
 	padding: 1.8rem;
 	width: 100%;
 	max-width: 100%;
+	min-width: 0;
 	box-sizing: border-box;
 	text-align: left;
 	transition: all 0.3s ease;
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	overflow-wrap: anywhere;
 	word-break: break-word;
+	overflow: hidden;
 }
 
 .post-meta {

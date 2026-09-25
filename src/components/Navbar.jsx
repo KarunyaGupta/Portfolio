@@ -80,6 +80,18 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", onClick);
   }, [isOpen]);
 
+  // Lock body scroll while the mobile menu overlay is open, and always
+  // restore the previous value on close/unmount so we never leave the page
+  // stuck in a non-scrollable state.
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <>
       {/* --- Navbar --- */}
@@ -272,7 +284,8 @@ export default function Navbar() {
                 borderRadius: 999,
                 cursor: "pointer",
                 zIndex: 10000,
-                padding: "7px 14px",
+                padding: "10px 18px",
+                minHeight: 44,
                 fontFamily: "inherit",
               }}
               onClick={() => setIsOpen(!isOpen)}
@@ -316,13 +329,20 @@ export default function Navbar() {
               aria-label="Close menu"
               style={{
                 position: "absolute",
-                top: "1rem",
-                right: "1rem",
-                fontSize: "2rem",
+                top: "0.75rem",
+                right: "0.75rem",
+                fontSize: "1.6rem",
+                lineHeight: 1,
                 color: "#fff",
-                background: "none",
-                border: "none",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: 999,
                 cursor: "pointer",
+                width: 44,
+                height: 44,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
               onClick={() => setIsOpen(false)}
             >

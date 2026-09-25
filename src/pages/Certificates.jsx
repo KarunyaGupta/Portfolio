@@ -203,7 +203,7 @@ export default function Certificates() {
           style={{
             marginTop: 28,
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
             gap: 20,
           }}
         >
@@ -224,6 +224,8 @@ export default function Certificates() {
                 <img
                   src={c.img}
                   alt={c.title}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: "100%",
                     height: 160,
