@@ -8,7 +8,7 @@ import Btn from '../components/Btn'
 
 import { BsGithub, BsLinkedin, BsEnvelopeFill, BsWhatsapp, BsInstagram } from 'react-icons/bs'
 
-import photo from '../../public/photo.webp'
+import photo from '../../public/photo.png'
 
 const professions = [
   'Product Analyst',

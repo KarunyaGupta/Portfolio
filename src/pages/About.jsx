@@ -32,6 +32,24 @@ const EDUCATION = [
   },
 ];
 
+const RESEARCH = {
+  category: "Research Paper",
+  title: "AI-Driven Decision Support Framework for Intelligent Quick Commerce Operations",
+  authors: "Karunya Gupta, Japit Singh, Krish Gupta, Ishant Arora",
+  institution: "Chitkara University, Rajpura, Punjab",
+  description:
+    "A unified AI-driven decision support framework for quick-commerce operations that connects demand forecasting, inventory optimisation, product recommendation & substitution, and last-mile delivery through three explicit couplings and a shared cost objective. It follows a five-layer architecture — Data, Features, Models, Decision Support, and Human-in-the-Loop. In a preliminary experiment on simulated rare-demand data, decision-focused forecasting achieved a 10.3% reduction in inventory cost per period over accuracy-focused forecasting (despite worse RMSE) — a simulated result, not a production outcome.",
+  tags: [
+    "AI/ML",
+    "Decision Support Systems",
+    "Predictive Analytics",
+    "Demand Forecasting",
+    "Supply Chain Optimisation",
+    "Last-Mile Logistics",
+  ],
+  pdf: "/research/ai-driven-quick-commerce-decision-support.pdf",
+};
+
 const RECS = [
   {
     name: "Arushi Agarwal",
@@ -156,8 +174,48 @@ export default function AboutMe() {
         </div>
       </section>
 
-      {/* Recommendations */}
+      {/* Research */}
       <section className="ds-section">
+        <div className="ds-container ds-container--narrow">
+          <SectionHeading eyebrow="Publications" title="Research" />
+          <motion.div
+            className="ds-card ds-card--hover"
+            {...reveal}
+            style={{ textAlign: "left", display: "flex", flexDirection: "column", gap: "0.85rem" }}
+          >
+            <span className="ds-badge" style={{ alignSelf: "flex-start" }}>
+              {RESEARCH.category}
+            </span>
+
+            <h3 style={{ color: "#f2f6ff", margin: 0, fontSize: "1.2rem", lineHeight: 1.4 }}>
+              {RESEARCH.title}
+            </h3>
+
+            <p style={{ color: "var(--text-muted)", margin: 0, fontSize: "0.9rem" }}>
+              {RESEARCH.authors} &middot; {RESEARCH.institution}
+            </p>
+
+            <p style={{ color: "var(--text-soft)", margin: 0, lineHeight: 1.75 }}>
+              {RESEARCH.description}
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "0.2rem" }}>
+              {RESEARCH.tags.map((t) => (
+                <span key={t} className="ds-badge">{t}</span>
+              ))}
+            </div>
+
+            <div className="section-cta" style={{ justifyContent: "flex-start", marginTop: "0.6rem" }}>
+              <Btn href={RESEARCH.pdf} external variant="primary" size="sm">
+                Read Research Paper &rarr;
+              </Btn>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Recommendations */}
+      <section className="ds-section ds-section--tint">
         <div className="ds-container ds-container--narrow">
           <SectionHeading eyebrow="Kind Words" title="Recommendations" />
           <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
