@@ -78,14 +78,14 @@ const projPreview = [
     tags: ['Product', 'Workflow Automation'],
   },
   {
+    title: 'Code Review AI',
+    desc: 'An AI-powered platform that reviews code in real time, offering instant suggestions to improve performance, security and code quality.',
+    tags: ['React', 'Vite', 'Gemini'],
+  },
+  {
     title: 'SkyMetrics: Aviation Intelligence',
     desc: 'A data engineering + BI solution turning complex aviation datasets into strategic pricing and logistics insights.',
     tags: ['Power BI', 'ETL', 'DAX'],
-  },
-  {
-    title: 'Employee Attrition Analytics',
-    desc: 'An interactive HR dashboard surfacing the key drivers of employee turnover across roles, departments and tenure.',
-    tags: ['Power BI', 'SQL', 'Python'],
   },
 ]
 
