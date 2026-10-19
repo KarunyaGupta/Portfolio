@@ -8,7 +8,7 @@ import Btn from '../components/Btn'
 
 import { BsGithub, BsLinkedin, BsEnvelopeFill, BsWhatsapp, BsInstagram } from 'react-icons/bs'
 
-import photo from '../../public/photo.png'
+import photo from '../../public/photo.webp'
 
 const professions = [
   'Product Analyst',
@@ -75,19 +75,16 @@ const projPreview = [
   {
     title: "Snapdeal's Influencer Hub",
     desc: 'A centralized platform digitizing Snapdeal\u2019s end-to-end influencer workflow: onboarding, campaigns, payments and remarks.',
-    ss: '/projects/snapdeal.png',
     tags: ['Product', 'Workflow Automation'],
   },
   {
     title: 'SkyMetrics: Aviation Intelligence',
     desc: 'A data engineering + BI solution turning complex aviation datasets into strategic pricing and logistics insights.',
-    ss: '/projects/skymatrix.webp',
     tags: ['Power BI', 'ETL', 'DAX'],
   },
   {
     title: 'Employee Attrition Analytics',
     desc: 'An interactive HR dashboard surfacing the key drivers of employee turnover across roles, departments and tenure.',
-    ss: '/projects/hr.webp',
     tags: ['Power BI', 'SQL', 'Python'],
   },
 ]
@@ -141,6 +138,10 @@ export default function Home() {
               <motion.img
                 src={photo}
                 alt="Karunya Gupta"
+                width="800"
+                height="800"
+                fetchpriority="high"
+                decoding="async"
                 initial={{ scale: 0.92, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.9 }}
@@ -345,7 +346,6 @@ export default function Home() {
                 key={i}
                 whileHover={{ y: -6 }}
               >
-                <img className="proj-card__img" src={p.ss} alt={p.title} loading="lazy" />
                 <div className="proj-card__body">
                   <h3 className="proj-card__title">{p.title}</h3>
                   <p className="proj-card__desc">{p.desc}</p>

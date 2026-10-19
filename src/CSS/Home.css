@@ -545,13 +545,7 @@
 
 /* Project preview card */
 .proj-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-.proj-card__img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-.proj-card__body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.proj-card__body { padding: 1.2rem 1.3rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
 .proj-card__title { margin: 0; font-size: 1rem; color: #f2f6ff; font-weight: 700; line-height: 1.35; }
 .proj-card__desc { margin: 0; font-size: 0.86rem; color: var(--text-soft); line-height: 1.55; }
 .proj-card__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.4rem; }
