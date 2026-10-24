@@ -10,7 +10,7 @@ const PROJECTS = [
 		title: "📣 Snapdeal's Influencer Hub - Influencer Management Platform",
 		desc: "A centralized influencer management platform that digitizes Snapdeal's end-to-end influencer workflow, replacing fragmented email-based communication with a structured system for influencer onboarding, campaign assignment, transaction tracking, payments, and stakeholder remarks.",
 		 tech: ["Product Management", "Workflow Automation", "Requirements Gathering", "Cross-functional Collaboration"],
-		 live: '#',
+		 live: 'https://affiliate.snapdeal.com/',
 		 code: '#',
 		 category: 'Product',
 	},
@@ -23,6 +23,15 @@ const PROJECTS = [
         category: 'Development',
 	},
 	{
+		title:'📈 Google Stock Price Analysis and Prediction',
+		// desc:'Comming soon... working on it!',
+		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
+		tech:['PowerBI','Data Cleaning','EDA','Time Series Forecasting','LSTM'],
+		live:'https://app.powerbi.com/links/9FaS_bofXm?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
+		code:'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
+        ,category: 'Dashboards'
+	},
+	{
 		title:'✈️ SkyMetrics: 360° Aviation Intelligence & Strategic Dashboard',
 		desc:'"SkyMetrics" is a comprehensive data engineering and business intelligence solution designed to transform complex aviation datasets into actionable strategic insights.This project decodes the intricate relationship between flight logistics, airline business models, and market pricing behaviors.',
 		// desc:'This project analyzes domestic flight fare trends in India to uncover insights related to airline pricing, routes, travel duration, and number of stops. An interactive dashboard was created to compare ticket prices across airlines, sources, and destinations.',
@@ -32,26 +41,7 @@ const PROJECTS = [
 		category: 'Dashboards',
 		drive: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
 	},
-
-	{
-		title:'👥 Employee Attrition Analytics & Insights Dashboard',
-		desc:'Developed an interactive HR Attrition Analysis Dashboard to identify key factors influencing employee turnover and workforce stability. The dashboard provides insights into attrition trends based on departments, job roles, age groups, gender, salary slabs, and years of experience.',
-		// desc:'Analyzes employee attrition patterns to identify key factors influencing workforce turnover. An interactive dashboard was developed to explore attrition trends across departments, job roles, age groups, and work experience.'
-		tech:['PowerBI','Excel','SQL','Python'],
-		live:'https://app.powerbi.com/links/lOUQUNocKo?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=eaff1f69-8e2d-4893-ab13-8d31fffd15ca',
-		code:'https://drive.google.com/drive/folders/1dGRGEU1IBvB9peVusqSLPnZJ-mYy5cxS?usp=drive_link'
-		,category: 'Dashboards',
-		drive: 'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
-	},
-	{
-		title:'📈 Google Stock Price Analysis and Prediction',
-		// desc:'Comming soon... working on it!',
-		desc:'This project analyzes Google stock price trends and builds predictive models to forecast future prices. It explores historical data, technical indicators, and machine learning techniques for stock price prediction.',
-		tech:['PowerBI','Data Cleaning','EDA','Time Series Forecasting','LSTM'],
-		live:'https://app.powerbi.com/links/9FaS_bofXm?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
-		code:'https://drive.google.com/drive/folders/1xniVs5pnYUUwI3du9QZzHg9k7Bgm6V4m?usp=sharing'
-        ,category: 'Dashboards'
-	},
+	
 	   // ProfileX project removed as requested
 	{
 		title: '💰 Loan Status Prediction',
@@ -69,39 +59,6 @@ const PROJECTS = [
 		code: 'https://drive.google.com/drive/folders/1T_n-1GsqTFy4hSpwvh56Ca4ufjxtppff?usp=drive_link',
         category: 'Dashboards',
 	},
-	{
-		title: '🩺 Pharmaceutical Sales Analysis Dashboard',
-		desc: "This project analyzes a global Pharmaceutical Manufacturing Company's raw sales data to derive meaningful insights. The analysis focuses on performance metrics across different regions, distributors, customers, and sales teams.",
-		tech: ['PowerBI','Pandas', 'EDA', 'Python', 'Data Visiualization'],
-		live: 'https://app.powerbi.com/links/zOIZyJ4BT2?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare&bookmarkGuid=0e8f3acb-8169-4858-8601-b763e080b62f',
-		code: 'https://drive.google.com/drive/folders/1YC0a5DuxxCfen5qzGFMGiGuu1trLyyX_?usp=drive_link',
-        category: 'Dashboards',
-	},
-	{
-		title: '🛒 E-Commerce Sales Performance & Profitability Analysis',
-		desc: 'A data-driven Power BI dashboard that analyzes Amazon store sales to uncover trends, top-performing products, revenue patterns, and customer behavior. It helps in making informed business decisions through interactive visuals and KPIs.',
-		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: '',
-		code: 'https://drive.google.com/drive/folders/1vzF07kBsyB4jH2JHNkQQlG5VlMx5JfoO?usp=drive_link',
-        category: 'Dashboards',
-	},
-	{
-		title: '💬 Social Media Analysis',
-		desc: 'This SQL-driven project architects a comprehensive relational database to simulate a dynamic social media ecosystem, featuring interconnected schemas for Users, Posts, Messages, Followers, and Comments.',
-		tech: ['SQL','Relational Schema Design','Data Aggregation'],
-		live: '#',
-		code: 'https://github.com/KarunyaGupta/SocialMediaAnalysis-SQL-Project',
-        category: 'Others',
-	},
-	
-	{
-		title: '📽 Netflix Content Library',
-		desc: 'This is a Data Analysis and Visualization project analyzing the Netflix content catalog (movies and TV shows). The goal is to draw insights and present findings using an interactive report created in Power BI.',
-		tech: ['PowerBI', 'Excel/CSV', 'DAX', 'Power Query'],
-		live: 'https://app.powerbi.com/links/f2md6kaNCx?ctid=7211e667-d09c-4d22-8038-4d51ebe960a8&pbi_source=linkShare',
-		code: 'https://drive.google.com/drive/folders/1eaPT0P8CwNnIxo4qdMnV3zZpKeXt1cOk?usp=sharing',
-        category: 'Dashboards',
-	},
 	// {
 	// 	title: '🚗 Bengaluru Rides Analysis (OLA)',
 	// 	desc: 'This is a data analysis and exploration project focused on understanding patterns and insights from a dataset of 100,000 rides taken in the city of Bengaluru.',
@@ -110,15 +67,7 @@ const PROJECTS = [
 	// 	live: '#',
 	// 	code: '#',
 	// },
-	
-	{
-		title: '🌟 Personal Expense Tracker',
-		desc: 'A user-friendly web application to track personal expenses, categorize spending, and visualize financial data through interactive charts and reports. Built with React for the frontend and Node.js for the backend.',
-		tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-		live: '',
-		code: 'https://github.com/KarunyaGupta/ExpenseTracker',
-		category: 'Development',
-	},
+
 	{
 		title:'😄 MemeHub',
 		desc:'A Meme Maker web application that allows users to create memes easily. It features image uploading, text overlay, and various customization options to generate memes.',
@@ -144,14 +93,6 @@ const PROJECTS = [
 		code: 'https://github.com/KarunyaGupta/Portfolio',
         category: 'Development',
 	},
-	{
-		title: 'Productive Notion Dashboard',
-		desc: 'A comprehensive Notion dashboard template designed to enhance productivity and organization. It includes sections for task management, goal tracking, habit monitoring, and personal journaling.',
-		tech: ['Notion','Creativity'],
-		live: 'https://www.notion.so/Dashboard-2f35ba28887a80cb8599fa64b9cd8a7c?source=copy_link',
-		code: '#',
-		category: 'Others',
-	}
 ]
 
 
